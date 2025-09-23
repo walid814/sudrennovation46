@@ -13,7 +13,7 @@
  <header>
         <div class="container header-container">
             <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
               <span style="display: flex; flex-direction: column; line-height: 1;">
                 <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
                 <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
@@ -25,18 +25,72 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-<li class="dropdown">
-    <a href="#">Services <i class="fas fa-caret-down"></i></a>
-    <ul class="dropdown-menu">
-        <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
-        <li><a href="couvreur.html">Couvreur</a></li>
-        <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
-        <li><a href="renovation.html">Rénovation peinture</a></li>
-        <li><a href="isolation.html">Isolation des combles</a></li>
-    </ul>
-</li>                    <li><a href="#about">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
+                            <li><a href="couvreur.html">Couvreur</a></li>
+                            <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
+                            <li><a href="renovation.html">Rénovation peinture</a></li>
+                            <li><a href="isolation.html">Isolation des combles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">À propos</a></li>
                     <li><a href="realisations.html">Réalisations</a></li>
                     <li><a href="contact.html" class="btn">Contact</a></li>
+                    <!-- Nouveau menu Paramètres -->
+                    <li class="dropdown settings-menu">
+                        <a href="#"><i class="fas fa-cog"></i></a>
+                        <ul class="dropdown-menu settings-dropdown">
+                            <li class="settings-header">Réglages de l'affichage</li>
+                            <li class="settings-subheader">Préférences d'affichage du site</li>
+                            
+                            <li class="setting-item">
+                                <span>Thème clair ou sombre</span>
+                                <div class="theme-toggle">
+                                    <button class="theme-btn light active" data-theme="light">Clair</button>
+                                    <button class="theme-btn dark" data-theme="dark">Sombre</button>
+                                </div>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Mode contraste élevé</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="high-contrast-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Réduire les animations</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="reduce-motion-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Barres de défilement classiques</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="classic-scrollbars-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Taille des contenus</span>
+                                <div class="size-controls">
+                                    <button class="size-btn" id="decrease-size">A-</button>
+                                    <span class="size-value">100%</span>
+                                    <button class="size-btn" id="increase-size">A+</button>
+                                </div>
+                            </li>
+                            
+                            <li class="settings-footer">
+                                <button id="reset-settings">Réinitialiser les paramètres</button>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -65,61 +119,55 @@
                     <img src="images/ravalement.jpg" alt="Peintre en bâtiment à Cahors">
                 </div>
             </div>
+                                            <a href="contact.html" class="btn">Nous contacter</a>
 
         </div>
     </section>
 
 <section id="about" class="about">
     <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h1><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Laissez-nous vous présenter nos atouts.</span></h1>
-                <h3><span style="color: #222222;">Nous nous appuyons sur notre expertise et notre expérience pour fournir un travail de qualité.</span></h3>
-                
+        <div class="atouts-containerr">
+            <!-- Carte Prestations -->
+            <div class="atout-card white">
+                <div>
+                    <span style="color: #013f1c;" class="atout-icon">
+                        <i class="fas fa-hands"></i>
+                    </span>
+                </div>
+                <h3><span style="color: #013f1c;">Nos prestations</span></h3>
+                <ul class="prestation-list">
+                    <li>Ravalement de façades</li>
+                    <li>Couvreur</li>
+                    <li>Démoussage de toiture</li>
+                    <li>Travaux de rénovation peinture</li>
+                    <li>Isolation des combles</li>
+                </ul>
             </div>
             
-        </div>
-        
-        <!-- Nouvelle section des atouts -->
-        <div class="atouts-container">
-            <div class="atout-card white">
-    <div class="atout-icon">
-        <i class="fas fa-hands"></i>
-    </div>
-    <h3>Nos prestations</h3>
-    <ul class="prestation-list">
-        <li>Ravalement de façades</li>
-        <li>Couvreur</li>
-        <li>Démoussage de toiture</li>
-        <li>Travaux de rénovation peinture</li>
-        <li>Isolation des combles</li>
-    </ul>
-</div>
-            
+            <!-- Carte Garanties -->
             <div class="atout-card green">
-    <div class="atout-icon">
-        <i class="fas fa-bolt"></i>
-    </div>
-    <h3>Nos garanties</h3>
-    <ul class="prestation-list">
-        <li>Savoir-Faire</li>
-        <li>Réactivité</li>
-        <li>Qualité du travail</li>
-        <li>Conseil</li>
-    </ul>
-</div>
+                <div class="atout-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Nos garanties</h3>
+                <ul class="prestation-list">
+                    <li>Savoir-Faire</li>
+                    <li>Réactivité</li>
+                    <li>Qualité du travail</li>
+                    <li>Conseil</li>
+                </ul>
+            </div>
             
+            <!-- Carte Zone d'intervention -->
             <div class="atout-card yellow">
-    <div class="atout-icon">
-        <i class="fas fa-shield-alt"></i>
-    </div>
-    <h3><span style="color: #013f1c;">La Zone d'intervention</span></h3>
-    <div class="zone-intervention">
-        <p><span style="color: #000000;">Cahors</span></p>
-        <p><span style="color: #000000;">Et ses environs</span></p>
-    </div>
-            
-            
+                <div class="atout-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3><span style="color: #013f1c;">La Zone d'intervention</span></h3>
+                <ul class="prestation-list">
+                    <li><span style="color: #013f1c;">Cahors</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>

@@ -7,36 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset et styles de base */
+        /* RESET ET STYLES DE BASE */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
         }
-        
+        html {
+            font-size: 105%; /* Zoom de 5% - ajustez selon vos besoins */
+        }
         body {
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
             background-color: #f8f9fa;
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: #D4A017;
@@ -49,13 +51,13 @@
             cursor: pointer;
             font-size: 16px;
         }
-        
+
         .btn:hover {
             background-color: #BF8C15;
             transform: translateY(-2px);
         }
-        
-        /* Header */
+
+        /* HEADER */
         header {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -64,96 +66,137 @@
             top: 0;
             z-index: 1000;
         }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
             color: #2C3E50;
         }
-        
+
         .logo span {
             color: #D4A017;
         }
-        
+
         nav ul {
             display: flex;
         }
-        
+
         nav ul li {
             margin-left: 25px;
         }
-        
+
         nav ul li a {
             font-weight: 500;
             transition: color 0.3s;
             font-size: 16px;
         }
-        
+
         nav ul li a:hover {
             color: #D4A017;
         }
-        
+
         .menu-toggle {
             display: none;
             font-size: 24px;
             cursor: pointer;
         }
-        
-        /* Hero Section */
+
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/accueil.jpg') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             align-items: center;
-            color: white;
-            text-align: center;
+            justify-content: flex-start;
+            padding-left: 50px;
+            position: relative;
+            background-color: rgb(237, 245, 247); /* fond de base à gauche */
+            overflow: hidden;
             margin-top: 60px;
         }
-        
+
+        /* Image de fond à partir de 25% */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%; /* commence au quart gauche */
+            right: 0;
+            background: url('images/accueil.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        /* Dégradés par-dessus l'image */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            right: 0;
+            background: 
+                linear-gradient(
+                    to right, 
+                    rgba(237, 245, 247, 1) 0%,
+                    rgba(237, 245, 247, 1) 5%,
+                    rgba(255, 255, 255, 0.7) 25%,
+                    rgba(255, 255, 255, 0) 60%
+                ),
+                linear-gradient(
+                    to right,
+                    rgba(0,0,0,0.4),
+                    rgba(0,0,0,0) 70%
+                );
+            z-index: 2;
+        }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 3; /* texte au-dessus de tout */
+            text-align: center;
         }
-        
+
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            color: #2C3E50;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            color: #2C3E50;
         }
-        
-        /* Section Title */
+
+        /* SECTION TITLE */
         .section-title {
             text-align: center;
             margin-bottom: 50px;
             padding-top: 40px;
         }
-        
+
         .section-title h2 {
-            background: linear-gradient(90deg, #D4A017, #BF8C15);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-size: 2.5rem;
+            color: #2C3E50;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title h2:after {
             content: '';
             position: absolute;
@@ -164,41 +207,51 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
+
         .section-title p {
-            color: #777;
+            color: #555;
             max-width: 700px;
             margin: 20px auto 0;
+            font-size: 1.1rem;
         }
-        
-        /* Comparison Grid */
+
+        /* COMPARISON GRID */
         .comparison-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 3rem 0;
         }
-        
+
         .comparison-section {
             margin-bottom: 3rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
+        .comparison-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
         .comparison-title {
             text-align: center;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
             color: #2C3E50;
             font-size: 1.3rem;
+            padding: 0 15px;
         }
-        
+
         .comparison-container {
             position: relative;
             width: 100%;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
             aspect-ratio: 16/9;
         }
-        
+
         .comparison-container img {
             width: 100%;
             height: 100%;
@@ -208,14 +261,14 @@
             top: 0;
             left: 0;
         }
-        
+
         .before-container {
             width: 100%;
             height: 100%;
             position: relative;
             z-index: 1;
         }
-        
+
         .after-container {
             position: absolute;
             top: 0;
@@ -225,11 +278,11 @@
             overflow: hidden;
             z-index: 2;
         }
-        
+
         .after-container img {
             clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
         }
-        
+
         .comparison-slider {
             position: absolute;
             top: 0;
@@ -241,7 +294,7 @@
             z-index: 10;
             transform: translateX(-50%);
         }
-        
+
         .comparison-slider::before {
             content: "";
             position: absolute;
@@ -255,7 +308,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: all 0.2s ease;
         }
-        
+
         .comparison-slider::after {
             content: "↔";
             position: absolute;
@@ -266,12 +319,12 @@
             font-size: 12px;
             font-weight: bold;
         }
-        
+
         .comparison-slider:hover::before {
             width: 26px;
             height: 26px;
         }
-        
+
         .image-label {
             position: absolute;
             bottom: 12px;
@@ -283,31 +336,32 @@
             z-index: 5;
             font-size: 0.8rem;
         }
-        
+
         .before-label {
             left: 12px;
         }
-        
+
         .after-label {
             right: 12px;
         }
-        
+
         .instructions {
             text-align: center;
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 1rem;
             color: #666;
             font-style: italic;
             font-size: 0.85rem;
+            padding: 0 15px;
         }
-        
-        /* Gallery */
+
+        /* GALLERY */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 4rem;
         }
-        
+
         .gallery-title {
             text-align: center;
             margin-bottom: 2rem;
@@ -315,7 +369,7 @@
             font-size: 1.8rem;
             grid-column: 1 / -1;
         }
-        
+
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -325,19 +379,19 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             aspect-ratio: 4/3;
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-        
+
         .gallery-caption {
             position: absolute;
             bottom: 0;
@@ -350,15 +404,15 @@
             transition: transform 0.3s ease;
             font-size: 0.9rem;
         }
-        
+
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
-        
-        /* Footer */
+
+        /* FOOTER */
         footer {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             padding: 40px 0 20px;
             margin-top: 5rem;
         }
@@ -371,7 +425,7 @@
         }
 
         .footer-info h3 {
-            color: #fff;
+            color: #000000;
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
@@ -386,7 +440,7 @@
         }
 
         .footer-cta h2 {
-            color: #fff;
+            color: #000000;
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
@@ -397,8 +451,8 @@
         }
 
         .footer-nav {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
             padding: 15px 0;
             margin-bottom: 20px;
             display: flex;
@@ -407,7 +461,7 @@
         }
 
         .footer-nav a {
-            color: white;
+            color: rgb(0, 0, 0);
             text-decoration: none;
             margin: 0 15px;
             font-size: 0.9rem;
@@ -432,7 +486,272 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Menu déroulant */
+        nav ul li.dropdown {
+            position: relative;
+        }
+
+        nav ul li.dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li.dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 100;
+            flex-direction: column;
+            padding: 10px 0;
+        }
+
+        nav ul li.dropdown .dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li.dropdown .dropdown-menu li a {
+            padding: 10px 20px;
+            display: block;
+            color: #333;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li.dropdown .dropdown-menu li a:hover {
+            background-color: #03550e;
+            color: white;
+        }
+
+        /* Affiche le menu au hover */
+        nav ul li.dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        /* Styles pour le menu des paramètres */
+        .settings-menu {
+            margin-left: auto;
+        }
+
+        .settings-menu > a {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .settings-dropdown {
+            width: 300px;
+            right: 0;
+            left: auto !important;
+            padding: 0;
+        }
+
+        .settings-header {
+            padding: 15px;
+            background-color: #013f1c;
+            color: white;
+            font-weight: bold;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .settings-subheader {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            color: #555;
+            font-size: 0.9em;
+            border-bottom: 1px solid #eee;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .setting-item span {
+            font-size: 0.95em;
+        }
+
+        /* Toggle switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #013f1c;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Theme toggle buttons */
+        .theme-toggle {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .theme-btn {
+            padding: 4px 8px;
+            border: none;
+            background: #f5f5f5;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s;
+        }
+
+        .theme-btn.active {
+            background: #013f1c;
+            color: white;
+        }
+
+        /* Size controls */
+        .size-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .size-btn {
+            padding: 2px 8px;
+            border: 1px solid #ddd;
+            background: #f5f5f5;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .size-value {
+            margin: 0 8px;
+            font-size: 0.9em;
+        }
+
+        .settings-footer {
+            padding: 10px 15px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        #reset-settings {
+            background: none;
+            border: none;
+            color: #013f1c;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9em;
+        }
+
+        /* Styles pour le mode sombre */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode header {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .settings-dropdown {
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+            border: 1px solid #444;
+        }
+
+        body.dark-mode .setting-item {
+            border-bottom: 1px solid #444;
+        }
+
+        body.dark-mode .theme-btn {
+            background: #444;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .theme-btn.active {
+            background: #D4A017;
+            color: #2d2d2d;
+        }
+
+        /* Styles pour le contraste élevé */
+        body.high-contrast {
+            filter: contrast(1.4);
+        }
+
+        body.high-contrast a {
+            text-decoration: underline;
+        }
+
+        /* Styles pour réduire les animations */
+        body.reduce-motion * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+
+        /* Styles pour les barres de défilement classiques */
+        body.classic-scrollbars ::-webkit-scrollbar {
+            width: 16px;
+        }
+
+        body.classic-scrollbars ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        body.classic-scrollbars ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 8px;
+            border: 3px solid #f1f1f1;
+        }
+
+        body.dark-mode.classic-scrollbars ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+
+        body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
+            background: #555;
+            border: 3px solid #2d2d2d;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 1200px) {
             .comparison-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -448,7 +767,7 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
-            h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
             
@@ -509,6 +828,13 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            /* Pour mobile : menu déroulant cliquable */
+            nav ul li.dropdown .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                margin-top: 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -536,6 +862,10 @@
             .btn {
                 padding: 10px 20px;
             }
+            
+            .hero {
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
@@ -543,8 +873,8 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
               <span style="display: flex; flex-direction: column; line-height: 1;">
                 <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
                 <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
@@ -556,10 +886,72 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#about">À propos</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
+                            <li><a href="couvreur.html">Couvreur</a></li>
+                            <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
+                            <li><a href="renovation.html">Rénovation peinture</a></li>
+                            <li><a href="isolation.html">Isolation des combles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">À propos</a></li>
                     <li><a href="realisations.html">Réalisations</a></li>
                     <li><a href="contact.html" class="btn">Contact</a></li>
+                    <!-- Nouveau menu Paramètres -->
+                    <li class="dropdown settings-menu">
+                        <a href="#"><i class="fas fa-cog"></i></a>
+                        <ul class="dropdown-menu settings-dropdown">
+                            <li class="settings-header">Réglages de l'affichage</li>
+                            <li class="settings-subheader">Préférences d'affichage du site</li>
+                            
+                            <li class="setting-item">
+                                <span>Thème clair ou sombre</span>
+                                <div class="theme-toggle">
+                                    <button class="theme-btn light active" data-theme="light">Clair</button>
+                                    <button class="theme-btn dark" data-theme="dark">Sombre</button>
+                                </div>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Mode contraste élevé</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="high-contrast-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Réduire les animations</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="reduce-motion-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Barres de défilement classiques</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="classic-scrollbars-toggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            
+                            <li class="setting-item">
+                                <span>Taille des contenus</span>
+                                <div class="size-controls">
+                                    <button class="size-btn" id="decrease-size">A-</button>
+                                    <span class="size-value">100%</span>
+                                    <button class="size-btn" id="increase-size">A+</button>
+                                </div>
+                            </li>
+                            
+                            <li class="settings-footer">
+                                <button id="reset-settings">Réinitialiser les paramètres</button>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -661,8 +1053,6 @@
                 <p class="instructions">Glissez pour comparer</p>
             </div>
         </div>
-        
-        
     </div>
     
     <footer>
@@ -794,6 +1184,96 @@
                 });
                 
                 document.addEventListener('touchmove', moveSlider);
+            });
+        });
+
+        // Settings functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme toggle
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const theme = this.getAttribute('data-theme');
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    document.body.classList.remove('dark-mode', 'light-mode');
+                    document.body.classList.add(theme + '-mode');
+                    
+                    // Save to localStorage
+                    localStorage.setItem('theme', theme);
+                });
+            });
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`).click();
+            
+            // High contrast toggle
+            const highContrastToggle = document.getElementById('high-contrast-toggle');
+            highContrastToggle.addEventListener('change', function() {
+                document.body.classList.toggle('high-contrast', this.checked);
+                localStorage.setItem('highContrast', this.checked);
+            });
+            
+            // Load high contrast setting
+            highContrastToggle.checked = localStorage.getItem('highContrast') === 'true';
+            document.body.classList.toggle('high-contrast', highContrastToggle.checked);
+            
+            // Reduce motion toggle
+            const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+            reduceMotionToggle.addEventListener('change', function() {
+                document.body.classList.toggle('reduce-motion', this.checked);
+                localStorage.setItem('reduceMotion', this.checked);
+            });
+            
+            // Load reduce motion setting
+            reduceMotionToggle.checked = localStorage.getItem('reduceMotion') === 'true';
+            document.body.classList.toggle('reduce-motion', reduceMotionToggle.checked);
+            
+            // Classic scrollbars toggle
+            const classicScrollbarsToggle = document.getElementById('classic-scrollbars-toggle');
+            classicScrollbarsToggle.addEventListener('change', function() {
+                document.body.classList.toggle('classic-scrollbars', this.checked);
+                localStorage.setItem('classicScrollbars', this.checked);
+            });
+            
+            // Load classic scrollbars setting
+            classicScrollbarsToggle.checked = localStorage.getItem('classicScrollbars') === 'true';
+            document.body.classList.toggle('classic-scrollbars', classicScrollbarsToggle.checked);
+            
+            // Font size controls
+            const decreaseSizeBtn = document.getElementById('decrease-size');
+            const increaseSizeBtn = document.getElementById('increase-size');
+            const sizeValue = document.querySelector('.size-value');
+            
+            let fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+            updateFontSize();
+            
+            decreaseSizeBtn.addEventListener('click', function() {
+                if (fontSize > 80) {
+                    fontSize -= 10;
+                    updateFontSize();
+                }
+            });
+            
+            increaseSizeBtn.addEventListener('click', function() {
+                if (fontSize < 150) {
+                    fontSize += 10;
+                    updateFontSize();
+                }
+            });
+            
+            function updateFontSize() {
+                document.documentElement.style.fontSize = fontSize + '%';
+                sizeValue.textContent = fontSize + '%';
+                localStorage.setItem('fontSize', fontSize);
+            }
+            
+            // Reset settings
+            document.getElementById('reset-settings').addEventListener('click', function() {
+                localStorage.clear();
+                location.reload();
             });
         });
     </script>
