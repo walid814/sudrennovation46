@@ -15,8 +15,8 @@
             <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
               <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
               <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
+                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
               </span>
             </a>
             <div class="menu-toggle">
@@ -35,7 +35,7 @@
                             <li><a href="isolation.html">Isolation des combles</a></li>
                         </ul>
                     </li>
-                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#" id="open-about-popup">À propos</a></li>
                     <li><a href="realisations.html">Réalisations</a></li>
                     <li><a href="contact.html" class="btn">Contact</a></li>
                     <!-- Nouveau menu Paramètres -->
@@ -95,7 +95,93 @@
             </nav>
         </div>
     </header>
+   <!-- Overlay et Popup À propos -->
+<div class="popup-overlay" id="popup-overlay"></div>
 
+<div class="about-popup" id="about-popup">
+    <div class="popup-header">
+        <h2>Infos pratiques</h2>
+        <button class="close-popup" id="close-popup">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="popup-content">
+        <div class="popup-intro">
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+              <span style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+              </span>
+            </a>
+            <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
+            <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+        </div>
+
+        <div class="contact-buttons">
+            <a href="contact.html" class="contact-btn">
+                <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
+            </a>
+            
+        </div>
+
+        <div class="popup-section">
+            <h3><span style="color: #013f1c">Contactez-nous</span></h3>
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
+                        <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong><span style="color: #013f1c">Téléphone</span></strong>
+                        <p>09 70 35 41 39</p>
+                    </div>
+                </div>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
+                        <div class="hours-info">
+                            <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
+                    <i class="fas fa-envelope"></i> E-mail
+                </a>
+                <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
+                    <i class="fas fa-map-marker-alt"></i> Plan
+                </a>
+            </div>
+        </div>
+
+        <div class="popup-section">
+            <h3><span style="color: #013f1c">Suivez-nous</span></h3>
+            <div class="social-buttons">
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content" style="text-align: left; margin-left: 180px; max-width: 600px;">
@@ -597,6 +683,45 @@ const cardWidth = cards[0].offsetWidth + 20; // width + gap
             localStorage.setItem('fontSize', newSize);
         }
     });
+    // === GESTION DU POPUP À PROPOS ===
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutPopup = document.getElementById('about-popup');
+    const openPopupBtn = document.getElementById('open-about-popup');
+    const closePopupBtn = document.getElementById('close-popup');
+    const popupOverlay = document.getElementById('popup-overlay');
+
+    // Ouvrir le popup
+    if (openPopupBtn) {
+        openPopupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            aboutPopup.classList.add('active');
+            popupOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Fermer le popup
+    function closePopup() {
+        aboutPopup.classList.remove('active');
+        popupOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', closePopup);
+    }
+
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', closePopup);
+    }
+
+    // Fermer avec la touche Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
+            closePopup();
+        }
+    });
+});
     </script>
 </body>
 </html>
