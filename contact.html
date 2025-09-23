@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous - Sud Rénovation 46</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page de contact */
+        .contact-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 50px;
+            position: relative;
+            background-color: rgb(237, 245, 247);
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            right: 0;
+            background: url('images/contact.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .contact-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            right: 0;
+            background: 
+                linear-gradient(
+                    to right, 
+                    rgba(237, 245, 247, 1) 0%,
+                    rgba(237, 245, 247, 1) 5%,
+                    rgba(255, 255, 255, 0.7) 25%,
+                    rgba(255, 255, 255, 0) 60%
+                ),
+                linear-gradient(
+                    to right,
+                    rgba(0,0,0,0.4),
+                    rgba(0,0,0,0) 70%
+                );
+            z-index: 2;
+        }
+
+        .contact-hero-content {
+            max-width: 600px;
+            padding-left: 60px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .contact-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #013f1c;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #013f1c;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 80px 0;
+            background: linear-gradient(90deg, #edf5f7 1%, #c0e2e2 100%);
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #013f1c;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-info h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #D4A017;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .contact-details i {
+            margin-right: 15px;
+            color: #D4A017;
+            width: 25px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .business-hours {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .business-hours h3 {
+            color: #013f1c;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .business-hours p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #013f1c;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #013f1c;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #D4A017;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-btn {
+            background-color: #D4A017;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .form-btn:hover {
+            background-color: #BF8C15;
+            transform: translateY(-2px);
+        }
+
+        .map-section {
+            padding: 80px 0;
+            background: linear-gradient(90deg, #edf5f7 1%, #c0e2e2 100%);
+        }
+
+        .map-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #013f1c;
+        }
+
+        .map-container {
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-hero-content {
+                padding-left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding-left: 20px;
+                height: 50vh;
+            }
+            
+            .contact-hero h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+              <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+              <span style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
+                <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
+              </span>
+            </a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
+                            <li><a href="couvreur.html">Couvreur</a></li>
+                            <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
+                            <li><a href="renovation.html">Rénovation peinture</a></li>
+                            <li><a href="isolation.html">Isolation des combles</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">À propos</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="contact.html" class="btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h2>Contactez Sud Rénovation</h2>
+            <p>Une question, un devis ou simplement besoin de conseils ? Nous sommes à votre écoute.</p>
+            <a href="#contact-form" class="btn">
+                <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                Nous écrire
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <div class="container contact-container">
+        <div class="contact-info">
+            <h2>Nos coordonnées</h2>
+            
+            <div class="contact-details">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1790 Mondounet, 46230 Montdoumerc</span>
+                </p>
+                
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <span><a href="tel:+33970354139" style="color: #555; text-decoration: none;">09 70 35 41 39</a></span>
+                </p>
+                
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <span><a href="mailto:contact@sudrenovation46.fr" style="color: #555; text-decoration: none;">contact@sudrenovation46.fr</a></span>
+                </p>
+            </div>
+            
+            <div class="business-hours">
+                <h3>Horaires d'ouverture</h3>
+                <p><strong>Lundi - Vendredi:</strong> 8h00 - 12h00 / 14h00 - 18h00</p>
+                <p><strong>Samedi:</strong> 9h00 - 12h00</p>
+                <p><strong>Dimanche:</strong> Fermé</p>
+            </div>
+            
+            <div class="social-links" style="margin-top: 30px;">
+                <h3 style="margin-bottom: 15px; color: #013f1c;">Suivez-nous</h3>
+                <a href="#" style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="background-color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="background-color: #0077b5;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="background-color: #e4405f;"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div class="contact-form" id="contact-form">
+            <h3>Envoyez-nous un message</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nom et Prénom *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service concerné *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Sélectionnez un service</option>
+                        <option value="ravalement">Ravalement de façade</option>
+                        <option value="couvreur">Couvreur</option>
+                        <option value="entretien">Entretien et démoussage</option>
+                        <option value="peinture">Rénovation peinture</option>
+                        <option value="isolation">Isolation des combles</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="form-btn">
+                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Nous localiser</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92507.2570030477!2d1.405017430706722!3d44.39805340411428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac83bb2f2aeb97%3A0x40665174816e4c0!2s46000%20Cahors!5e0!3m2!1sfr!2sfr!4v1719406864499!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <a href="index.html" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                        <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+                        <span style="display: flex; flex-direction: column; line-height: 1;">
+                            <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
+                            <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
+                        </span>
+                    </a>
+                    <p>
+                        <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
+                            1790 Mondounet 46230 MONTDOUMERC
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:+33970354139" class="footer-link">
+                            09 70 35 41 39
+                        </a>
+                    </p>
+                    <p>Lundi au samedi : 08h - 19h</p>
+                </div>
+                <div class="footer-cta">
+                    <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
+                    <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
+                    <a href="contact.html" class="btn">Contactez-nous</a>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">Contactez-nous</a>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="plan-du-site.html">Plan du site</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Haut de page</p>
+                <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle for mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
+                }
+            });
+        });
+
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
