@@ -93,7 +93,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 10px 0;
+     height: 80px;
 }
 
 .logo {
@@ -108,12 +109,24 @@ header {
 
 nav ul {
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 15px; /* Réduit l'espacement si nécessaire */
+    display: flex;
+    align-items: center;
+    height: 40px;
 }
-
+nav ul li:last-child a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    height: 40px;
+    line-height: 1;
+    white-space: nowrap;
+}
 nav ul li a {
     font-weight: 500;
     transition: color 0.3s;
@@ -951,18 +964,24 @@ footer {
 /* Menu déroulant */
 nav ul li.dropdown {
     position: relative;
+    height: 40px; /* Hauteur fixe comme les autres */
+    display: flex;
+    align-items: center;
 }
 
 nav ul li.dropdown > a {
     display: flex;
     align-items: center;
     gap: 5px;
+    height: 100%; /* Prend toute la hauteur du li */
+    padding: 0 10px;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
 
 nav ul li.dropdown .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Commence juste en dessous du lien */
     left: 0;
     background-color: white;
     min-width: 220px;
@@ -971,10 +990,12 @@ nav ul li.dropdown .dropdown-menu {
     z-index: 100;
     flex-direction: column;
     padding: 10px 0;
+    margin-top: 0; /* Supprime tout espace supplémentaire */
 }
-
 nav ul li.dropdown .dropdown-menu li {
     margin: 0;
+    height: auto; /* Hauteur automatique pour les sous-éléments */
+     width: 100%;
 }
 
 nav ul li.dropdown .dropdown-menu li a {
@@ -982,13 +1003,25 @@ nav ul li.dropdown .dropdown-menu li a {
     display: block;
     color: #333;
     font-weight: 500;
-    transition: background 0.3s, color 0.3s;
+      transition: color 0.3s ease;
+    height: auto; /* Hauteur automatique */
+    white-space: normal; /* Permet le retour à la ligne si nécessaire */
+}
+/* Style pour la page active */
+nav ul li.active > a {
+    color: #013f1c;
+    font-weight: 600;
 }
 
-nav ul li.dropdown .dropdown-menu li a:hover {
-    background-color: #03550e;
-    color: white;
+/* Hover normal */
+nav ul li:not(.active) a:hover {
+    color: #013f1c;
+    background-color: transparent;
 }
+nav ul li.dropdown .dropdown-menu li a:hover {
+    background-color: transparent;
+ color: #00a859;
+    text-shadow: 0 0 1px rgba(0, 168, 89, 0.3); /* Légère ombre pour contraste */}
 
 /* Affiche le menu au hover */
 nav ul li.dropdown:hover .dropdown-menu {
@@ -1292,9 +1325,14 @@ nav ul li.dropdown:hover .dropdown-menu {
 }
 
 .settings-menu > a {
-    padding: 10px;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
 }
+
 
 .settings-dropdown {
     width: 300px;
@@ -1785,7 +1823,10 @@ body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
     transform: translateY(-3px) scale(1.1);
     box-shadow: 0 5px 15px rgba(212, 160, 23, 0.3);
 }
-
+nav ul li a:not(.btn):not(.info-link):hover {
+    color: #013f1c; /* Vert foncé au survol */
+    background-color: transparent; /* Pas de fond */
+}
 /* Améliorations pour la version large */
 .popup-intro h3 {
     font-size: 1.8rem;
@@ -1839,6 +1880,14 @@ body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
         height: 40px;
         margin-right: 15px;
     }
+     .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none; /* Caché par défaut sur mobile */
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1864,4 +1913,60 @@ body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
     .contact-info {
         padding: 20px;
     }
+}
+/* Styles pour le lien Infos pratiques avec logo */
+/* Styles pour le lien Infos pratiques avec cercle complet */
+.info-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 2px solid #013f1c;
+    background-color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #013f1c;
+    font-weight: 500;
+    height: 40px;
+    line-height: 1;
+    white-space: nowrap; /* Important pour éviter le chevauchement */
+}
+
+.info-link:hover {
+    background-color: #013f1c; /* Fond vert au survol */
+    color: white; /* Texte blanc au survol */
+    transform: scale(1.05);
+}
+/* Ajustement pour les autres liens de navigation */
+nav ul li a:not(.btn) {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+    white-space: nowrap; /* Empêche le texte de se superposer */
+}
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #013f1c;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.info-link:hover .info-icon {
+    background-color: white;
+    color: #013f1c;
+    transform: scale(1.1);
+}
+
+.info-text {
+  white-space: nowrap;
+}nav ul li.dropdown > a:hover {
+    color: #013f1c; /* Vert foncé au survol */
 }

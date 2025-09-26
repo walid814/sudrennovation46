@@ -60,38 +60,61 @@
 
         /* HEADER */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 80px; /* Ajout d'une hauteur fixe */
+}
 
         .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* Réduction du padding */
+    height: 80px; /* Hauteur fixe pour le conteneur */
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2C3E50;
-        }
-
+.logo {
+    font-size: 22px; /* Légère réduction de la taille */
+    font-weight: 700;
+    color: #2C3E50;
+}
         .logo span {
             color: #D4A017;
         }
 
         nav ul {
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
+    display: flex;
+    align-items: center;
+}
+nav ul li:last-child a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    height: 40px;
+    line-height: 1;
+    white-space: nowrap;
+}
+nav ul li a:not(.btn) {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+nav ul li {
+    margin-left: 15px; /* Réduction de l'espacement entre les éléments */
+    display: flex;
+    align-items: center;
+    height: 40px; /* Hauteur fixe pour chaque élément */
+}
 
         nav ul li a {
             font-weight: 500;
@@ -119,7 +142,8 @@
             position: relative;
             background-color: rgb(237, 245, 247); /* fond de base à gauche */
             overflow: hidden;
-            margin-top: 60px;
+            margin-top: 80px;
+            height: calc(60vh - 20px); /* Ajustement si nécessaire */
         }
 
         /* Image de fond à partir de 25% */
@@ -489,14 +513,20 @@
 
         /* Menu déroulant */
         nav ul li.dropdown {
-            position: relative;
-        }
+    position: relative;
+    height: 40px; /* Hauteur fixe comme les autres */
+    display: flex;
+    align-items: center;
+}
 
         nav ul li.dropdown > a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%; /* Prend toute la hauteur du li */
+    padding: 0 10px;
+    white-space: nowrap;
+}
 
         nav ul li.dropdown .dropdown-menu {
             display: none;
@@ -540,9 +570,13 @@
         }
 
         .settings-menu > a {
-            padding: 10px;
-            font-size: 18px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
 
         .settings-dropdown {
             width: 300px;
@@ -617,7 +651,17 @@
             transition: .4s;
             border-radius: 50%;
         }
+        /* Style pour la page active */
+nav ul li.active > a {
+    color: #013f1c;
+    font-weight: 600;
+}
 
+/* Hover normal */
+nav ul li:not(.active) a:hover {
+    color: #013f1c;
+    background-color: transparent;
+}
         input:checked + .slider {
             background-color: #013f1c;
         }
@@ -870,11 +914,161 @@
                 padding-left: 20px;
             }
         }
+        /* === POPUP À PROPOS - VERSION LARGE === */
+.about-popup {
+    position: fixed;
+    top: 0;
+    right: -35vw; /* Commence hors écran avec 35% de largeur */
+    width: 35vw; /* 1/4 de l'écran (25%) + marge */
+    min-width: 100px; /* Largeur minimale */
+    max-width: 1600px; /* Largeur maximale */
+    height: 100vh;
+    background: linear-gradient(135deg, #edf5f7 0%, #c0e2e2 100%);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    z-index: 10000;
+    transition: right 0.4s ease-in-out;
+    overflow-y: auto;
+}
+
+.about-popup.active {
+    right: 0;
+}
+
+.popup-header {
+    background: #013f1c;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+    color: #D4A017;
+    transform: scale(1.1);
+}
+
+.popup-content {
+    padding: 30px;
+}
+
+.popup-section {
+    margin-bottom: 35px;
+}
+
+.popup-section h3 {
+    color: #2C3E50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 3px solid #D4A017;
+    padding-bottom: 12px;
+}
+
+.popup-intro {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.popup-intro h4 {
+    color: #D4A017;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.popup-intro h3 {
+    color: #2C3E50;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.popup-intro p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+.info-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 2px solid #013f1c;
+    background-color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #013f1c;
+    font-weight: 500;
+    height: 40px;
+    line-height: 1;
+    white-space: nowrap; /* Important pour éviter le chevauchement */
+}
+
+.info-link:hover {
+    background-color: #013f1c; /* Fond vert au survol */
+    color: white; /* Texte blanc au survol */
+    transform: scale(1.05);
+}
+/* Ajustement pour les autres liens de navigation */
+nav ul li a:not(.btn) {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+    white-space: nowrap; /* Empêche le texte de se superposer */
+}
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #013f1c;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.info-link:hover .info-icon {
+    background-color: white;
+    color: #013f1c;
+    transform: scale(1.1);
+}
+
+.info-text {
+  white-space: nowrap;
+}nav ul li.dropdown > a:hover {
+    color: #013f1c; /* Vert foncé au survol */
+}
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+     <header>
         <div class="container header-container">
             <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
               <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
@@ -888,20 +1082,26 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li class="dropdown">
+<li><a href="index.html">Accueil</a></li>                    <li class="dropdown">
                         <a href="#">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
                             <li><a href="couvreur.html">Couvreur</a></li>
                             <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
-                            <li><a href="renovation.html">Rénovation peinture</a></li>
+                            <li ><a href="renovation.html">Rénovation peinture</a></li>
                             <li><a href="isolation.html">Isolation des combles</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" id="open-about-popup">À propos</a></li>
-                    <li><a href="realisations.html">Réalisations</a></li>
-                    <li><a href="contact.html" class="btn">Contact</a></li>
+                    <li class="active"><a href="realisations.html">Réalisations</a></li>
+<li>
+  <a href="#" id="open-about-popup" class="info-link">
+    <span class="info-icon">
+      <i class="fas fa-info-circle"></i>
+    </span>
+    Infos pratiques
+  </a>
+</li>
+                    <li><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
                     <!-- Nouveau menu Paramètres -->
                     <li class="dropdown settings-menu">
                         <a href="#"><i class="fas fa-cog"></i></a>
@@ -960,7 +1160,7 @@
         </div>
     </header>
 <!-- Overlay et Popup À propos -->
-<div class="popup-overlay" id="popup-overlay"></div>
+<div class="popup-overlay" id="popup-overlay">
 
 <div class="about-popup" id="about-popup">
     <div class="popup-header">
@@ -1045,6 +1245,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
     <!-- Hero Section -->
     <section class="hero">
