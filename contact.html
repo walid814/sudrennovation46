@@ -820,9 +820,13 @@
             </div>
 
             <!-- Colonne de droite avec le formulaire -->
-            <div class="contact-form" id="contact-form">
-                <h3><span style="color: #013f1c;">Devis / Contact</span></h3>
-                   <form action="https://formspree.io/f/xnngjayg" method="POST">
+           <!-- Colonne de droite avec le formulaire -->
+<div class="contact-form" id="contact-form">
+    <h3><span style="color: #013f1c;">Devis / Contact</span></h3>
+    <form action="https://formspree.io/f/xnngjayg" method="POST" id="myForm">
+        <!-- Champ email requis par Formspree -->
+        <input type="hidden" name="_replyto" value="from-form">
+        
         <div class="form-group">
             <label for="name">Nom *</label>
             <span class="help-text">Saisissez votre nom complet</span>
@@ -858,8 +862,9 @@
             <textarea id="message" name="message" placeholder="Décrivez votre projet en quelques mots..." required></textarea>
         </div>
         
-        <!-- Champ caché pour le sujet de l'email -->
+        <!-- Champs cachés pour Formspree -->
         <input type="hidden" name="_subject" value="Nouvelle demande de devis - Sud Rénovation">
+        <input type="text" name="_gotcha" style="display:none">
         
         <button type="submit" class="form-btn">
             <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
@@ -989,6 +994,81 @@ document.addEventListener('DOMContentLoaded', function() {
             closePopup();
         }
     });
+});
+// Gestion du formulaire Formspree
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('myForm');
+    
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Afficher un indicateur de chargement
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Succès
+                    showMessage('✅ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
+                    form.reset();
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            } catch (error) {
+                showMessage('❌ Une erreur est survenue. Veuillez nous contacter directement par téléphone au 09 70 35 41 39', 'error');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+    
+    function showMessage(message, type) {
+        // Supprimer les messages existants
+        const existingMessages = document.querySelectorAll('.form-message');
+        existingMessages.forEach(msg => msg.remove());
+        
+        // Créer un nouvel élément de message
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `form-message ${type}`;
+        messageDiv.innerHTML = message;
+        
+        // Style du message
+        messageDiv.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 20px;
+            background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+            color: white;
+            border-radius: 10px;
+            z-index: 10000;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-weight: bold;
+        `;
+        
+        document.body.appendChild(messageDiv);
+        
+        // Supprimer après 5 secondes
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 5000);
+    }
 });
     </script>
 </body>
