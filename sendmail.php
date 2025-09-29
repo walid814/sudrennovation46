@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = htmlspecialchars(trim($_POST['service']));
     $message = htmlspecialchars(trim($_POST['message']));
 
-    // Validation des champs requis
+    // Validation
     if (empty($name) || empty($email) || empty($phone) || empty($service) || empty($message)) {
         echo "❌ Tous les champs obligatoires doivent être remplis.";
         exit;
@@ -18,45 +18,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Adresse de réception
-    $to = "walid.c69@outlook.fr";
-    $subject = "Nouvelle demande de devis - Sud Rénovation";
+    // Sauvegarde dans un fichier (au lieu d'envoyer un email)
+    $devis_data = "=== NOUVELLE DEMANDE DE DEVIS ===\n";
+    $devis_data .= "Date: " . date('d/m/Y H:i:s') . "\n";
+    $devis_data .= "Nom: $name\n";
+    $devis_data .= "Email: $email\n";
+    $devis_data .= "Téléphone: $phone\n";
+    $devis_data .= "Service: $service\n";
+    $devis_data .= "Message: $message\n";
+    $devis_data .= "==============================\n\n";
 
-    // Contenu du mail enrichi
-    $body = "=== NOUVELLE DEMANDE DE DEVIS ===\n\n";
-    $body .= "INFORMATIONS CLIENT :\n";
-    $body .= "Nom : $name\n";
-    $body .= "Email : $email\n";
-    $body .= "Téléphone : $phone\n";
-    $body .= "Service demandé : $service\n\n";
-    $body .= "MESSAGE :\n$message\n\n";
-    $body .= "---\n";
-    $body .= "Envoyé depuis le formulaire de contact Sud Rénovation\n";
-    $body .= "Date : " . date('d/m/Y à H:i:s') . "\n";
+    // Écriture dans le fichier
+    $file_saved = file_put_contents('devis_recus.txt', $devis_data, FILE_APPEND | LOCK_EX);
 
-    // Entêtes améliorées
-    $headers = "From: noreply@sud-renovation.com\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-
-    // Journalisation pour debug
-    $log_message = "[" . date('Y-m-d H:i:s') . "] Tentative d'envoi à: $to\n";
-    $log_message .= "De: $name ($email)\n";
-    $log_message .= "Sujet: $service\n";
-    file_put_contents('email_log.txt', $log_message, FILE_APPEND);
-
-    // Tentative d'envoi
-    if (mail($to, $subject, $body, $headers)) {
-        // Log de succès
-        file_put_contents('email_log.txt', "✅ Email envoyé avec succès\n", FILE_APPEND);
-        echo "✅ Merci $name, votre demande de devis a bien été envoyée. Nous vous recontacterons rapidement.";
+    if ($file_saved !== false) {
+        // Afficher les données pour debug
+        echo "✅ DEMANDE ENREGISTRÉE (TEST LOCAL)\n\n";
+        echo "Nom: $name\n";
+        echo "Email: $email\n";
+        echo "Téléphone: $phone\n";
+        echo "Service: $service\n";
+        echo "Message: $message\n\n";
+        echo "📁 Les données sont sauvegardées dans 'devis_recus.txt'\n";
+        echo "🌐 En production, l'email sera envoyé à walid.c69@outlook.fr";
+        
+        // Afficher aussi dans la console navigateur
+        echo "<script>console.log('Devis enregistré:', " . json_encode($_POST) . ");</script>";
     } else {
-        // Log d'erreur
-        $error = error_get_last();
-        file_put_contents('email_log.txt', "❌ Erreur d'envoi: " . $error['message'] . "\n", FILE_APPEND);
-        echo "❌ Désolé, une erreur est survenue lors de l'envoi. Veuillez nous contacter directement au 09 70 35 41 39";
+        echo "❌ Erreur lors de la sauvegarde. Contactez-nous au 09 70 35 41 39";
     }
 } else {
     echo "Accès non autorisé.";
