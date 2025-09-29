@@ -1970,3 +1970,436 @@ nav ul li a:not(.btn) {
 }nav ul li.dropdown > a:hover {
     color: #013f1c; /* Vert foncé au survol */
 }
+/* === STYLES MOBILE === */
+@media (max-width: 768px) {
+    /* Reset zoom sur mobile */
+    html {
+        font-size: 100%;
+    }
+    
+    /* Header mobile */
+    .header-container {
+        height: 70px;
+        padding: 5px 0;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    /* Menu mobile */
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        padding: 12px 0;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+    }
+    
+    /* Hero section mobile */
+    .hero {
+        height: 70vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero::before {
+        left: 0; /* Image pleine largeur sur mobile */
+    }
+    
+    .hero::after {
+        left: 0;
+        background: 
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.3) 0%,
+                rgba(0,0,0,0.1) 50%,
+                transparent 100%
+            );
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Services carousel mobile */
+    .services-carousel {
+        margin: 10px 0;
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .services-track {
+        gap: 20px;
+    }
+    
+    .service-card {
+        flex: 0 0 85%;
+        height: 280px;
+    }
+    
+    .service-image-container {
+        height: 280px;
+    }
+    
+    .carousel-button {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .carousel-button.prev {
+        left: 5px;
+    }
+    
+    .carousel-button.next {
+        right: 5px;
+    }
+    
+    /* Sections générales */
+    .services, .about, .realisations, .contact, .renovation-cahors, .peintre-cahors, .devis-section {
+        padding: 50px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    /* About section mobile */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    
+    /* Atouts section mobile */
+    .atouts-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .atouts-containerr {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 95%;
+    }
+    
+    .atout-card {
+        width: 100%;
+        min-height: 250px;
+        padding: 20px 15px;
+    }
+    
+    .atout-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .atout-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Gallery mobile */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        height: 300px;
+        border-width: 8px;
+    }
+    
+    /* Contact mobile */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+    
+    /* Footer mobile */
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        position: static;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    /* Rénovation Cahors mobile */
+    .renovation-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .renovation-text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .renovation-text h2 {
+        font-size: 2rem;
+    }
+    
+    /* Peintre Cahors mobile */
+    .peintre-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .peintre-text h2 {
+        font-size: 2rem;
+    }
+    
+    /* Devis section mobile */
+    .devis-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .devis-text {
+        padding: 40px 30px;
+    }
+    
+    .devis-text h2 {
+        font-size: 2rem;
+    }
+    
+    /* Devis hero mobile */
+    .devis-hero {
+        height: 60vh;
+    }
+    
+    .devis-hero-content {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+    }
+    
+    .devis-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .devis-hero p {
+        font-size: 1.1rem;
+    }
+    
+    /* Boutons mobile */
+    .btn, .btn-realisations, .btn-tel {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Dropdown menu mobile */
+    nav ul li.dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        margin-top: 10px;
+    }
+    
+    /* Info link mobile */
+    .info-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .info-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
+/* === STYLES TRÈS PETITS ÉCRANS === */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .service-card {
+        flex: 0 0 90%;
+        height: 250px;
+    }
+    
+    .service-image-container {
+        height: 250px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .atout-card {
+        min-height: 220px;
+        padding: 15px 10px;
+    }
+    
+    .atout-icon {
+        font-size: 2rem;
+    }
+    
+    .atout-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-item {
+        height: 250px;
+    }
+    
+    .devis-text {
+        padding: 30px 20px;
+    }
+    
+    .devis-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === CORRECTIONS SPÉCIFIQUES POUR L'ORIENTATION PAYSAGE === */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+/* === AMÉLIORATIONS TOUCH SCREEN === */
+@media (max-width: 768px) {
+    /* Agrandir les zones cliquables */
+    .btn, .btn-realisations, .btn-tel,
+    .carousel-button, .carousel-dot,
+    .service-card, .gallery-item {
+        min-height: 44px; /* Taille minimale recommandée pour le touch */
+    }
+    
+    .carousel-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Améliorer la visibilité du focus */
+    button:focus, a:focus {
+        outline: 2px solid #D4A017;
+        outline-offset: 2px;
+    }
+}
+
+/* === CORRECTION DU Z-INDEX POUR MOBILE === */
+@media (max-width: 768px) {
+    header {
+        z-index: 1001; /* Au-dessus du menu mobile */
+    }
+    
+    nav ul {
+        z-index: 1000;
+    }
+    
+    .menu-toggle {
+        z-index: 1002;
+    }
+}
+
+/* === OPTIMISATIONS PERFORMANCE MOBILE === */
+@media (max-width: 768px) {
+    .hero::before,
+    .devis-hero::before {
+        background-attachment: scroll; /* Évite le fixed sur mobile */
+    }
+    
+    .service-card:hover .service-content {
+        transform: none; /* Désable les animations hover sur touch */
+    }
+}
+
+/* === CORRECTION HAUTEUR HEADER MOBILE === */
+@media (max-width: 768px) {
+    .header-container {
+        height: 60px;
+    }
+    
+    nav ul {
+        top: 60px;
+    }
+}
