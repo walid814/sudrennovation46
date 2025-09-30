@@ -733,13 +733,25 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('active');
 });
 
-// Fermer le menu quand on clique sur un lien
+// Fermer le menu quand on clique sur un lien (sauf Infos pratiques qui ouvre le popup)
 document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
+        // Si c'est le lien Infos pratiques, on ne ferme pas le menu tout de suite
+        if (this.id === 'open-about-popup') {
+            return; // Laisser le popup gérer l'affichage
+        }
+        
         if (window.innerWidth <= 768) {
             document.querySelector('nav ul').classList.remove('active');
         }
     });
+});
+
+// Fermer le menu quand on ouvre le popup Infos pratiques
+document.getElementById('open-about-popup').addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+        document.querySelector('nav ul').classList.remove('active');
+    }
 });
     </script>
 </body>
