@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peintre en bâtiment Cahors - Sud rénovation</title>
+    <title>Isolation des combles à Cahors - Sud rénovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
- <header>
+    <header>
         <div class="container header-container">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center;">
+                <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                <span style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                    <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                </span>
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <nav>
+            
+            <!-- Navigation desktop -->
+            <nav class="desktop-nav">
                 <ul>
-<li><a href="index.html">Accueil</a></li>                    <li class="dropdown">
-<li class="dropdown active">                  
-    <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
                             <li><a href="couvreur.html">Couvreur</a></li>
@@ -34,17 +36,16 @@
                             <li><a href="renovation.html">Rénovation peinture</a></li>
                             <li><a href="isolation.html">Isolation des combles</a></li>
                         </ul>
-                        </li>
                     </li>
                     <li><a href="realisations.html">Réalisations</a></li>
-<li>
-  <a href="#" id="open-about-popup" class="info-link">
-    <span class="info-icon">
-      <i class="fas fa-info-circle"></i>
-    </span>
-    Infos pratiques
-  </a>
-</li>
+                    <li>
+                        <a href="#" id="open-about-popup" class="info-link">
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span class="info-text">Infos pratiques</span>
+                        </a>
+                    </li>
                     <li><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
                     <!-- Nouveau menu Paramètres -->
                     <li class="dropdown settings-menu">
@@ -103,281 +104,390 @@
             </nav>
         </div>
     </header>
-   <!-- Overlay et Popup À propos -->
-<div class="popup-overlay" id="popup-overlay"></div>
 
-<div class="about-popup" id="about-popup">
-    <div class="popup-header">
-        <h2>Infos pratiques</h2>
-        <button class="close-popup" id="close-popup">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="popup-content">
-        <div class="popup-intro">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-            <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
-            <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+    <!-- Navigation mobile fixée en bas -->
+    <nav class="mobile-nav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li class="dropdown active">
+                <a href="#">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="realisations.html">
+                    <i class="fas fa-images"></i>
+                    <span>Réalisations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="open-about-popup-mobile" class="info-link">
+                    <span class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Infos</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay et Popup À propos -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="about-popup" id="about-popup">
+        <div class="popup-header">
+            <h2>Infos pratiques</h2>
+            <button class="close-popup" id="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        
+        <div class="popup-content">
+            <div class="popup-intro">
+                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                    <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                    <span style="display: flex; flex-direction: column; line-height: 1;">
+                        <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                        <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                    </span>
+                </a>
+                <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
+                <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+            </div>
 
-        <div class="contact-buttons">
-            <a href="contact.html" class="contact-btn">
-                <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
-            </a>
-            
-        </div>
+            <div class="contact-buttons">
+                <a href="contact.html" class="contact-btn">
+                    <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
+                </a>
+            </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Contactez-nous</span></h3>
-            <div class="contact-info">
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-building"></i>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Contactez-nous</span></h3>
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
+                            <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                        </div>
                     </div>
-                    <div class="contact-text">
-                        <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
-                        <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Téléphone</span></strong>
+                            <p>09 70 35 41 39</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Téléphone</span></strong>
-                        <p>09 70 35 41 39</p>
-                    </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
-                        <div class="hours-info">
-                            <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
+                            <div class="hours-info">
+                                <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="action-buttons">
+                    <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
+                        <i class="fas fa-map-marker-alt"></i> Plan
+                    </a>
+                </div>
             </div>
-            
-            <div class="action-buttons">
-                <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
-                    <i class="fas fa-envelope"></i> E-mail
-                </a>
-                <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
-                    <i class="fas fa-map-marker-alt"></i> Plan
-                </a>
-            </div>
-        </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Suivez-nous</span></h3>
-            <div class="social-buttons">
-                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Suivez-nous</span></h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<section class="peintre-cahors">
+
+    <section class="peintre-cahors">
         <div class="container">
             <div class="peintre-content">
                 <div class="peintre-text">
-<h1><span style="color: #013f1c;">Isolation des combles à Cahors
- à Cahors</span></h1>                
-<p>
-Optez pour nos travaux d'Isolation des combles à Cahors pour éviter les pertes de chaleur et les courants d'air indésirables.
+                    <h1><span style="color: #013f1c;">Isolation des combles à Cahors</span></h1>                
+                    <p>
+                        Optez pour nos travaux d'Isolation des combles à Cahors pour éviter les pertes de chaleur et les courants d'air indésirables.
+                        <span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">
+                            Appelez-nous pour rénover votre maison 09 70 35 41 39
+                        </span>
+                    </p>
 
-<span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">
-    <span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">
-    Appelez-nous pour rénover votre maison 09 70 35 41 39
-
-  </span>
-
-  </span>
-</p>
-
-                    <h3><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Nos travaux d’Isolation des combles
-</span></h3>
-                    <p>L'isolation des combles est une opération essentielle pour améliorer le confort thermique de votre domicile et faire des économies d’énergie. Sud Rénovation est le choix idéal pour cette tâche à Cahors.</p>
-                    <p>Nous réalisons des travaux d'isolation que ce soit sûr des combles perdus, aménageables ou aménagés. Notre artisan couvreur utilise des matériaux d'isolation de haute performance pour réduire les pertes de chaleur et vous faire profiter d’une température ambiante en toute saison.</p>
-                    <p> Que ce soit pour réduire vos factures d'énergie ou améliorer l’efficacité énergétique de votre maison vous pouvez compter sur nous.</p>
-<p class="highlight-text">
-  <span>Améliorez l'efficacité énergétique de votre maison avec des travaux d’isolation des combles</span>
-</p>                </div>
+                    <h3><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Nos travaux d'Isolation des combles</span></h3>
+                    <p>L'isolation des combles est une opération essentielle pour améliorer le confort thermique de votre domicile et faire des économies d'énergie. Sud Rénovation est le choix idéal pour cette tâche à Cahors.</p>
+                    <p>Nous réalisons des travaux d'isolation que ce soit sûr des combles perdus, aménageables ou aménagés. Notre artisan couvreur utilise des matériaux d'isolation de haute performance pour réduire les pertes de chaleur et vous faire profiter d'une température ambiante en toute saison.</p>
+                    <p>Que ce soit pour réduire vos factures d'énergie ou améliorer l'efficacité énergétique de votre maison vous pouvez compter sur nous.</p>
+                    <p class="highlight-text">
+                        <span>Améliorez l'efficacité énergétique de votre maison avec des travaux d'isolation des combles</span>
+                    </p>
+                    <a href="contact.html" class="btn">Nous contacter</a>
+                </div>
                 <div class="peintre-image">
-                    <img src="images/real6.jpg" alt="Peintre en bâtiment à Cahors">
+                    <img src="images/real6.jpg" alt="Isolation des combles à Cahors">
                 </div>
             </div>
-                                <a href="contact.html" class="btn">Nous contacter</a>
-
         </div>
     </section>
 
-<section id="about" class="about">
-    <div class="container">
-        
-        
-        <!-- Nouvelle section des atouts -->
-        <div class="atouts-containerr">
-            <div class="atout-card white">
-    <div><span style="color: #013f1c;"class="atout-icon">
-        <i class="fas fa-hands"></i>
-    </span></div>
-    <h3><span style="color: #013f1c;">Nos prestations</span></h3>
-    <ul class="prestation-list">
-        <li>Ravalement de façades</li>
-        <li>Couvreur</li>
-        <li>Démoussage de toiture</li>
-        <li>Travaux de rénovation peinture</li>
-        <li>Isolation des combles</li>
-    </ul>
-</div>
-            
-            <div class="atout-card green">
-    <div class="atout-icon">
-        <i class="fas fa-bolt"></i>
-    </div>
-    <h3>Nos garanties</h3>
-    <ul class="prestation-list">
-        <li>Savoir-Faire</li>
-        <li>Réactivité</li>
-        <li>Qualité du travail</li>
-        <li>Conseil</li>
-    </ul>
-</div>
-            
-            <div class="atout-card yellow">
-    <div class="atout-icon">
-        <i class="fas fa-shield-alt"></i>
-    </div>
-    <h3><span style="color: #013f1c;">La Zone d'intervention</span></h3>
-    <ul class="prestation-list">
-        <li><span style="color: #013f1c;">Cahors</span></li>
-        
-    </ul>
-            
-            
+    <section id="about" class="about">
+        <div class="container">
+            <!-- Nouvelle section des atouts -->
+            <div class="atouts-containerr">
+                <div class="atout-card white">
+                    <div><span style="color: #013f1c;" class="atout-icon">
+                        <i class="fas fa-hands"></i>
+                    </span></div>
+                    <h3><span style="color: #013f1c;">Nos prestations</span></h3>
+                    <ul class="prestation-list">
+                        <li>Ravalement de façades</li>
+                        <li>Couvreur</li>
+                        <li>Démoussage de toiture</li>
+                        <li>Travaux de rénovation peinture</li>
+                        <li>Isolation des combles</li>
+                    </ul>
+                </div>
+                
+                <div class="atout-card green">
+                    <div class="atout-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Nos garanties</h3>
+                    <ul class="prestation-list">
+                        <li>Savoir-Faire</li>
+                        <li>Réactivité</li>
+                        <li>Qualité du travail</li>
+                        <li>Conseil</li>
+                    </ul>
+                </div>
+                
+                <div class="atout-card yellow">
+                    <div class="atout-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3><span style="color: #013f1c;">La Zone d'intervention</span></h3>
+                    <ul class="prestation-list">
+                        <li><span style="color: #013f1c;">Cahors</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="renovation-cahors">
         <div class="container">
             <div class="renovation-content">
                 <div class="renovation-text">
-                    <h2><span style="color: #013f1c;">Un professionnel pour réaliser les travaux d’Isolation des combles</span></h2>
+                    <h2><span style="color: #013f1c;">Un professionnel pour réaliser les travaux d'Isolation des combles</span></h2>
                     <p>Nous proposons une approche globale pour réaliser les travaux d'isolation des combles à Cahors et ses environs.</p>
-                    <p>Nous nous appuyons sur notre expertise et notre expérience pour fournir un travail de qualité et vous conseiller sur les meilleures pratiques pour optimiser les performances d’isolation de votre maison.</p>
-                    <p>Notre intervention permet également d’améliorer l'insonorisation de votre maison, créant ainsi un environnement plus paisible.</p>
-                    <p>En complément de l’isolation des combles, nous nous occupons de la rénovation de peinture. Nous augmentons également la valeur de votre propriété à travers le ravalement de façade et le démoussage de toiture.</p>
-<p class="highlight-text">
-  <span>Pour améliorer les performances thermiques et acoustiques des maisons à Cahors</span>
-</p>
-
+                    <p>Nous nous appuyons sur notre expertise et notre expérience pour fournir un travail de qualité et vous conseiller sur les meilleures pratiques pour optimiser les performances d'isolation de votre maison.</p>
+                    <p>Notre intervention permet également d'améliorer l'insonorisation de votre maison, créant ainsi un environnement plus paisible.</p>
+                    <p>En complément de l'isolation des combles, nous nous occupons de la rénovation de peinture. Nous augmentons également la valeur de votre propriété à travers le ravalement de façade et le démoussage de toiture.</p>
+                    <p class="highlight-text">
+                        <span>Pour améliorer les performances thermiques et acoustiques des maisons à Cahors</span>
+                    </p>
                 </div>
                 
                 <div class="renovation-image">
-                    <img src="images/isolation.jpg" alt="Renovation maison Cahors">
+                    <img src="images/isolation.jpg" alt="Isolation des combles Cahors">
                 </div>
             </div>
-
         </div>
-</section>
+    </section>
 
-     <footer>
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-info">
-                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-<p>
-  <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
-     1790 Mondounet 46230 MONTDOUMERC
-  </a>
-</p>                
-<p>
-  <a href="tel:+33970354139" class="footer-link">
-     09 70 35 41 39
-  </a>
-</p>
-
-      <p>Lundi au samedi : 08h - 19h</p>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                        <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+                        <span style="display: flex; flex-direction: column; line-height: 1;">
+                            <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
+                            <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
+                        </span>
+                    </a>
+                    <p>
+                        <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
+                            1790 Mondounet 46230 MONTDOUMERC
+                        </a>
+                    </p>                
+                    <p>
+                        <a href="tel:+33970354139" class="footer-link">
+                            09 70 35 41 39
+                        </a>
+                    </p>
+                    <p>Lundi au samedi : 08h - 19h</p>
+                </div>
+                <div class="footer-cta">
+                    <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
+                    <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
+                    <a href="contact.html" class="btn">Contactez-nous</a>
+                </div>
             </div>
-            <div class="footer-cta">
-                <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
-                <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
-                <a href="contact.html" class="btn">Contactez-nous</a>
+            
+            <div class="footer-nav">
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">Contactez-nous</a>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="plan-du-site.html">Plan du site</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Haut de page</p>
+                <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
             </div>
         </div>
-        
-        <div class="footer-nav">
-            <a href="index.html">Accueil</a>
-            <a href="contact.html">Contactez-nous</a>
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="plan-du-site.html">Plan du site</a>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>Haut de page</p>
-            <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
-        </div>
-    </div>
-</footer>
-<script> // === GESTION DU POPUP À PROPOS ===
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutPopup = document.getElementById('about-popup');
-    const openPopupBtn = document.getElementById('open-about-popup');
-    const closePopupBtn = document.getElementById('close-popup');
-    const popupOverlay = document.getElementById('popup-overlay');
+    </footer>
 
-    // Ouvrir le popup
-    if (openPopupBtn) {
-        openPopupBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            aboutPopup.classList.add('active');
-            popupOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+    <script>
+        // === GESTION DU POPUP À PROPOS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPopup = document.getElementById('about-popup');
+            const openPopupBtn = document.getElementById('open-about-popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            const popupOverlay = document.getElementById('popup-overlay');
+
+            // Ouvrir le popup
+            if (openPopupBtn) {
+                openPopupBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    aboutPopup.classList.add('active');
+                    popupOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Fermer le popup
+            function closePopup() {
+                aboutPopup.classList.remove('active');
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (closePopupBtn) {
+                closePopupBtn.addEventListener('click', closePopup);
+            }
+
+            if (popupOverlay) {
+                popupOverlay.addEventListener('click', closePopup);
+            }
+
+            // Fermer avec la touche Échap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
         });
-    }
 
-    // Fermer le popup
-    function closePopup() {
-        aboutPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+        // Menu mobile amélioré
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.desktop-nav ul').classList.toggle('active');
+        });
 
-    if (closePopupBtn) {
-        closePopupBtn.addEventListener('click', closePopup);
-    }
+        // Gestion du dropdown Services sur mobile
+        document.querySelectorAll('.mobile-nav .dropdown > a').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    showMobileServicesMenu();
+                }
+            });
+        });
 
-    if (popupOverlay) {
-        popupOverlay.addEventListener('click', closePopup);
-    }
-
-    // Fermer avec la touche Échap
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
-            closePopup();
+        function showMobileServicesMenu() {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 1002;
+                display: flex;
+                align-items: flex-end;
+            `;
+            
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                background: white;
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+                padding: 20px;
+                max-height: 70vh;
+                overflow-y: auto;
+            `;
+            
+            menu.innerHTML = `
+                <h3 style="text-align: center; margin-bottom: 20px; color: #013f1c;">Nos Services</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="ravalement.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Ravalement / Façades</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="couvreur.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Couvreur</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="entretien.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Entretien / Nettoyage</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="renovation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Rénovation peinture</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="isolation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Isolation des combles</a>
+                    </li>
+                </ul>
+                <button style="width: 100%; padding: 15px; background: #013f1c; color: white; border: none; border-radius: 10px; margin-top: 20px; font-weight: 600;">Fermer</button>
+            `;
+            
+            overlay.appendChild(menu);
+            document.body.appendChild(overlay);
+            
+            menu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(overlay);
+            });
+            
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
         }
-    });
-});</script>
+
+        // Lier le popup infos pratiques à la version mobile
+        document.getElementById('open-about-popup-mobile').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('open-about-popup').click();
+        });
+    </script>
 </body>
 </html>
