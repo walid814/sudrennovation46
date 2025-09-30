@@ -698,7 +698,10 @@ footer {
     padding: 80px 0;
     background: linear-gradient(90deg, #edf5f7 1%, #c0e2e2 100%);        
 }
-
+.peintre-cahors,
+.renovation-cahors {
+    padding: 50px 0 !important;
+}
 .peintre-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1113,6 +1116,29 @@ nav ul li.dropdown:hover .dropdown-menu {
     .renovation-image {
         padding: 8px;
         margin-bottom: 10px;
+    }
+    .peintre-text h2,
+    .renovation-text h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .peintre-text h3,
+    .renovation-text h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .peintre-text p,
+    .renovation-text p {
+        font-size: 0.9rem !important;
+    }
+    
+    .highlight-text {
+        padding: 12px;
+        margin: 15px 0;
+    }
+    
+    .highlight-text span {
+        font-size: 0.95rem !important;
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -2044,17 +2070,82 @@ nav ul li a:not(.btn):not(.info-link):hover {
     
     /* Sections texte + image */
     .peintre-content,
-    .renovation-content,
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+.renovation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
     
     .peintre-text,
     .renovation-text {
-        padding: 0;
+        padding: 0 !important;
+        order: 1; /* Texte en premier sur mobile */
+    }
+    .peintre-image,
+    .renovation-image {
+        order: 2; /* Image après le texte sur mobile */
+        padding: 10px !important;
+    }
+    .peintre-text h2,
+    .renovation-text h2 {
+        font-size: 1.6rem !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
     }
     
+    .peintre-text h2:after,
+    .renovation-text h2:after {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+    
+    .peintre-text h3,
+    .renovation-text h3 {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        margin: 20px 0 15px !important;
+    }
+    
+    /* Paragraphes */
+    .peintre-text p,
+    .renovation-text p {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        line-height: 1.6;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Texte en surbrillance */
+    .peintre-text p span,
+    .renovation-text p span {
+        font-size: 1rem !important;
+    }
+    
+    /* Highlight text */
+    .highlight-text {
+        background: rgba(1, 63, 28, 0.05);
+        padding: 15px;
+        border-left: 4px solid #D4A017;
+        border-radius: 0 8px 8px 0;
+        margin: 20px 0;
+        text-align: left !important;
+    }
+    
+    .highlight-text span {
+        font-size: 1rem !important;
+        color: #013f1c !important;
+        font-weight: 600;
+    }
+    
+    /* Boutons */
+    .peintre-content .btn,
+    .renovation-content .btn {
+        display: block;
+        margin: 20px auto 0 auto;
+        max-width: 250px;
+        text-align: center;
+    }
     /* Atouts */
     .atouts-container {
         grid-template-columns: 1fr;
