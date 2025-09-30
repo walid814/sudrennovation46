@@ -1055,24 +1055,47 @@ nav ul li.dropdown:hover .dropdown-menu {
 }
 
 @media (max-width: 480px) {
+     .hero {
+        height: 70vh; /* Un peu plus haut sur très petit écran */
+    }
+    
+    .hero-content {
+        max-width: 95% !important;
+    }
+    
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.4rem !important;
     }
     
-    .hero p {
-        font-size: 1rem;
+    .hero-content p:first-child {
+        font-size: 0.75rem !important;
     }
     
-    .btn {
-        padding: 10px 20px;
+    .hero-content p:nth-child(3) {
+        font-size: 0.85rem !important;
     }
     
+    .hero .btn,
+    .hero .btn-tel {
+        max-width: 250px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
     .service-card,
     .gallery-item {
         max-width: 100%;
     }
 }
-
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content {
+        margin-left: 100px !important;
+        max-width: 500px !important;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem !important;
+    }
+}
 .highlight-text {
     border-left: 4px solid #013f1c; /* barre verte */
     padding-left: 10px;             /* espace entre barre et texte */
@@ -1880,16 +1903,49 @@ nav ul li a:not(.btn):not(.info-link):hover {
     
     /* Hero section mobile */
     .hero {
-        height: 70vh;
-        padding-left: 20px;
+        height: 60vh;
+        padding-left: 0;
+        padding-right: 0;
         margin-top: 60px;
-    }
-    
-    .hero-content {
-        margin-left: 0;
-        max-width: 100%;
+        justify-content: center;
         text-align: center;
     }
+     .hero::before {
+        left: 0; /* Image prend toute la largeur sur mobile */
+        background-position: center;
+    }
+    .hero::after {
+        left: 0;
+        background: 
+            linear-gradient(
+                to bottom, 
+                rgba(237, 245, 247, 0.3) 0%,
+                rgba(237, 245, 247, 0.6) 30%,
+                rgba(237, 245, 247, 0.8) 60%,
+                rgba(237, 245, 247, 1) 100%
+            );
+    }
+     .hero-content {
+        margin-left: 0 !important;
+        max-width: 90% !important;
+        text-align: center;
+        padding: 0 15px;
+    }
+     .hero-content p:first-child {
+        font-size: 0.8rem !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+        color: #013f1c !important;
+        font-weight: 600;
+    }
+     .hero h1 {
+        font-size: 1.6rem !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
     
     .hero h1 {
         font-size: 1.8rem;
@@ -1900,7 +1956,31 @@ nav ul li a:not(.btn):not(.info-link):hover {
         font-size: 1rem;
         text-align: left;
     }
+    .hero h1 span {
+        display: block;
+    }
     
+    .hero-content p:nth-child(3) {
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        margin-bottom: 25px !important;
+        line-height: 1.4;
+    }
+    .hero .btn,
+    .hero .btn-tel {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 8px auto !important;
+        padding: 12px 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .hero .btn img {
+        height: 18px !important;
+        margin-right: 6px !important;
+    }
     /* Services carousel mobile */
     .services-carousel {
         margin: 10px 0;
@@ -2036,30 +2116,6 @@ nav ul li a:not(.btn):not(.info-link):hover {
     }
 }
 
-@media (max-width: 480px) {
-    /* Ajustements pour très petits écrans */
-    .hero {
-        padding-left: 15px;
-        height: 60vh;
-    }
-    
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-    
-    .service-card {
-        flex: 0 0 90%;
-    }
-    
-    .atout-card {
-        min-height: 200px;
-        padding: 15px;
-    }
-    
-    .atout-icon {
-        font-size: 2rem;
-    }
-}
 /* Styles pour le lien Infos pratiques avec logo */
 /* Styles pour le lien Infos pratiques avec cercle complet */
 .info-link {
