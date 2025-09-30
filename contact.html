@@ -128,16 +128,16 @@
         }
 
         .contact-details {
-    margin-bottom: 30px;
-}
+            margin-bottom: 30px;
+        }
 
-.contact-details p {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    color: #555;
-    font-size: 1.1rem;
-}
+        .contact-details p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: #555;
+            font-size: 1.1rem;
+        }
 
         .contact-details i {
             margin-right: 15px;
@@ -148,19 +148,19 @@
         }
 
         .contact-details a {
-    color: #555;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-left: -10px;
-}
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-left: -10px;
+        }
 
         .contact-details a:hover {
-    color: #D4A017;
-    background-color: rgba(212, 160, 23, 0.1);
-    transform: translateX(5px);
-}
+            color: #D4A017;
+            background-color: rgba(212, 160, 23, 0.1);
+            transform: translateX(5px);
+        }
 
         .business-hours {
             background: linear-gradient(135deg, rgba(237, 245, 247, 0.9) 0%, rgba(192, 226, 226, 0.9) 100%);
@@ -542,41 +542,44 @@
             }
             
             .contact-details p {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    color: #555;
-    font-size: 1.1rem;
-    position: relative;
-}
-.contact-details p:first-child {
-    border-bottom: 2px solid #D4A017;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    display: inline-block;
-    width: auto;
-}
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                color: #555;
+                font-size: 1.1rem;
+                position: relative;
+            }
+            
+            .contact-details p:first-child {
+                border-bottom: 2px solid #D4A017;
+                padding-bottom: 10px;
+                margin-bottom: 25px;
+                display: inline-block;
+                width: auto;
+            }
 
-.contact-details p:first-child a {
-    color: #2C3E50;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0 5px 5px 5px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-.contact-details p:first-child a:hover {
-    color: #D4A017;
-    border-bottom-color: #D4A017;
-}
+            .contact-details p:first-child a {
+                color: #2C3E50;
+                font-weight: 600;
+                text-decoration: none;
+                font-size: 1.1rem;
+                padding: 0 5px 5px 5px;
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+            
+            .contact-details p:first-child a:hover {
+                color: #D4A017;
+                border-bottom-color: #D4A017;
+            }
+            
             .contact-details i {
-    margin-right: 15px;
-    color: #D4A017;
-    width: 25px;
-    text-align: center;
-    font-size: 20px;
-}
+                margin-right: 15px;
+                color: #D4A017;
+                width: 25px;
+                text-align: center;
+                font-size: 20px;
+            }
             
             .mini-map {
                 height: 150px;
@@ -586,23 +589,25 @@
 </head>
 <body>
     <!-- Header -->
-     <header>
+    <header>
         <div class="container header-container">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center;">
+                <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                <span style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                    <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                </span>
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <nav>
+            
+            <!-- Navigation desktop -->
+            <nav class="desktop-nav">
                 <ul>
-<li><a href="index.html">Accueil</a></li>                    <li class="dropdown">
-                       <li class="dropdown active">                  
-    <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
                             <li><a href="couvreur.html">Couvreur</a></li>
@@ -610,18 +615,17 @@
                             <li><a href="renovation.html">Rénovation peinture</a></li>
                             <li><a href="isolation.html">Isolation des combles</a></li>
                         </ul>
-                        </li>
                     </li>
                     <li><a href="realisations.html">Réalisations</a></li>
-<li>
-  <a href="#" id="open-about-popup" class="info-link">
-    <span class="info-icon">
-      <i class="fas fa-info-circle"></i>
-    </span>
-    Infos pratiques
-  </a>
-</li>
-                    <li class="active"><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
+                    <li>
+                        <a href="#" id="open-about-popup" class="info-link">
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span class="info-text">Infos pratiques</span>
+                        </a>
+                    </li>
+                    <li><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
                     <!-- Nouveau menu Paramètres -->
                     <li class="dropdown settings-menu">
                         <a href="#"><i class="fas fa-cog"></i></a>
@@ -679,93 +683,132 @@
             </nav>
         </div>
     </header>
-<!-- Overlay et Popup À propos -->
-<div class="popup-overlay" id="popup-overlay"></div>
 
-<div class="about-popup" id="about-popup">
-    <div class="popup-header">
-        <h2>Infos pratiques</h2>
-        <button class="close-popup" id="close-popup">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="popup-content">
-        <div class="popup-intro">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-            <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
-            <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+    <!-- Navigation mobile fixée en bas -->
+    <nav class="mobile-nav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li class="dropdown active">
+                <a href="#">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="realisations.html">
+                    <i class="fas fa-images"></i>
+                    <span>Réalisations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="open-about-popup-mobile" class="info-link">
+                    <span class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Infos</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay et Popup À propos -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="about-popup" id="about-popup">
+        <div class="popup-header">
+            <h2>Infos pratiques</h2>
+            <button class="close-popup" id="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        
+        <div class="popup-content">
+            <div class="popup-intro">
+                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                    <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                    <span style="display: flex; flex-direction: column; line-height: 1;">
+                        <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                        <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                    </span>
+                </a>
+                <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
+                <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+            </div>
 
-        <div class="contact-buttons">
-            <a href="contact.html" class="contact-btn">
-                <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
-            </a>
-            
-        </div>
+            <div class="contact-buttons">
+                <a href="contact.html" class="contact-btn">
+                    <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
+                </a>
+            </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Contactez-nous</span></h3>
-            <div class="contact-info">
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-building"></i>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Contactez-nous</span></h3>
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
+                            <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                        </div>
                     </div>
-                    <div class="contact-text">
-                        <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
-                        <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Téléphone</span></strong>
+                            <p>09 70 35 41 39</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Téléphone</span></strong>
-                        <p>09 70 35 41 39</p>
-                    </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
-                        <div class="hours-info">
-                            <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
+                            <div class="hours-info">
+                                <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="action-buttons">
+                    <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
+                        <i class="fas fa-map-marker-alt"></i> Plan
+                    </a>
+                </div>
             </div>
-            
-            <div class="action-buttons">
-                <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
-                    <i class="fas fa-envelope"></i> E-mail
-                </a>
-                <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
-                    <i class="fas fa-map-marker-alt"></i> Plan
-                </a>
-            </div>
-        </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Suivez-nous</span></h3>
-            <div class="social-buttons">
-                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Suivez-nous</span></h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
     <!-- Hero Section -->
     <section class="contact-section">
         <div class="container contact-container">
@@ -788,7 +831,6 @@
                                 <i class="fas fa-phone"></i>
                                 <a href="tel:+33970354139">09 70 35 41 39</a>
                             </p>
-                           
                         </div>
                         
                         <div class="business-hours">
@@ -820,58 +862,57 @@
             </div>
 
             <!-- Colonne de droite avec le formulaire -->
-           <!-- Colonne de droite avec le formulaire -->
-<div class="contact-form" id="contact-form">
-    <h3><span style="color: #013f1c;">Devis / Contact</span></h3>
-<form action="sendmail.php" method="POST">
-        <!-- Champ email requis par Formspree -->
-        <input type="hidden" name="_replyto" value="from-form">
-        
-        <div class="form-group">
-            <label for="name">Nom *</label>
-            <span class="help-text">Saisissez votre nom complet</span>
-            <input type="text" id="name" name="name" placeholder="John Doe" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email *</label>
-            <span class="help-text">Saisissez votre adresse email</span>
-            <input type="email" id="email" name="email" placeholder="john.doe@exemple.com" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="phone">Téléphone *</label>
-            <span class="help-text">Saisissez votre numéro de téléphone</span>
-            <input type="tel" id="phone" name="phone" placeholder="06########" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="service">Demande *</label>
-            <span class="help-text">Choisissez une option</span>
-            <select id="service" name="service" required>
-                <option value="">Sélectionnez un service</option>
-                <option value="Demande de devis / tarifs">Demande de devis / tarifs</option>
-                <option value="Question sur nos services">Question sur nos services</option>
-                <option value="Autre demande">Autre demande</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Précisions *</label>
-            <span class="help-text">Précisez votre demande</span>
-            <textarea id="message" name="message" placeholder="Décrivez votre projet en quelques mots..." required></textarea>
-        </div>
-        
-        <!-- Champs cachés pour Formspree -->
-        <input type="hidden" name="_subject" value="Nouvelle demande de devis - Sud Rénovation">
-        <input type="text" name="_gotcha" style="display:none">
-        
-        <button type="submit" class="form-btn">
-            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-            Envoyer le message
-        </button>
-    </form>
-</div>
+            <div class="contact-form" id="contact-form">
+                <h3><span style="color: #013f1c;">Devis / Contact</span></h3>
+                <form action="sendmail.php" method="POST">
+                    <!-- Champ email requis par Formspree -->
+                    <input type="hidden" name="_replyto" value="from-form">
+                    
+                    <div class="form-group">
+                        <label for="name">Nom *</label>
+                        <span class="help-text">Saisissez votre nom complet</span>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <span class="help-text">Saisissez votre adresse email</span>
+                        <input type="email" id="email" name="email" placeholder="john.doe@exemple.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Téléphone *</label>
+                        <span class="help-text">Saisissez votre numéro de téléphone</span>
+                        <input type="tel" id="phone" name="phone" placeholder="06########" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Demande *</label>
+                        <span class="help-text">Choisissez une option</span>
+                        <select id="service" name="service" required>
+                            <option value="">Sélectionnez un service</option>
+                            <option value="Demande de devis / tarifs">Demande de devis / tarifs</option>
+                            <option value="Question sur nos services">Question sur nos services</option>
+                            <option value="Autre demande">Autre demande</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Précisions *</label>
+                        <span class="help-text">Précisez votre demande</span>
+                        <textarea id="message" name="message" placeholder="Décrivez votre projet en quelques mots..." required></textarea>
+                    </div>
+                    
+                    <!-- Champs cachés pour Formspree -->
+                    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Sud Rénovation">
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="form-btn">
+                        <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -921,9 +962,201 @@
     </footer>
 
     <script>
-        // Menu toggle for mobile
+        // === GESTION DU POPUP À PROPOS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPopup = document.getElementById('about-popup');
+            const openPopupBtn = document.getElementById('open-about-popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            const popupOverlay = document.getElementById('popup-overlay');
+
+            // Ouvrir le popup
+            if (openPopupBtn) {
+                openPopupBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    aboutPopup.classList.add('active');
+                    popupOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Fermer le popup
+            function closePopup() {
+                aboutPopup.classList.remove('active');
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (closePopupBtn) {
+                closePopupBtn.addEventListener('click', closePopup);
+            }
+
+            if (popupOverlay) {
+                popupOverlay.addEventListener('click', closePopup);
+            }
+
+            // Fermer avec la touche Échap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+        });
+
+        // Menu mobile amélioré
         document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
+            document.querySelector('.desktop-nav ul').classList.toggle('active');
+        });
+
+        // Gestion du dropdown Services sur mobile
+        document.querySelectorAll('.mobile-nav .dropdown > a').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    showMobileServicesMenu();
+                }
+            });
+        });
+
+        function showMobileServicesMenu() {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 1002;
+                display: flex;
+                align-items: flex-end;
+            `;
+            
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                background: white;
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+                padding: 20px;
+                max-height: 70vh;
+                overflow-y: auto;
+            `;
+            
+            menu.innerHTML = `
+                <h3 style="text-align: center; margin-bottom: 20px; color: #013f1c;">Nos Services</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="ravalement.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Ravalement / Façades</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="couvreur.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Couvreur</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="entretien.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Entretien / Nettoyage</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="renovation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Rénovation peinture</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="isolation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Isolation des combles</a>
+                    </li>
+                </ul>
+                <button style="width: 100%; padding: 15px; background: #013f1c; color: white; border: none; border-radius: 10px; margin-top: 20px; font-weight: 600;">Fermer</button>
+            `;
+            
+            overlay.appendChild(menu);
+            document.body.appendChild(overlay);
+            
+            menu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(overlay);
+            });
+            
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
+        }
+
+        // Lier le popup infos pratiques à la version mobile
+        document.getElementById('open-about-popup-mobile').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('open-about-popup').click();
+        });
+
+        // Gestion du formulaire Formspree
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form').querySelector('form');
+            
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    // Afficher un indicateur de chargement
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        const formData = new FormData(this);
+                        
+                        const response = await fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Succès
+                            showMessage('✅ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
+                            form.reset();
+                        } else {
+                            throw new Error('Erreur lors de l\'envoi');
+                        }
+                    } catch (error) {
+                        showMessage('❌ Une erreur est survenue. Veuillez nous contacter directement par téléphone au 09 70 35 41 39', 'error');
+                    } finally {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+            
+            function showMessage(message, type) {
+                // Supprimer les messages existants
+                const existingMessages = document.querySelectorAll('.form-message');
+                existingMessages.forEach(msg => msg.remove());
+                
+                // Créer un nouvel élément de message
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `form-message ${type}`;
+                messageDiv.innerHTML = message;
+                
+                // Style du message
+                messageDiv.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    padding: 20px;
+                    background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                    color: white;
+                    border-radius: 10px;
+                    z-index: 10000;
+                    max-width: 400px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                    font-weight: bold;
+                `;
+                
+                document.body.appendChild(messageDiv);
+                
+                // Supprimer après 5 secondes
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 5000);
+            }
         });
 
         // Smooth scrolling for anchor links
@@ -956,120 +1189,6 @@
                 header.style.boxShadow = 'none';
             }
         });
-        // === GESTION DU POPUP À PROPOS ===
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutPopup = document.getElementById('about-popup');
-    const openPopupBtn = document.getElementById('open-about-popup');
-    const closePopupBtn = document.getElementById('close-popup');
-    const popupOverlay = document.getElementById('popup-overlay');
-
-    // Ouvrir le popup
-    if (openPopupBtn) {
-        openPopupBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            aboutPopup.classList.add('active');
-            popupOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    // Fermer le popup
-    function closePopup() {
-        aboutPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (closePopupBtn) {
-        closePopupBtn.addEventListener('click', closePopup);
-    }
-
-    if (popupOverlay) {
-        popupOverlay.addEventListener('click', closePopup);
-    }
-
-    // Fermer avec la touche Échap
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
-            closePopup();
-        }
-    });
-});
-// Gestion du formulaire Formspree
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('myForm');
-    
-    if (form) {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Afficher un indicateur de chargement
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            try {
-                const formData = new FormData(this);
-                
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Succès
-                    showMessage('✅ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
-                    form.reset();
-                } else {
-                    throw new Error('Erreur lors de l\'envoi');
-                }
-            } catch (error) {
-                showMessage('❌ Une erreur est survenue. Veuillez nous contacter directement par téléphone au 09 70 35 41 39', 'error');
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-    
-    function showMessage(message, type) {
-        // Supprimer les messages existants
-        const existingMessages = document.querySelectorAll('.form-message');
-        existingMessages.forEach(msg => msg.remove());
-        
-        // Créer un nouvel élément de message
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-message ${type}`;
-        messageDiv.innerHTML = message;
-        
-        // Style du message
-        messageDiv.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            padding: 20px;
-            background: ${type === 'success' ? '#4CAF50' : '#f44336'};
-            color: white;
-            border-radius: 10px;
-            z-index: 10000;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            font-weight: bold;
-        `;
-        
-        document.body.appendChild(messageDiv);
-        
-        // Supprimer après 5 secondes
-        setTimeout(() => {
-            messageDiv.remove();
-        }, 5000);
-    }
-});
     </script>
 </body>
 </html>

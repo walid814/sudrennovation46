@@ -28,7 +28,6 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            
         }
 
         a {
@@ -60,69 +59,68 @@
 
         /* HEADER */
         header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    height: 80px; /* Ajout d'une hauteur fixe */
-}
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 80px;
+        }
 
         .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0; /* Réduction du padding */
-    height: 80px; /* Hauteur fixe pour le conteneur */
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            height: 80px;
+        }
 
-.logo {
-    font-size: 22px; /* Légère réduction de la taille */
-    font-weight: 700;
-    color: #2C3E50;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2C3E50;
+        }
+
         .logo span {
             color: #D4A017;
         }
 
-        nav ul {
-    display: flex;
-    align-items: center;
-}
-nav ul li:last-child a.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    height: 40px;
-    line-height: 1;
-    white-space: nowrap;
-}
-nav ul li a:not(.btn) {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    padding: 0 10px;
-    white-space: nowrap;
-    font-weight: 500;
-    transition: color 0.3s;
-    font-size: 16px;
-}
-nav ul li {
-    margin-left: 15px; /* Réduction de l'espacement entre les éléments */
-    display: flex;
-    align-items: center;
-    height: 40px; /* Hauteur fixe pour chaque élément */
-}
+        /* Navigation desktop */
+        .desktop-nav ul {
+            display: flex;
+            align-items: center;
+        }
 
-        nav ul li a {
+        .desktop-nav ul li:last-child a.btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            height: 40px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .desktop-nav ul li a:not(.btn) {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 10px;
+            white-space: nowrap;
             font-weight: 500;
             transition: color 0.3s;
             font-size: 16px;
         }
 
-        nav ul li a:hover {
+        .desktop-nav ul li {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .desktop-nav ul li a:hover {
             color: #D4A017;
         }
 
@@ -130,6 +128,45 @@ nav ul li {
             display: none;
             font-size: 24px;
             cursor: pointer;
+        }
+
+        /* Navigation mobile fixée en bas */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+
+        .mobile-nav ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .mobile-nav li {
+            text-align: center;
+        }
+
+        .mobile-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .mobile-nav i {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-nav .active a {
+            color: #013f1c;
         }
 
         /* HERO SECTION */
@@ -140,26 +177,24 @@ nav ul li {
             justify-content: flex-start;
             padding-left: 50px;
             position: relative;
-            background-color: rgb(237, 245, 247); /* fond de base à gauche */
+            background-color: rgb(237, 245, 247);
             overflow: hidden;
             margin-top: 80px;
-            height: calc(60vh - 20px); /* Ajustement si nécessaire */
+            height: calc(60vh - 20px);
         }
 
-        /* Image de fond à partir de 25% */
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 25%; /* commence au quart gauche */
+            left: 25%;
             right: 0;
             background: url('images/accueil.jpg') no-repeat center center;
             background-size: cover;
             z-index: 1;
         }
 
-        /* Dégradés par-dessus l'image */
         .hero::after {
             content: '';
             position: absolute;
@@ -188,7 +223,7 @@ nav ul li {
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
-            z-index: 3; /* texte au-dessus de tout */
+            z-index: 3;
             text-align: center;
         }
 
@@ -512,23 +547,23 @@ nav ul li {
         }
 
         /* Menu déroulant */
-        nav ul li.dropdown {
-    position: relative;
-    height: 40px; /* Hauteur fixe comme les autres */
-    display: flex;
-    align-items: center;
-}
+        .desktop-nav ul li.dropdown {
+            position: relative;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
 
-        nav ul li.dropdown > a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 100%; /* Prend toute la hauteur du li */
-    padding: 0 10px;
-    white-space: nowrap;
-}
+        .desktop-nav ul li.dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            height: 100%;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
 
-        nav ul li.dropdown .dropdown-menu {
+        .desktop-nav ul li.dropdown .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
@@ -542,11 +577,11 @@ nav ul li {
             padding: 10px 0;
         }
 
-        nav ul li.dropdown .dropdown-menu li {
+        .desktop-nav ul li.dropdown .dropdown-menu li {
             margin: 0;
         }
 
-        nav ul li.dropdown .dropdown-menu li a {
+        .desktop-nav ul li.dropdown .dropdown-menu li a {
             padding: 10px 20px;
             display: block;
             color: #333;
@@ -554,13 +589,13 @@ nav ul li {
             transition: background 0.3s, color 0.3s;
         }
 
-        nav ul li.dropdown .dropdown-menu li a:hover {
+        .desktop-nav ul li.dropdown .dropdown-menu li a:hover {
             background-color: #03550e;
             color: white;
         }
 
         /* Affiche le menu au hover */
-        nav ul li.dropdown:hover .dropdown-menu {
+        .desktop-nav ul li.dropdown:hover .dropdown-menu {
             display: flex;
         }
 
@@ -570,13 +605,13 @@ nav ul li {
         }
 
         .settings-menu > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+        }
 
         .settings-dropdown {
             width: 300px;
@@ -651,17 +686,19 @@ nav ul li {
             transition: .4s;
             border-radius: 50%;
         }
-        /* Style pour la page active */
-nav ul li.active > a {
-    color: #013f1c;
-    font-weight: 600;
-}
 
-/* Hover normal */
-nav ul li:not(.active) a:hover {
-    color: #013f1c;
-    background-color: transparent;
-}
+        /* Style pour la page active */
+        .desktop-nav ul li.active > a {
+            color: #013f1c;
+            font-weight: 600;
+        }
+
+        /* Hover normal */
+        .desktop-nav ul li:not(.active) a:hover {
+            color: #013f1c;
+            background-color: transparent;
+        }
+
         input:checked + .slider {
             background-color: #013f1c;
         }
@@ -795,9 +832,173 @@ nav ul li:not(.active) a:hover {
             background: #555;
             border: 3px solid #2d2d2d;
         }
+
         .realisations {
             background: linear-gradient(90deg, #edf5f7 1%, #c0e2e2 100%);
         }
+
+        /* === POPUP À PROPOS - VERSION LARGE === */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-overlay.active {
+            display: block;
+        }
+
+        .about-popup {
+            position: fixed;
+            top: 0;
+            right: -35vw;
+            width: 35vw;
+            min-width: 100px;
+            max-width: 1600px;
+            height: 100vh;
+            background: linear-gradient(135deg, #edf5f7 0%, #c0e2e2 100%);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+            z-index: 10000;
+            transition: right 0.4s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .about-popup.active {
+            right: 0;
+        }
+
+        .popup-header {
+            background: #013f1c;
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .popup-header h2 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .close-popup {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .close-popup:hover {
+            color: #D4A017;
+            transform: scale(1.1);
+        }
+
+        .popup-content {
+            padding: 30px;
+        }
+
+        .popup-section {
+            margin-bottom: 35px;
+        }
+
+        .popup-section h3 {
+            color: #2C3E50;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 3px solid #D4A017;
+            padding-bottom: 12px;
+        }
+
+        .popup-intro {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .popup-intro h4 {
+            color: #D4A017;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .popup-intro h3 {
+            color: #2C3E50;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .popup-intro p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .info-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            border: 2px solid #013f1c;
+            background-color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #013f1c;
+            font-weight: 500;
+            height: 40px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .info-link:hover {
+            background-color: #013f1c;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .info-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #013f1c;
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .info-link:hover .info-icon {
+            background-color: white;
+            color: #013f1c;
+            transform: scale(1.1);
+        }
+
+        .info-text {
+            white-space: nowrap;
+        }
+
+        .desktop-nav ul li.dropdown > a:hover {
+            color: #013f1c;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1200px) {
             .comparison-grid {
@@ -806,44 +1007,24 @@ nav ul li:not(.active) a:hover {
         }
         
         @media (max-width: 768px) {
-            .comparison-grid {
-                grid-template-columns: 1fr;
+            .desktop-nav {
+                display: none;
             }
             
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
+            .mobile-nav {
+                display: block;
             }
             
             .menu-toggle {
                 display: block;
             }
             
-            nav {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                display: none;
-                text-align: center;
+            .comparison-grid {
+                grid-template-columns: 1fr;
             }
             
-            nav.active {
-                display: block;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
             .hero h1 {
@@ -876,11 +1057,9 @@ nav ul li:not(.active) a:hover {
                 text-align: center;
             }
             
-            /* Pour mobile : menu déroulant cliquable */
-            nav ul li.dropdown .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                margin-top: 10px;
+            .about-popup {
+                width: 85vw;
+                right: -85vw;
             }
         }
         
@@ -914,193 +1093,46 @@ nav ul li:not(.active) a:hover {
                 padding-left: 20px;
             }
         }
-        /* === POPUP À PROPOS - VERSION LARGE === */
-.about-popup {
-    position: fixed;
-    top: 0;
-    right: -35vw; /* Commence hors écran avec 35% de largeur */
-    width: 35vw; /* 1/4 de l'écran (25%) + marge */
-    min-width: 100px; /* Largeur minimale */
-    max-width: 1600px; /* Largeur maximale */
-    height: 100vh;
-    background: linear-gradient(135deg, #edf5f7 0%, #c0e2e2 100%);
-    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
-    z-index: 10000;
-    transition: right 0.4s ease-in-out;
-    overflow-y: auto;
-}
-
-.about-popup.active {
-    right: 0;
-}
-
-.popup-header {
-    background: #013f1c;
-    color: white;
-    padding: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.popup-header h2 {
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.close-popup {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 8px;
-    transition: color 0.3s ease;
-}
-
-.close-popup:hover {
-    color: #D4A017;
-    transform: scale(1.1);
-}
-
-.popup-content {
-    padding: 30px;
-}
-
-.popup-section {
-    margin-bottom: 35px;
-}
-
-.popup-section h3 {
-    color: #2C3E50;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    border-bottom: 3px solid #D4A017;
-    padding-bottom: 12px;
-}
-
-.popup-intro {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.popup-intro h4 {
-    color: #D4A017;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.popup-intro h3 {
-    color: #2C3E50;
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.popup-intro p {
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-.info-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    border: 2px solid #013f1c;
-    background-color: white;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: #013f1c;
-    font-weight: 500;
-    height: 40px;
-    line-height: 1;
-    white-space: nowrap; /* Important pour éviter le chevauchement */
-}
-
-.info-link:hover {
-    background-color: #013f1c; /* Fond vert au survol */
-    color: white; /* Texte blanc au survol */
-    transform: scale(1.05);
-}
-/* Ajustement pour les autres liens de navigation */
-nav ul li a:not(.btn) {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    padding: 0 10px;
-    white-space: nowrap; /* Empêche le texte de se superposer */
-}
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  background-color: #013f1c;
-  color: white;
-  border-radius: 50%;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.info-link:hover .info-icon {
-    background-color: white;
-    color: #013f1c;
-    transform: scale(1.1);
-}
-
-.info-text {
-  white-space: nowrap;
-}nav ul li.dropdown > a:hover {
-    color: #013f1c; /* Vert foncé au survol */
-}
     </style>
 </head>
 <body>
     <!-- Header -->
-     <header>
+    <header>
         <div class="container header-container">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center;">
+                <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                <span style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                    <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                </span>
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <nav>
+            
+            <!-- Navigation desktop -->
+            <nav class="desktop-nav">
                 <ul>
-<li><a href="index.html">Accueil</a></li>                    <li class="dropdown">
-                        <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
                             <li><a href="couvreur.html">Couvreur</a></li>
                             <li><a href="entretien.html">Entretien / Nettoyage / Démoussage</a></li>
-                            <li ><a href="renovation.html">Rénovation peinture</a></li>
+                            <li><a href="renovation.html">Rénovation peinture</a></li>
                             <li><a href="isolation.html">Isolation des combles</a></li>
                         </ul>
                     </li>
                     <li class="active"><a href="realisations.html">Réalisations</a></li>
-<li>
-  <a href="#" id="open-about-popup" class="info-link">
-    <span class="info-icon">
-      <i class="fas fa-info-circle"></i>
-    </span>
-    Infos pratiques
-  </a>
-</li>
+                    <li>
+                        <a href="#" id="open-about-popup" class="info-link">
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span class="info-text">Infos pratiques</span>
+                        </a>
+                    </li>
                     <li><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
                     <!-- Nouveau menu Paramètres -->
                     <li class="dropdown settings-menu">
@@ -1159,94 +1191,132 @@ nav ul li a:not(.btn) {
             </nav>
         </div>
     </header>
-<!-- Overlay et Popup À propos -->
-<div class="popup-overlay" id="popup-overlay">
 
-<div class="about-popup" id="about-popup">
-    <div class="popup-header">
-        <h2>Infos pratiques</h2>
-        <button class="close-popup" id="close-popup">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="popup-content">
-        <div class="popup-intro">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-            <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
-            <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+    <!-- Navigation mobile fixée en bas -->
+    <nav class="mobile-nav">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li class="dropdown active">
+                <a href="#">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="realisations.html">
+                    <i class="fas fa-images"></i>
+                    <span>Réalisations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="open-about-popup-mobile" class="info-link">
+                    <span class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Infos</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay et Popup À propos -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="about-popup" id="about-popup">
+        <div class="popup-header">
+            <h2>Infos pratiques</h2>
+            <button class="close-popup" id="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        
+        <div class="popup-content">
+            <div class="popup-intro">
+                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                    <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                    <span style="display: flex; flex-direction: column; line-height: 1;">
+                        <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                        <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                    </span>
+                </a>
+                <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
+                <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+            </div>
 
-        <div class="contact-buttons">
-            <a href="contact.html" class="contact-btn">
-                <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
-            </a>
-            
-        </div>
+            <div class="contact-buttons">
+                <a href="contact.html" class="contact-btn">
+                    <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
+                </a>
+            </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Contactez-nous</span></h3>
-            <div class="contact-info">
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-building"></i>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Contactez-nous</span></h3>
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
+                            <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                        </div>
                     </div>
-                    <div class="contact-text">
-                        <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
-                        <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Téléphone</span></strong>
+                            <p>09 70 35 41 39</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Téléphone</span></strong>
-                        <p>09 70 35 41 39</p>
-                    </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
-                        <div class="hours-info">
-                            <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
+                            <div class="hours-info">
+                                <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="action-buttons">
+                    <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
+                        <i class="fas fa-map-marker-alt"></i> Plan
+                    </a>
+                </div>
             </div>
-            
-            <div class="action-buttons">
-                <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
-                    <i class="fas fa-envelope"></i> E-mail
-                </a>
-                <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
-                    <i class="fas fa-map-marker-alt"></i> Plan
-                </a>
-            </div>
-        </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Suivez-nous</span></h3>
-            <div class="social-buttons">
-                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Suivez-nous</span></h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -1254,97 +1324,99 @@ nav ul li a:not(.btn) {
             <p>Découvrez nos transformations exceptionnelles avant/après</p>
         </div>
     </section>
+
     <section class="realisations">
-    <!-- Main Content -->
-    <div class="container">
-        <div class="section-title">
-            <h2><span style="color: #D4A017;">Transformations Avant/Après</span></h2>
-            <p>Utilisez le curseur pour comparer l'état avant et après nos interventions</p>
+        <!-- Main Content -->
+        <div class="container">
+            <div class="section-title">
+                <h2><span style="color: #D4A017;">Transformations Avant/Après</span></h2>
+                <p>Utilisez le curseur pour comparer l'état avant et après nos interventions</p>
+            </div>
+            
+            <div class="comparison-grid">
+                <div class="comparison-section">
+                    <h3 class="comparison-title">Projet 1</h3>
+                    <div class="comparison-container">
+                        <div class="before-container">
+                            <img src="images/real1avant.jpg" alt="Avant travaux">
+                            <div class="image-label before-label">Avant</div>
+                        </div>
+                        <div class="after-container">
+                            <img src="images/real1apres.jpg" alt="Après travaux">
+                            <div class="image-label after-label">Après</div>
+                        </div>
+                        <div class="comparison-slider"></div>
+                    </div>
+                    <p class="instructions">Glissez pour comparer</p>
+                </div>
+                
+                <div class="comparison-section">
+                    <h3 class="comparison-title">Projet 2</h3>
+                    <div class="comparison-container">
+                        <div class="before-container">
+                            <img src="images/real2avant.jpg" alt="Avant travaux">
+                            <div class="image-label before-label">Avant</div>
+                        </div>
+                        <div class="after-container">
+                            <img src="images/real2apres.jpg" alt="Après travaux">
+                            <div class="image-label after-label">Après</div>
+                        </div>
+                        <div class="comparison-slider"></div>
+                    </div>
+                    <p class="instructions">Glissez pour comparer</p>
+                </div>
+                
+                <div class="comparison-section">
+                    <h3 class="comparison-title">Projet 3</h3>
+                    <div class="comparison-container">
+                        <div class="before-container">
+                            <img src="images/real3avant.jpg" alt="Avant travaux">
+                            <div class="image-label before-label">Avant</div>
+                        </div>
+                        <div class="after-container">
+                            <img src="images/real3apres.jpg" alt="Après travaux">
+                            <div class="image-label after-label">Après</div>
+                        </div>
+                        <div class="comparison-slider"></div>
+                    </div>
+                    <p class="instructions">Glissez pour comparer</p>
+                </div>
+                
+                <div class="comparison-section">
+                    <h3 class="comparison-title">Projet 5</h3>
+                    <div class="comparison-container">
+                        <div class="before-container">
+                            <img src="images/real5avant.jpg" alt="Avant travaux">
+                            <div class="image-label before-label">Avant</div>
+                        </div>
+                        <div class="after-container">
+                            <img src="images/real5apres.jpg" alt="Après travaux">
+                            <div class="image-label after-label">Après</div>
+                        </div>
+                        <div class="comparison-slider"></div>
+                    </div>
+                    <p class="instructions">Glissez pour comparer</p>
+                </div>
+                
+                <div class="comparison-section">
+                    <h3 class="comparison-title">Projet 7</h3>
+                    <div class="comparison-container">
+                        <div class="before-container">
+                            <img src="images/real7avant.jpg" alt="Avant travaux">
+                            <div class="image-label before-label">Avant</div>
+                        </div>
+                        <div class="after-container">
+                            <img src="images/real7apres.jpg" alt="Après travaux">
+                            <div class="image-label after-label">Après</div>
+                        </div>
+                        <div class="comparison-slider"></div>
+                    </div>
+                    <p class="instructions">Glissez pour comparer</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="comparison-grid">
-            <div class="comparison-section">
-                <h3 class="comparison-title">Projet 1</h3>
-                <div class="comparison-container">
-                    <div class="before-container">
-                        <img src="images/real1avant.jpg" alt="Avant travaux">
-                        <div class="image-label before-label">Avant</div>
-                    </div>
-                    <div class="after-container">
-                        <img src="images/real1apres.jpg" alt="Après travaux">
-                        <div class="image-label after-label">Après</div>
-                    </div>
-                    <div class="comparison-slider"></div>
-                </div>
-                <p class="instructions">Glissez pour comparer</p>
-            </div>
-            
-            <div class="comparison-section">
-                <h3 class="comparison-title">Projet 2</h3>
-                <div class="comparison-container">
-                    <div class="before-container">
-                        <img src="images/real2avant.jpg" alt="Avant travaux">
-                        <div class="image-label before-label">Avant</div>
-                    </div>
-                    <div class="after-container">
-                        <img src="images/real2apres.jpg" alt="Après travaux">
-                        <div class="image-label after-label">Après</div>
-                    </div>
-                    <div class="comparison-slider"></div>
-                </div>
-                <p class="instructions">Glissez pour comparer</p>
-            </div>
-            
-            <div class="comparison-section">
-                <h3 class="comparison-title">Projet 3</h3>
-                <div class="comparison-container">
-                    <div class="before-container">
-                        <img src="images/real3avant.jpg" alt="Avant travaux">
-                        <div class="image-label before-label">Avant</div>
-                    </div>
-                    <div class="after-container">
-                        <img src="images/real3apres.jpg" alt="Après travaux">
-                        <div class="image-label after-label">Après</div>
-                    </div>
-                    <div class="comparison-slider"></div>
-                </div>
-                <p class="instructions">Glissez pour comparer</p>
-            </div>
-            
-            <div class="comparison-section">
-                <h3 class="comparison-title">Projet 5</h3>
-                <div class="comparison-container">
-                    <div class="before-container">
-                        <img src="images/real5avant.jpg" alt="Avant travaux">
-                        <div class="image-label before-label">Avant</div>
-                    </div>
-                    <div class="after-container">
-                        <img src="images/real5apres.jpg" alt="Après travaux">
-                        <div class="image-label after-label">Après</div>
-                    </div>
-                    <div class="comparison-slider"></div>
-                </div>
-                <p class="instructions">Glissez pour comparer</p>
-            </div>
-            
-            <div class="comparison-section">
-                <h3 class="comparison-title">Projet 7</h3>
-                <div class="comparison-container">
-                    <div class="before-container">
-                        <img src="images/real7avant.jpg" alt="Avant travaux">
-                        <div class="image-label before-label">Avant</div>
-                    </div>
-                    <div class="after-container">
-                        <img src="images/real7apres.jpg" alt="Après travaux">
-                        <div class="image-label after-label">Après</div>
-                    </div>
-                    <div class="comparison-slider"></div>
-                </div>
-                <p class="instructions">Glissez pour comparer</p>
-            </div>
-        </div>
-    </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -1356,13 +1428,21 @@ nav ul li a:not(.btn) {
                             <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
                         </span>
                     </a>
-                    <p>© 1790 Mondounet 46230 MONTDOUMERC</p>
-                    <p>© 09 70 35 41 39</p>
+                    <p>
+                        <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
+                            1790 Mondounet 46230 MONTDOUMERC
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:+33970354139" class="footer-link">
+                            09 70 35 41 39
+                        </a>
+                    </p>
                     <p>Lundi au samedi : 08h - 19h</p>
                 </div>
                 <div class="footer-cta">
-                    <h2>Pour offrir à votre toit les soins qu'il mérite</h2>
-                    <p><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+                    <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
+                    <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
                     <a href="contact.html" class="btn">Contactez-nous</a>
                 </div>
             </div>
@@ -1382,40 +1462,125 @@ nav ul li a:not(.btn) {
     </footer>
 
     <script>
-        // Menu toggle for mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
-        });
+        // === GESTION DU POPUP À PROPOS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPopup = document.getElementById('about-popup');
+            const openPopupBtn = document.getElementById('open-about-popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            const popupOverlay = document.getElementById('popup-overlay');
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('nav').classList.remove('active');
+            // Ouvrir le popup
+            if (openPopupBtn) {
+                openPopupBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    aboutPopup.classList.add('active');
+                    popupOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Fermer le popup
+            function closePopup() {
+                aboutPopup.classList.remove('active');
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (closePopupBtn) {
+                closePopupBtn.addEventListener('click', closePopup);
+            }
+
+            if (popupOverlay) {
+                popupOverlay.addEventListener('click', closePopup);
+            }
+
+            // Fermer avec la touche Échap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
+                    closePopup();
                 }
             });
         });
 
-        // Sticky header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
+        // Menu mobile amélioré
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.desktop-nav ul').classList.toggle('active');
+        });
+
+        // Gestion du dropdown Services sur mobile
+        document.querySelectorAll('.mobile-nav .dropdown > a').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    showMobileServicesMenu();
+                }
+            });
+        });
+
+        function showMobileServicesMenu() {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 1002;
+                display: flex;
+                align-items: flex-end;
+            `;
+            
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                background: white;
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+                padding: 20px;
+                max-height: 70vh;
+                overflow-y: auto;
+            `;
+            
+            menu.innerHTML = `
+                <h3 style="text-align: center; margin-bottom: 20px; color: #013f1c;">Nos Services</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="ravalement.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Ravalement / Façades</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="couvreur.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Couvreur</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="entretien.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Entretien / Nettoyage</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="renovation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Rénovation peinture</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="isolation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Isolation des combles</a>
+                    </li>
+                </ul>
+                <button style="width: 100%; padding: 15px; background: #013f1c; color: white; border: none; border-radius: 10px; margin-top: 20px; font-weight: 600;">Fermer</button>
+            `;
+            
+            overlay.appendChild(menu);
+            document.body.appendChild(overlay);
+            
+            menu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(overlay);
+            });
+            
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
+        }
+
+        // Lier le popup infos pratiques à la version mobile
+        document.getElementById('open-about-popup-mobile').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('open-about-popup').click();
         });
 
         // Comparison slider functionality
@@ -1566,45 +1731,6 @@ nav ul li a:not(.btn) {
                 location.reload();
             });
         });
-        // === GESTION DU POPUP À PROPOS ===
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutPopup = document.getElementById('about-popup');
-    const openPopupBtn = document.getElementById('open-about-popup');
-    const closePopupBtn = document.getElementById('close-popup');
-    const popupOverlay = document.getElementById('popup-overlay');
-
-    // Ouvrir le popup
-    if (openPopupBtn) {
-        openPopupBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            aboutPopup.classList.add('active');
-            popupOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    // Fermer le popup
-    function closePopup() {
-        aboutPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (closePopupBtn) {
-        closePopupBtn.addEventListener('click', closePopup);
-    }
-
-    if (popupOverlay) {
-        popupOverlay.addEventListener('click', closePopup);
-    }
-
-    // Fermer avec la touche Échap
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
-            closePopup();
-        }
-    });
-});
     </script>
 </body>
 </html>
