@@ -1520,20 +1520,26 @@ body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
 .about-popup {
     position: fixed;
     top: 0;
-    right: -35vw; /* Commence hors écran avec 35% de largeur */
-    width: 35vw; /* 1/4 de l'écran (25%) + marge */
-    min-width: 100px; /* Largeur minimale */
-    max-width: 1600px; /* Largeur maximale */
+    right: -35vw; /* Commence HORS écran */
+    width: 35vw;
+    min-width: 100px;
+    max-width: 1600px;
     height: 100vh;
     background: linear-gradient(135deg, #edf5f7 0%, #c0e2e2 100%);
     box-shadow: -5px 0 25px rgba(0,0,0,0.2);
     z-index: 10000;
     transition: right 0.4s ease-in-out;
     overflow-y: auto;
+    /* AJOUT: Caché par défaut */
+    visibility: hidden;
+    opacity: 0;
 }
 
 .about-popup.active {
     right: 0;
+    /* AJOUT: Visible quand actif */
+    visibility: visible;
+    opacity: 1;
 }
 
 .popup-header {
@@ -1766,7 +1772,6 @@ body.dark-mode.classic-scrollbars ::-webkit-scrollbar-thumb {
     visibility: hidden;
     transition: all 0.3s ease;
 }
-
 .popup-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -1817,19 +1822,7 @@ nav ul li a:not(.btn):not(.info-link):hover {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
-    .about-popup {
-        width: 40vw;
-        min-width: 450px;
-    }
-}
 
-@media (max-width: 992px) {
-    .about-popup {
-        width: 50vw;
-        min-width: 400px;
-    }
-}
 
 /* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 768px) {
@@ -1991,6 +1984,55 @@ nav ul li a:not(.btn):not(.info-link):hover {
         font-size: 14px;
         display: inline-block;
         margin: 5px;
+    }
+    .info-link {
+        justify-content: center;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 10px 0;
+    }
+    
+    .info-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    
+    /* Ajustement du menu déroulant des paramètres */
+    .settings-dropdown {
+        position: fixed;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    /* S'assurer que tous les liens de navigation sont bien alignés */
+    nav ul li a:not(.btn) {
+        justify-content: center;
+        padding: 12px 20px;
+    }
+    
+    /* Menu déroulant des services en mobile */
+    nav ul li.dropdown .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        margin-top: 10px;
+    }
+    
+    nav ul li.dropdown .dropdown-menu li a {
+        padding: 10px 20px;
+        justify-content: center;
+    }
+    .about-popup {
+        width: 85vw;
+        right: -85vw; /* Hors écran sur mobile */
+    }
+    
+    .about-popup.active {
+        right: 0;
     }
 }
 
