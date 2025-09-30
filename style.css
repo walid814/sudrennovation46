@@ -1899,33 +1899,110 @@ nav ul li a:not(.btn) {
 }
 
 /* ===== RESPONSIVE MOBILE ===== */
+/* ===== CORRECTIONS MOBILE COMPLÈTES ===== */
+
+/* Navigation mobile fixée en bas */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 8px 0;
+}
+
+.mobile-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav li {
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 0.7rem;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav li a i {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+    color: #013f1c;
+}
+
+.mobile-nav li a:hover {
+    color: #D4A017;
+}
+
+.mobile-nav li a:hover i {
+    color: #D4A017;
+}
+
+.mobile-nav li a.btn {
+    background: #D4A017;
+    color: white;
+    border-radius: 15px;
+    padding: 8px 12px;
+    margin: 0 5px;
+}
+
+.mobile-nav li a.btn i {
+    color: white;
+    margin-bottom: 2px;
+}
+
+/* Cacher la navigation desktop sur mobile */
 @media (max-width: 768px) {
-    /* Header mobile en bas */
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    /* Header mobile - Logo en haut */
     header {
         position: fixed;
-        top: auto;
-        bottom: 0;
+        top: 0;
+        bottom: auto;
         background: white;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         z-index: 1000;
     }
     
     .header-container {
-        height: 60px;
+        height: 70px;
         padding: 5px 0;
     }
     
-    /* Logo réduit */
+    /* Logo réduit en haut */
     .logo img {
-        height: 40px !important;
+        height: 50px !important;
         margin-right: 10px !important;
     }
     
     .logo span {
-        font-size: 0.8em !important;
+        font-size: 0.9em !important;
     }
     
-    /* Menu hamburger */
+    /* Menu hamburger en haut à droite */
     .menu-toggle {
         display: flex;
         align-items: center;
@@ -1938,116 +2015,15 @@ nav ul li a:not(.btn) {
         font-size: 18px;
     }
     
-    /* Navigation mobile */
-    nav ul {
-        display: none;
-        position: fixed;
-        bottom: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-        border-radius: 20px 20px 0 0;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    nav ul.active {
-        display: flex;
-    }
-    
-    nav ul li {
-        margin: 8px 0;
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid #f0f0f0;
-        padding-bottom: 8px;
-    }
-    
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-    
-    /* Cacher certains éléments sur mobile */
-    .settings-menu {
-        display: none;
-    }
-    
-    .info-link .info-text {
-        display: none;
-    }
-    
-    /* Infos pratiques en icône seule */
-    .info-link {
-        padding: 8px;
-        border: 2px solid #013f1c;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .info-link .info-icon {
-        margin: 0;
-    }
-    
-    /* Bouton contact simplifié */
-    nav ul li:last-child a.btn {
-        background: #D4A017;
-        color: white;
-        border-radius: 20px;
-        padding: 10px 15px;
-        font-size: 14px;
-        justify-content: center;
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
-    }
-    
-    /* Dropdown mobile */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: #f8f9fa;
-        margin-top: 10px;
-        border-radius: 10px;
-        padding: 10px;
-        display: none;
-        width: 100%;
-    }
-    
-    .dropdown-menu.active {
-        display: block;
-    }
-    
-    .dropdown-menu li {
-        border-bottom: 1px solid #e0e0e0;
-        margin: 5px 0;
-        padding: 0;
-    }
-    
-    .dropdown-menu li:last-child {
-        border-bottom: none;
-    }
-    
-    .dropdown-menu li a {
-        padding: 10px 15px !important;
-        display: block;
-        width: 100%;
-    }
-    
-    /* Compensation pour header en bas */
+    /* Ajuster le body padding pour la nav en haut ET en bas */
     body {
-        padding-bottom: 60px;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
     
-    /* Hero section mobile */
+    /* Hero section mobile - ajusté pour le header en haut */
     .hero {
-        height: 60vh;
+        height: 50vh;
         padding-left: 0;
         margin-top: 0;
         justify-content: center;
@@ -2078,14 +2054,14 @@ nav ul li a:not(.btn) {
     }
     
     .hero-content p:first-child {
-        font-size: 0.8rem !important;
+        font-size: 0.75rem !important;
         margin-bottom: 8px !important;
         color: #013f1c !important;
         font-weight: 600;
     }
     
     .hero h1 {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
         line-height: 1.3 !important;
         margin-bottom: 15px !important;
         text-align: center;
@@ -2096,8 +2072,8 @@ nav ul li a:not(.btn) {
     }
     
     .hero-content p:nth-child(3) {
-        font-size: 0.9rem !important;
-        margin-bottom: 25px !important;
+        font-size: 0.85rem !important;
+        margin-bottom: 20px !important;
         line-height: 1.4;
         text-align: center;
     }
@@ -2106,12 +2082,12 @@ nav ul li a:not(.btn) {
     .hero .btn-tel {
         display: block;
         width: 100%;
-        max-width: 280px;
-        margin: 8px auto !important;
-        padding: 12px 20px;
-        font-size: 14px;
+        max-width: 250px;
+        margin: 6px auto !important;
+        padding: 10px 15px;
+        font-size: 0.8rem;
     }
-    
+
     /* Services carousel mobile */
     .services-carousel {
         margin: 10px 0;
@@ -2315,20 +2291,57 @@ nav ul li a:not(.btn) {
 
 @media (max-width: 480px) {
     /* Ajustements pour très petits écrans */
+    .header-container {
+        height: 60px;
+    }
+    
+    .logo img {
+        height: 40px !important;
+    }
+    
+    .logo span {
+        font-size: 0.8em !important;
+    }
+    
+    /* Navigation en bas plus compacte */
+    .mobile-nav {
+        padding: 6px 0;
+    }
+    
+    .mobile-nav li a {
+        font-size: 0.65rem;
+        padding: 4px 2px;
+    }
+    
+    .mobile-nav li a i {
+        font-size: 1rem;
+    }
+    
+    .mobile-nav li a.btn {
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+    
+    /* Compensation ajustée */
+    body {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
     .hero {
-        height: 70vh;
+        height: 45vh;
     }
     
     .hero h1 {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
     }
     
     .hero-content p:first-child {
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
     }
     
     .hero-content p:nth-child(3) {
-        font-size: 0.85rem !important;
+        font-size: 0.8rem !important;
     }
     
     .service-card {
@@ -2369,5 +2382,15 @@ nav ul li a:not(.btn) {
     .btn, .btn-tel {
         padding: 10px 15px;
         font-size: 13px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none;
+    }
+    
+    .desktop-nav {
+        display: block;
     }
 }

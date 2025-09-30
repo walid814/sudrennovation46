@@ -12,19 +12,22 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
+            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center;">
+                <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                <span style="display: flex; flex-direction: column; line-height: 1;">
+                    <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                    <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                </span>
             </a>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            <nav>
+            
+            <!-- Navigation desktop -->
+            <nav class="desktop-nav">
                 <ul>
-<li class="active"><a href="index.html">Accueil</a></li>                    <li class="dropdown">
+                    <li class="active"><a href="index.html">Accueil</a></li>
+                    <li class="dropdown">
                         <a href="#">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
@@ -35,14 +38,14 @@
                         </ul>
                     </li>
                     <li><a href="realisations.html">Réalisations</a></li>
-<li>
-  <a href="#" id="open-about-popup" class="info-link">
-    <span class="info-icon">
-      <i class="fas fa-info-circle"></i>
-    </span>
-    Infos pratiques
-  </a>
-</li>
+                    <li>
+                        <a href="#" id="open-about-popup" class="info-link">
+                            <span class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span class="info-text">Infos pratiques</span>
+                        </a>
+                    </li>
                     <li><a href="contact.html" class="btn" style="color: rgb(31, 29, 29);"><i class="fas fa-envelope" style="color: rgb(0, 0, 0);"></i> Contactez-nous</a></li>
                     <!-- Nouveau menu Paramètres -->
                     <li class="dropdown settings-menu">
@@ -101,153 +104,186 @@
             </nav>
         </div>
     </header>
-   <!-- Overlay et Popup À propos -->
-<div class="popup-overlay" id="popup-overlay"></div>
 
-<div class="about-popup" id="about-popup">
-    <div class="popup-header">
-        <h2>Infos pratiques</h2>
-        <button class="close-popup" id="close-popup">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="popup-content">
-        <div class="popup-intro">
-            <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-            <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
-            <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+    <!-- Navigation mobile fixée en bas -->
+    <nav class="mobile-nav">
+        <ul>
+            <li class="active">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="realisations.html">
+                    <i class="fas fa-images"></i>
+                    <span>Réalisations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="open-about-popup-mobile" class="info-link">
+                    <span class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span>Infos</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay et Popup À propos -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="about-popup" id="about-popup">
+        <div class="popup-header">
+            <h2>Infos pratiques</h2>
+            <button class="close-popup" id="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        
+        <div class="popup-content">
+            <div class="popup-intro">
+                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                    <img src="images/logo.png" alt="Logo Sud rénovation" style="height:100px; vertical-align:middle; margin-right:20px;">
+                    <span style="display: flex; flex-direction: column; line-height: 1;">
+                        <span style="color: #D4A017; font-size: 1.5em; font-weight: bold;">SUD</span>
+                        <span style="font-size: 1.5em; font-weight: bold;">RÉNOVATION</span>
+                    </span>
+                </a>
+                <h3><span style="color: #70471c;">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h3>
+                <p><strong><span style="color: #013f1c;">Notre couvreur prend en main</span></strong> les travaux de rénovation de toitures résidentielles et commerciales.</p>
+            </div>
 
-        <div class="contact-buttons">
-            <a href="contact.html" class="contact-btn">
-                <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
-            </a>
-            
-        </div>
+            <div class="contact-buttons">
+                <a href="contact.html" class="contact-btn">
+                    <i  style = "color: #000000;" class="fas fa-envelope"></i> <span style = "color: #000000;">Contactez-nous</span>
+                </a>
+            </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Contactez-nous</span></h3>
-            <div class="contact-info">
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-building"></i>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Contactez-nous</span></h3>
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
+                            <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                        </div>
                     </div>
-                    <div class="contact-text">
-                        <strong> <span style="color: #013f1c">Sud Rénovation</span></strong>
-                        <p>1790 Mondounet<br>46230 MONTDOUMERC</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Téléphone</span></strong>
+                            <p>09 70 35 41 39</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Téléphone</span></strong>
-                        <p>09 70 35 41 39</p>
-                    </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-text">
-                        <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
-                        <div class="hours-info">
-                            <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong><span style="color: #013f1c">Heures d'ouverture</span></strong>
+                            <div class="hours-info">
+                                <p><strong>Lundi au Samedi :</strong> 08h - 19h</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="action-buttons">
+                    <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
+                        <i class="fas fa-map-marker-alt"></i> Plan
+                    </a>
+                </div>
             </div>
-            
-            <div class="action-buttons">
-                <a href="mailto:contact@sudrenovation46.fr" class="action-btn">
-                    <i class="fas fa-envelope"></i> E-mail
-                </a>
-                <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="action-btn">
-                    <i class="fas fa-map-marker-alt"></i> Plan
-                </a>
-            </div>
-        </div>
 
-        <div class="popup-section">
-            <h3><span style="color: #013f1c">Suivez-nous</span></h3>
-            <div class="social-buttons">
-                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content" style="text-align: left; margin-left: 180px; max-width: 600px;">
-        <p style="font-size: 0.95rem; margin-bottom: 10px; color: #013f1c;">POUR MAINTENIR SON ESTHÉTIQUE ET PROTÉGER VOTRE MAISON</p>
-        <h1>
-          <span style="color: #70471c;">Des professionnels</span><br>
-          <span style="color: #013f1c;">à votre service&nbsp;!</span>
-        </h1>
-        <p><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Notre savoir-faire technique</span> dans le domaine de la toiture garantit des travaux durables.</p>
-        <a href="contact.html" class="btn">
-  <img src="images/messages.png" alt="Contact" style="height:22px; vertical-align:middle; margin-right:8px;">
-  Contactez-nous
-</a>
-
-        <a href="tel:0970354139" class="btn-tel" style="margin-left:12px;">
-          <i class="fas fa-phone" style="margin-right:8px;"></i>
-          09 70 35 41 39
-        </a>
-      </div>
-    </section>
-<section class="services">
-    <!-- Services Section Modifiée -->
-   <div class="services-carousel">
-    <div class="services-track">
-        <div class="service-card">
-            <div class="service-image-container">
-                <img src="images/image1.jpg" class="service-image">
-                <div class="service-overlay">
-                    <h3 class="service-title">Ravalement / Façade</h3>
-                    <p class="service-description">Revelez la beauté de votre maison a Cahors a travers des travaux de ravalement de facade.</p>
+            <div class="popup-section">
+                <h3><span style="color: #013f1c">Suivez-nous</span></h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
-                <!-- Service 2 -->
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" style="text-align: left; margin-left: 180px; max-width: 600px;">
+            <p style="font-size: 0.95rem; margin-bottom: 10px; color: #013f1c;">POUR MAINTENIR SON ESTHÉTIQUE ET PROTÉGER VOTRE MAISON</p>
+            <h1>
+                <span style="color: #70471c;">Des professionnels</span><br>
+                <span style="color: #013f1c;">à votre service&nbsp;!</span>
+            </h1>
+            <p><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Notre savoir-faire technique</span> dans le domaine de la toiture garantit des travaux durables.</p>
+            <a href="contact.html" class="btn">
+                <img src="images/messages.png" alt="Contact" style="height:22px; vertical-align:middle; margin-right:8px;">
+                Contactez-nous
+            </a>
+            <a href="tel:0970354139" class="btn-tel" style="margin-left:12px;">
+                <i class="fas fa-phone" style="margin-right:8px;"></i>
+                09 70 35 41 39
+            </a>
+        </div>
+    </section>
+
+    <section class="services">
+        <!-- Services Section Modifiée -->
+        <div class="services-carousel">
+            <div class="services-track">
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="images/image1.jpg" class="service-image">
+                        <div class="service-overlay">
+                            <h3 class="service-title">Ravalement / Façade</h3>
+                            <p class="service-description">Revelez la beauté de votre maison a Cahors a travers des travaux de ravalement de facade.</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="service-card">
                     <div class="service-image-container">
                         <img src="images/image2.jpg" class="service-image">
                         <div class="service-overlay">
                             <h3 class="service-title">Couvreur</h3>
                             <p class="service-description">Faites appel a notre couvreur pour renover le toit de votre maison a Cahors et ses alentours.</p>
-
                         </div>
                     </div>
-                   
                 </div>
                 
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-image-container">
                         <img src="images/image3.jpg" alt="Entretien / Nettoyage / Démoussage" class="service-image">
                         <div class="service-overlay">
                             <h3 class="service-title">Entretien / Nettoyage / Démoussage</h3>
-                                                    <p class="service-description">Démoussez la toiture de votre maison a Cahors avec Sud Renovation. </p>
-
+                            <p class="service-description">Démoussez la toiture de votre maison a Cahors avec Sud Renovation. </p>
                         </div>
                     </div>
-                    
                 </div>
                 
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-image-container">
                         <img src="images/image4.jpg" alt="Rénovation peinture" class="service-image">
@@ -256,28 +292,22 @@
                             <p class="service-description">A la recherche d'un professionnels de la rénovation peinture a Cahors ? </p>
                         </div>
                     </div>
-                    
                 </div>
                 
-                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-image-container">
                         <img src="images/image5.jpg" alt="Isolation des combles" class="service-image">
                         <div class="service-overlay">
                             <h3 class="service-title">Isolation des Combles</h3>
-                                                    <p class="service-description">Optez pour nos travaux d'isolation des combles a Cahors.</p>
-
+                            <p class="service-description">Optez pour nos travaux d'isolation des combles a Cahors.</p>
                         </div>
                     </div>
-                    
                 </div>
-
-                 
             </div>
             <div class="carousel-nav">
-        <button class="carousel-button prev"></button>
-        <button class="carousel-button next"></button>
-    </div>
+                <button class="carousel-button prev"></button>
+                <button class="carousel-button next"></button>
+            </div>
         </div>
     </section>
 
@@ -286,79 +316,78 @@
         <div class="container">
             <div class="peintre-content">
                 <div class="peintre-text">
-<h2><span style="color: #013f1c;">Peintre en bâtiment à Cahors</span></h2>                
-<p>
-  Sud Rénovation à Cahors transforme votre espace de vie. 
-  Nos services incluent la peinture en bâtiment, le ravalement de façades, 
-  l'isolation, le démoussage et les travaux de couverture. 
-  <span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">
-    Réinventez votre maison à travers nos travaux de couverture.
-  </span>
-</p>
+                    <h2><span style="color: #013f1c;">Peintre en bâtiment à Cahors</span></h2>                
+                    <p>
+                        Sud Rénovation à Cahors transforme votre espace de vie. 
+                        Nos services incluent la peinture en bâtiment, le ravalement de façades, 
+                        l'isolation, le démoussage et les travaux de couverture. 
+                        <span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">
+                            Réinventez votre maison à travers nos travaux de couverture.
+                        </span>
+                    </p>
 
                     <h3><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Peintre en bâtiment à Cahors : l'art de transformer votre bâtiment</span></h3>
                     <p>L'entreprise Sud Rénovation, spécialisée dans la peinture en bâtiment, excelle dans divers travaux.</p>
                     <p>Nos prestations comprennent le ravalement de façades, la rénovation de peinture, les travaux de couverture, le démoussage de toiture, ainsi que l'isolation des combles.</p>
                     <p><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;" >Nous transformons</span> votre habitation en lui donnant un coup de frais aux murs, en améliorant le confort thermique et en prolongeant la durée de vie du toit.</p>
-<p class="highlight-text">
-  <span>Donnez de l'éclat à vos murs grâce à l'intervention d'un peintre en bâtiment.</span>
-</p>                </div>
+                    <p class="highlight-text">
+                        <span>Donnez de l'éclat à vos murs grâce à l'intervention d'un peintre en bâtiment.</span>
+                    </p>
+                    <a href="contact.html" class="btn">Nous contacter</a>
+                </div>
                 <div class="peintre-image">
                     <img src="images/real4.jpg" alt="Peintre en bâtiment à Cahors">
                 </div>
             </div>
-                                <a href="contact.html" class="btn">Nous contacter</a>
-
         </div>
     </section>
-   <!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h1><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Laissez-nous vous présenter nos atouts.</span></h1>
-                <h3><span style="color: #222222;">Nous nous appuyons sur notre expertise et notre expérience pour fournir un travail de qualité.</span></h3>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Laissez-nous vous présenter nos atouts.</span></h1>
+                    <h3><span style="color: #222222;">Nous nous appuyons sur notre expertise et notre expérience pour fournir un travail de qualité.</span></h3>
+                </div>
+            </div>
+            
+            <!-- Nouvelle section des atouts -->
+            <div class="atouts-container">
+                <div class="atout-card white">
+                    <div class="atout-icon">
+                        <i><span style="color: #013f1c;" class="fas fa-hands"></span></i>
+                    </div>
+                    <h3><span style="color: #013f1c;">Notre savoir-faire</span></h3>
+                    <p>Nos travaux sont accomplis et résolus de manière compétente.</p>
+                </div>
                 
-            </div>
-            
-        </div>
-        
-        <!-- Nouvelle section des atouts -->
-        <div class="atouts-container">
-            <div class="atout-card white">
-                <div class="atout-icon">
-                    <i><span style="color: #013f1c;" class="fas fa-hands"></span></i>
+                <div class="atout-card green">
+                    <div class="atout-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>La réactivité</h3>
+                    <p>Nous sommes toujours à votre disposition.</p>
                 </div>
-                <h3><span style="color: #013f1c;">Notre savoir-faire</span></h3>
-                <p>Nos travaux sont accomplis et résolus de manière compétente.</p>
-            </div>
-            
-            <div class="atout-card green">
-                <div class="atout-icon">
-                    <i class="fas fa-bolt"></i>
+                
+                <div class="atout-card yellow">
+                    <div class="atout-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3><span style="color: #013f1c;">La durabilité du travail</span></h3>
+                    <p><span style="color: #000000;">Chaque projet est réalisé avec minutie.</span></p>
                 </div>
-                <h3>La réactivité</h3>
-                <p>Nous sommes toujours à votre disposition.</p>
-            </div>
-            
-            <div class="atout-card yellow">
-                <div class="atout-icon">
-                    <i class="fas fa-shield-alt"></i>
+                
+                <div class="atout-card green">
+                    <div class="atout-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Nos conseils</h3>
+                    <p>On vous aide sur les décisions concernant la rénovation de votre habitat.</p>
                 </div>
-                <h3><span style="color: #013f1c;">La durabilité du travail</span></h3>
-                <p><span style="color: #000000;">Chaque projet est réalisé avec minutie.</span></p>
-            </div>
-            
-            <div class="atout-card green">
-                <div class="atout-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>Nos conseils</h3>
-                <p>On vous aide sur les décisions concernant la rénovation de votre habitat.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Realisations Section -->
     <section id="realisations" class="realisations">
@@ -387,24 +416,22 @@
                     <img src="images/real6.jpg" alt="Projet de rénovation">
                 </div>
             </div>
-                                            <a href="realisations.html" class="btn-realisations">Nos realisations</a>
-
+            <a href="realisations.html" class="btn-realisations">Nos realisations</a>
         </div>
-        
     </section>
-<!-- Section Demande Devis -->
-<section class="devis-hero">
-  <div class="devis-gradient-square">
-    <div class="devis-hero-content">
-      <h2>Pour toute demande de devis ou de renseignements.</h2>
-      <p>Nous pouvons également procéder à l'isolation des combles, au ravalement de façade et à la rénovation de la peinture.</p>
-      <a href="contact.html" class="btn">Contactez-nous</a>
-    </div>
-  </div>
-</section>
 
+    <!-- Section Demande Devis -->
+    <section class="devis-hero">
+        <div class="devis-gradient-square">
+            <div class="devis-hero-content">
+                <h2>Pour toute demande de devis ou de renseignements.</h2>
+                <p>Nous pouvons également procéder à l'isolation des combles, au ravalement de façade et à la rénovation de la peinture.</p>
+                <a href="contact.html" class="btn">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
 
-<section class="renovation-cahors">
+    <section class="renovation-cahors">
         <div class="container">
             <div class="renovation-content">
                 <div class="renovation-text">
@@ -413,402 +440,385 @@
                     <p>Nous mettons en œuvre notre savoir-faire et notre expérience, garantissant ainsi la qualité de nos prestations. Notre réactivité et nos conseils vous apporteront de la réponse rapides et adaptées à vos besoins.</p>
                     <p>Nous adressons nos services aux particuliers et aux professionnels.</p>
                     <p>Donnez de l'éclat à vos murs grâce à l'intervention d'un peintre en bâtiment</p>
-<p class="highlight-text">
-  <span>Avec notre savoir-faire en peinture en bâtiment, redonnez vie à votre habitat à Cahors.</span>
-</p>
-                                                    <a href="contact.html" class="btn">Nous contacter</a>
-
+                    <p class="highlight-text">
+                        <span>Avec notre savoir-faire en peinture en bâtiment, redonnez vie à votre habitat à Cahors.</span>
+                    </p>
+                    <a href="contact.html" class="btn">Nous contacter</a>
                 </div>
                 
                 <div class="renovation-image">
                     <img src="images/renovation.jpg" alt="Renovation maison Cahors">
                 </div>
             </div>
-
         </div>
-</section>
-    <!-- Contact Section -->
-
+    </section>
     
-   <footer>
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-info">
-                <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
-              <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
-              <span style="display: flex; flex-direction: column; line-height: 1;">
-                <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
-                <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
-              </span>
-            </a>
-<p>
-  <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
-     1790 Mondounet 46230 MONTDOUMERC
-  </a>
-</p>                
-<p>
-  <a href="tel:+33970354139" class="footer-link">
-     09 70 35 41 39
-  </a>
-</p>
-
-      <p>Lundi au samedi : 08h - 19h</p>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center; margin-left: -8px;">
+                        <img src="images/logo-bonhomme-vert.png" alt="Logo Sud rénovation" style="height:48px; vertical-align:middle; margin-right:10px;">
+                        <span style="display: flex; flex-direction: column; line-height: 1;">
+                            <span style="color: #D4A017; font-size: 1em; font-weight: bold;">SUD</span>
+                            <span style="font-size: 1em; font-weight: bold;">RÉNOVATION</span>
+                        </span>
+                    </a>
+                    <p>
+                        <a href="https://www.google.com/maps?q=1790+Mondounet+46230+Montdoumerc" target="_blank" class="footer-link">
+                            1790 Mondounet 46230 MONTDOUMERC
+                        </a>
+                    </p>                
+                    <p>
+                        <a href="tel:+33970354139" class="footer-link">
+                            09 70 35 41 39
+                        </a>
+                    </p>
+                    <p>Lundi au samedi : 08h - 19h</p>
+                </div>
+                <div class="footer-cta">
+                    <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
+                    <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
+                    <a href="contact.html" class="btn">Contactez-nous</a>
+                </div>
             </div>
-            <div class="footer-cta">
-                <h2><span style="color: #70471c; ">Pour offrir à votre </span><span style="color: #013f1c;">toit les soins qu'il mérite</span></h2>
-                <p><span style="color: #013f1c;"><strong>Notre couvreur prend en main</strong> les travaux de rénovation de toitures résidentielles et commerciales.</span></p>
-                <a href="contact.html" class="btn">Contactez-nous</a>
+            
+            <div class="footer-nav">
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">Contactez-nous</a>
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="plan-du-site.html">Plan du site</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Haut de page</p>
+                <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
             </div>
         </div>
-        
-        <div class="footer-nav">
-            <a href="index.html">Accueil</a>
-            <a href="contact.html">Contactez-nous</a>
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="plan-du-site.html">Plan du site</a>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>Haut de page</p>
-            <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
-        </div>
-    </div>
-</footer>
-     <script>
-       
-    // Menu mobile amélioré
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('nav ul').classList.toggle('active');
-    });
+    </footer>
 
-    // Gestion des dropdowns sur mobile
-    document.querySelectorAll('.dropdown > a').forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const dropdownMenu = this.nextElementSibling;
-                dropdownMenu.classList.toggle('active');
-                
-                // Fermer les autres dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    if (menu !== dropdownMenu) {
-                        menu.classList.remove('active');
-                    }
-                });
-            }
+    <script>
+        // Menu mobile amélioré
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.desktop-nav ul').classList.toggle('active');
         });
-    });
 
-    // Fermer le menu au clic sur un lien
-    document.querySelectorAll('nav ul li a:not(.dropdown > a)').forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                document.querySelector('nav ul').classList.remove('active');
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.classList.remove('active');
-                });
-            }
-        });
-    });
-
-    // Fermer le menu en cliquant en dehors
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            const nav = document.querySelector('nav ul');
-            const menuToggle = document.querySelector('.menu-toggle');
-            
-            if (nav.classList.contains('active') && 
-                !nav.contains(e.target) && 
-                !menuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-            }
-            
-            // Fermer les dropdowns en cliquant en dehors
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.classList.remove('active');
-                });
-            }
-        }
-    });
-
-    // Smooth scrolling pour anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
+        // Gestion du dropdown Services sur mobile
+        document.querySelectorAll('.mobile-nav .dropdown > a').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
-                    document.querySelector('nav ul').classList.remove('active');
-                }
-            }
-        });
-    });
-
-    // Sticky header
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.boxShadow = 'none';
-        }
-    });
-
-    // Carousel functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.querySelector('.services-track');
-        const cards = document.querySelectorAll('.service-card');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-
-        if (track && cards.length > 0) {
-            let index = 0;
-            const isMobile = window.innerWidth <= 768;
-            const visibleCards = isMobile ? 1 : 3;
-            const cardWidth = cards[0].offsetWidth + 20;
-
-            if (nextButton) {
-                nextButton.addEventListener('click', () => {
-                    if (index < cards.length - visibleCards) {
-                        index++;
-                        track.style.transform = `translateX(-${cardWidth * index}px)`;
-                    }
-                });
-            }
-
-            if (prevButton) {
-                prevButton.addEventListener('click', () => {
-                    if (index > 0) {
-                        index--;
-                        track.style.transform = `translateX(-${cardWidth * index}px)`;
-                    }
-                });
-            }
-
-            // Redimensionnement responsive
-            window.addEventListener('resize', () => {
-                const isMobileNow = window.innerWidth <= 768;
-                const newVisibleCards = isMobileNow ? 1 : 3;
-                track.style.transform = `translateX(-${Math.min(index, cards.length - newVisibleCards) * cardWidth}px)`;
-            });
-        }
-    });
-
-    // Gestion des paramètres d'affichage
-    document.addEventListener('DOMContentLoaded', function() {
-        // Éléments du DOM
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const highContrastToggle = document.getElementById('high-contrast-toggle');
-        const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
-        const classicScrollbarsToggle = document.getElementById('classic-scrollbars-toggle');
-        const decreaseSizeBtn = document.getElementById('decrease-size');
-        const increaseSizeBtn = document.getElementById('increase-size');
-        const sizeValue = document.querySelector('.size-value');
-        const resetSettingsBtn = document.getElementById('reset-settings');
-        
-        // Charger les paramètres sauvegardés
-        loadSettings();
-        
-        // Gestion du changement de thème
-        themeButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const theme = this.getAttribute('data-theme');
-                setTheme(theme);
-                
-                // Mettre à jour l'interface
-                themeButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Sauvegarder le choix
-                localStorage.setItem('theme', theme);
-            });
-        });
-        
-        // Gestion du mode contraste élevé
-        highContrastToggle.addEventListener('change', function() {
-            document.body.classList.toggle('high-contrast', this.checked);
-            localStorage.setItem('highContrast', this.checked);
-        });
-        
-        // Gestion de la réduction des animations
-        reduceMotionToggle.addEventListener('change', function() {
-            document.body.classList.toggle('reduce-motion', this.checked);
-            localStorage.setItem('reduceMotion', this.checked);
-        });
-        
-        // Gestion des barres de défilement classiques
-        classicScrollbarsToggle.addEventListener('change', function() {
-            document.body.classList.toggle('classic-scrollbars', this.checked);
-            localStorage.setItem('classicScrollbars', this.checked);
-        });
-        
-        // Gestion de la taille du texte
-        decreaseSizeBtn.addEventListener('click', function() {
-            changeFontSize(-1);
-        });
-        
-        increaseSizeBtn.addEventListener('click', function() {
-            changeFontSize(1);
-        });
-        
-        // Réinitialisation des paramètres
-        resetSettingsBtn.addEventListener('click', function() {
-            localStorage.removeItem('theme');
-            localStorage.removeItem('highContrast');
-            localStorage.removeItem('reduceMotion');
-            localStorage.removeItem('classicScrollbars');
-            localStorage.removeItem('fontSize');
-            
-            // Réappliquer les valeurs par défaut
-            setTheme('light');
-            document.body.classList.remove('high-contrast', 'reduce-motion', 'classic-scrollbars');
-            highContrastToggle.checked = false;
-            reduceMotionToggle.checked = false;
-            classicScrollbarsToggle.checked = false;
-            
-            // Réinitialiser la taille de police
-            document.documentElement.style.fontSize = '100%';
-            sizeValue.textContent = '100%';
-            
-            // Mettre à jour les boutons de thème
-            themeButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-theme') === 'light') {
-                    btn.classList.add('active');
+                    e.preventDefault();
+                    showMobileServicesMenu();
                 }
             });
         });
-        
-        // Fonction pour charger les paramètres sauvegardés
-        function loadSettings() {
-            // Thème
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            setTheme(savedTheme);
+
+        function showMobileServicesMenu() {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 1002;
+                display: flex;
+                align-items: flex-end;
+            `;
             
-            // Mettre à jour les boutons de thème
-            themeButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-theme') === savedTheme) {
-                    btn.classList.add('active');
-                }
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                background: white;
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+                padding: 20px;
+                max-height: 70vh;
+                overflow-y: auto;
+            `;
+            
+            menu.innerHTML = `
+                <h3 style="text-align: center; margin-bottom: 20px; color: #013f1c;">Nos Services</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="ravalement.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Ravalement / Façades</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="couvreur.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Couvreur</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="entretien.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Entretien / Nettoyage</a>
+                    </li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px;">
+                        <a href="renovation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Rénovation peinture</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="isolation.html" style="display: block; padding: 10px; text-decoration: none; color: #333; font-weight: 500;">Isolation des combles</a>
+                    </li>
+                </ul>
+                <button style="width: 100%; padding: 15px; background: #013f1c; color: white; border: none; border-radius: 10px; margin-top: 20px; font-weight: 600;">Fermer</button>
+            `;
+            
+            overlay.appendChild(menu);
+            document.body.appendChild(overlay);
+            
+            menu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(overlay);
             });
             
-            // Mode contraste élevé
-            const highContrast = localStorage.getItem('highContrast') === 'true';
-            document.body.classList.toggle('high-contrast', highContrast);
-            highContrastToggle.checked = highContrast;
-            
-            // Réduction des animations
-            const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
-            document.body.classList.toggle('reduce-motion', reduceMotion);
-            reduceMotionToggle.checked = reduceMotion;
-            
-            // Barres de défilement classiques
-            const classicScrollbars = localStorage.getItem('classicScrollbars') === 'true';
-            document.body.classList.toggle('classic-scrollbars', classicScrollbars);
-            classicScrollbarsToggle.checked = classicScrollbars;
-            
-            // Taille de police
-            const savedFontSize = localStorage.getItem('fontSize') || 100;
-            document.documentElement.style.fontSize = savedFontSize + '%';
-            sizeValue.textContent = savedFontSize + '%';
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
         }
-        
-        // Fonction pour changer le thème
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.body.classList.add('dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-            }
-        }
-        
-        // Fonction pour changer la taille de police
-        function changeFontSize(direction) {
-            const currentSize = parseInt(document.documentElement.style.fontSize) || 100;
-            let newSize = currentSize + (direction * 10);
-            
-            // Limites de taille
-            newSize = Math.max(80, Math.min(150, newSize));
-            
-            document.documentElement.style.fontSize = newSize + '%';
-            sizeValue.textContent = newSize + '%';
-            
-            // Sauvegarder la préférence
-            localStorage.setItem('fontSize', newSize);
-        }
-    });
 
-    // === GESTION DU POPUP À PROPOS ===
-    document.addEventListener('DOMContentLoaded', function() {
-        const aboutPopup = document.getElementById('about-popup');
-        const openPopupBtn = document.getElementById('open-about-popup');
-        const closePopupBtn = document.getElementById('close-popup');
-        const popupOverlay = document.getElementById('popup-overlay');
+        // Lier le popup infos pratiques à la version mobile
+        document.getElementById('open-about-popup-mobile').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('open-about-popup').click();
+        });
 
-        // VÉRIFICATION : S'assurer que le popup est caché au départ
-        aboutPopup.classList.remove('active');
-        popupOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-
-        // Ouvrir le popup
-        if (openPopupBtn) {
-            openPopupBtn.addEventListener('click', function(e) {
+        // Smooth scrolling pour anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                e.stopPropagation();
                 
-                aboutPopup.classList.add('active');
-                popupOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
-        }
+        });
 
-        // Fermer le popup
-        function closePopup() {
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.services-track');
+            const cards = document.querySelectorAll('.service-card');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+
+            if (track && cards.length > 0) {
+                let index = 0;
+                const isMobile = window.innerWidth <= 768;
+                const visibleCards = isMobile ? 1 : 3;
+                const cardWidth = cards[0].offsetWidth + 20;
+
+                if (nextButton) {
+                    nextButton.addEventListener('click', () => {
+                        if (index < cards.length - visibleCards) {
+                            index++;
+                            track.style.transform = `translateX(-${cardWidth * index}px)`;
+                        }
+                    });
+                }
+
+                if (prevButton) {
+                    prevButton.addEventListener('click', () => {
+                        if (index > 0) {
+                            index--;
+                            track.style.transform = `translateX(-${cardWidth * index}px)`;
+                        }
+                    });
+                }
+
+                window.addEventListener('resize', () => {
+                    const isMobileNow = window.innerWidth <= 768;
+                    const newVisibleCards = isMobileNow ? 1 : 3;
+                    track.style.transform = `translateX(-${Math.min(index, cards.length - newVisibleCards) * cardWidth}px)`;
+                });
+            }
+        });
+
+        // Gestion des paramètres d'affichage
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            const highContrastToggle = document.getElementById('high-contrast-toggle');
+            const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+            const classicScrollbarsToggle = document.getElementById('classic-scrollbars-toggle');
+            const decreaseSizeBtn = document.getElementById('decrease-size');
+            const increaseSizeBtn = document.getElementById('increase-size');
+            const sizeValue = document.querySelector('.size-value');
+            const resetSettingsBtn = document.getElementById('reset-settings');
+            
+            loadSettings();
+            
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const theme = this.getAttribute('data-theme');
+                    setTheme(theme);
+                    
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    localStorage.setItem('theme', theme);
+                });
+            });
+            
+            highContrastToggle.addEventListener('change', function() {
+                document.body.classList.toggle('high-contrast', this.checked);
+                localStorage.setItem('highContrast', this.checked);
+            });
+            
+            reduceMotionToggle.addEventListener('change', function() {
+                document.body.classList.toggle('reduce-motion', this.checked);
+                localStorage.setItem('reduceMotion', this.checked);
+            });
+            
+            classicScrollbarsToggle.addEventListener('change', function() {
+                document.body.classList.toggle('classic-scrollbars', this.checked);
+                localStorage.setItem('classicScrollbars', this.checked);
+            });
+            
+            decreaseSizeBtn.addEventListener('click', function() {
+                changeFontSize(-1);
+            });
+            
+            increaseSizeBtn.addEventListener('click', function() {
+                changeFontSize(1);
+            });
+            
+            resetSettingsBtn.addEventListener('click', function() {
+                localStorage.removeItem('theme');
+                localStorage.removeItem('highContrast');
+                localStorage.removeItem('reduceMotion');
+                localStorage.removeItem('classicScrollbars');
+                localStorage.removeItem('fontSize');
+                
+                setTheme('light');
+                document.body.classList.remove('high-contrast', 'reduce-motion', 'classic-scrollbars');
+                highContrastToggle.checked = false;
+                reduceMotionToggle.checked = false;
+                classicScrollbarsToggle.checked = false;
+                
+                document.documentElement.style.fontSize = '100%';
+                sizeValue.textContent = '100%';
+                
+                themeButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-theme') === 'light') {
+                        btn.classList.add('active');
+                    }
+                });
+            });
+            
+            function loadSettings() {
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                setTheme(savedTheme);
+                
+                themeButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-theme') === savedTheme) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                const highContrast = localStorage.getItem('highContrast') === 'true';
+                document.body.classList.toggle('high-contrast', highContrast);
+                highContrastToggle.checked = highContrast;
+                
+                const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
+                document.body.classList.toggle('reduce-motion', reduceMotion);
+                reduceMotionToggle.checked = reduceMotion;
+                
+                const classicScrollbars = localStorage.getItem('classicScrollbars') === 'true';
+                document.body.classList.toggle('classic-scrollbars', classicScrollbars);
+                classicScrollbarsToggle.checked = classicScrollbars;
+                
+                const savedFontSize = localStorage.getItem('fontSize') || 100;
+                document.documentElement.style.fontSize = savedFontSize + '%';
+                sizeValue.textContent = savedFontSize + '%';
+            }
+            
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            }
+            
+            function changeFontSize(direction) {
+                const currentSize = parseInt(document.documentElement.style.fontSize) || 100;
+                let newSize = currentSize + (direction * 10);
+                
+                newSize = Math.max(80, Math.min(150, newSize));
+                
+                document.documentElement.style.fontSize = newSize + '%';
+                sizeValue.textContent = newSize + '%';
+                
+                localStorage.setItem('fontSize', newSize);
+            }
+        });
+
+        // === GESTION DU POPUP À PROPOS ===
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutPopup = document.getElementById('about-popup');
+            const openPopupBtn = document.getElementById('open-about-popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            const popupOverlay = document.getElementById('popup-overlay');
+
             aboutPopup.classList.remove('active');
             popupOverlay.classList.remove('active');
             document.body.style.overflow = '';
-        }
 
-        // Bouton fermer
-        if (closePopupBtn) {
-            closePopupBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                closePopup();
-            });
-        }
-
-        // Overlay (cliquer à côté pour fermer)
-        if (popupOverlay) {
-            popupOverlay.addEventListener('click', function(e) {
-                e.stopPropagation();
-                closePopup();
-            });
-        }
-
-        // Fermer avec la touche Échap
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
-                closePopup();
+            if (openPopupBtn) {
+                openPopupBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    aboutPopup.classList.add('active');
+                    popupOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
             }
-        });
 
-        // Empêcher la fermeture quand on clique dans le popup
-        aboutPopup.addEventListener('click', function(e) {
-            e.stopPropagation();
+            function closePopup() {
+                aboutPopup.classList.remove('active');
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (closePopupBtn) {
+                closePopupBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closePopup();
+                });
+            }
+
+            if (popupOverlay) {
+                popupOverlay.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closePopup();
+                });
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && aboutPopup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+
+            aboutPopup.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
