@@ -1054,67 +1054,6 @@ nav ul li.dropdown:hover .dropdown-menu {
     .carousel-button { display: none; } /* cacher flèches sur mobile */
 }
 
-@media (max-width: 480px) {
-     .hero {
-        height: 70vh; /* Un peu plus haut sur très petit écran */
-    }
-    
-    .hero-content {
-        max-width: 95% !important;
-    }
-    
-    .hero h1 {
-        font-size: 1.4rem !important;
-    }
-    
-    .hero-content p:first-child {
-        font-size: 0.75rem !important;
-    }
-    
-    .hero-content p:nth-child(3) {
-        font-size: 0.85rem !important;
-    }
-    
-    .hero .btn,
-    .hero .btn-tel {
-        max-width: 250px;
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-    .service-card,
-    .gallery-item {
-        max-width: 100%;
-    }
-     .renovation-cahors {
-        padding: 30px 0;
-    }
-    
-    .renovation-text h2 {
-        font-size: 1.4rem !important;
-    }
-    
-    .renovation-text p {
-        font-size: 0.9rem !important;
-        line-height: 1.5;
-    }
-    
-    .highlight-text {
-        font-size: 0.95rem !important;
-        padding: 10px 12px;
-        margin: 15px 0;
-    }
-    
-    .renovation-cahors .btn {
-        max-width: 250px;
-        padding: 12px 20px;
-        font-size: 15px;
-    }
-    
-    .renovation-image {
-        padding: 8px;
-        margin-bottom: 10px;
-    }
-}
 @media (min-width: 769px) {
     header {
         top: 0;
@@ -1901,473 +1840,6 @@ nav ul li a:not(.btn):not(.info-link):hover {
 /* Responsive */
 
 
-/* ===== RESPONSIVE MOBILE ===== */
-@media (max-width: 768px) {
-    /* Ajustements généraux */
-    html {
-        font-size: 90%; /* Réduction générale de la taille */
-    }
-    
-    .container {
-        width: 95%;
-        padding: 0 10px;
-    }
-    
-    /* Header mobile */
-    .header-container {
-        padding: 5px 0;
-        height: 60px;
-    }
-    
-    .logo img {
-        height: 60px !important;
-        margin-right: 10px !important;
-    }
-    
-    .logo span {
-        font-size: 1em !important;
-    }
-    
-    .menu-toggle {
-        display: block;
-        font-size: 20px;
-    }
-    
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    nav ul.active {
-        display: flex;
-    }
-    
-    nav ul li {
-        margin: 10px 0;
-        width: 100%;
-        height: auto;
-    }
-    
-    /* Hero section mobile */
-    .hero {
-        height: 60vh;
-        padding-left: 0;
-        padding-right: 0;
-        margin-top: 0;
-                padding-bottom: 20px;
-
-        justify-content: center;
-        text-align: center;
-
-    }
-    
-     .hero::before {
-        left: 0; /* Image prend toute la largeur sur mobile */
-        background-position: center;
-    }
-    .hero::after {
-        left: 0;
-        background: 
-            linear-gradient(
-                to bottom, 
-                rgba(237, 245, 247, 0.3) 0%,
-                rgba(237, 245, 247, 0.6) 30%,
-                rgba(237, 245, 247, 0.8) 60%,
-                rgba(237, 245, 247, 1) 100%
-            );
-    }
-     .hero-content {
-        margin-left: 0 !important;
-        max-width: 90% !important;
-        text-align: center;
-        padding: 0 15px;
-    }
-     .hero-content p:first-child {
-        font-size: 0.8rem !important;
-        margin-bottom: 8px !important;
-        text-align: center !important;
-        color: #013f1c !important;
-        font-weight: 600;
-    }
-     .hero h1 {
-        font-size: 1.6rem !important;
-        text-align: center !important;
-        line-height: 1.3 !important;
-        margin-bottom: 15px !important;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
-    
-    
-    .hero h1 {
-        font-size: 1.8rem;
-        text-align: left;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-        text-align: left;
-    }
-    .hero h1 span {
-        display: block;
-    }
-    
-    .hero-content p:nth-child(3) {
-        font-size: 0.9rem !important;
-        text-align: center !important;
-        margin-bottom: 25px !important;
-        line-height: 1.4;
-    }
-    .hero .btn,
-    .hero .btn-tel {
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 8px auto !important;
-        padding: 12px 20px;
-        font-size: 14px;
-        text-align: center;
-    }
-    
-    .hero .btn img {
-        height: 18px !important;
-        margin-right: 6px !important;
-    }
-    /* Services carousel mobile */
-    .services-carousel {
-        margin: 10px 0;
-        width: 100%;
-    }
-    
-    .service-card {
-        flex: 0 0 85%;
-        height: 250px;
-    }
-    
-    .service-image-container {
-        height: 250px;
-    }
-    
-    .carousel-button {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    
-    /* Sections texte + image */
-    .peintre-content,
-    .renovation-content,
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .peintre-text,
-    .renovation-text {
-        padding: 0;
-    }
-    
-    /* Atouts */
-    .atouts-container {
-        grid-template-columns: 1fr;
-        margin-left: 0;
-        gap: 15px;
-    }
-    
-    .atout-card {
-        width: 100%;
-        min-height: 250px;
-        padding: 20px;
-    }
-    
-    /* Gallery */
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .gallery-item {
-        height: 300px;
-        border: 8px solid #fff;
-    }
-    
-    /* Footer */
-    .footer-top {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .footer-nav {
-        position: static;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    /* Boutons */
-    .btn, .btn-tel {
-        padding: 10px 20px;
-        font-size: 14px;
-        display: inline-block;
-        margin: 5px;
-    }
-    .info-link {
-        justify-content: center;
-        width: 100%;
-        padding: 12px 20px;
-        margin: 10px 0;
-    }
-    
-    .info-icon {
-        width: 20px;
-        height: 20px;
-        font-size: 12px;
-    }
-    
-    /* Ajustement du menu déroulant des paramètres */
-    .settings-dropdown {
-        position: fixed;
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 300px;
-    }
-    
-    /* S'assurer que tous les liens de navigation sont bien alignés */
-    nav ul li a:not(.btn) {
-        justify-content: center;
-        padding: 12px 20px;
-    }
-    
-    /* Menu déroulant des services en mobile */
-    nav ul li.dropdown .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: #f9f9f9;
-        margin-top: 10px;
-    }
-    
-    nav ul li.dropdown .dropdown-menu li a {
-        padding: 10px 20px;
-        justify-content: center;
-    }
-    .about-popup {
-        width: 85vw;
-        right: -85vw; /* Hors écran sur mobile */
-    }
-    
-    .about-popup.active {
-        right: 0;
-    }
-    .renovation-cahors {
-        padding: 40px 0;
-    }
-    
-    .renovation-content {
-        flex-direction: column;
-        gap: 25px;
-    }
-    
-    .renovation-text {
-        padding-left: 0;
-        padding-right: 0;
-        order: 2; /* Texte après l'image sur mobile */
-    }
-    
-    .renovation-text h2 {
-        font-size: 1.6rem !important;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .renovation-text h2:after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .renovation-text p {
-        font-size: 0.95rem !important;
-        line-height: 1.6;
-        margin-bottom: 15px;
-        text-align: left;
-    }
-    
-    .highlight-text {
-        font-size: 1rem !important;
-        padding: 12px 15px;
-        margin: 20px 0;
-        text-align: center;
-        border-left: none;
-        border-top: 4px solid #013f1c;
-        border-bottom: 4px solid #013f1c;
-    }
-    
-    .highlight-text span {
-        font-size: 1.1em;
-        display: block;
-        text-align: center;
-    }
-    
-    .renovation-image {
-        order: 1; /* Image avant le texte sur mobile */
-        padding: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .renovation-image img {
-        border-radius: 8px;
-    }
-    
-    /* Bouton */
-    .renovation-cahors .btn {
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 20px auto 0;
-        text-align: center;
-        padding: 14px 25px;
-        font-size: 16px;
-    }
-    /* Header principal */
-    header {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        top: unset;
-        background: white;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-    
-    .header-container {
-        height: 60px;
-        padding: 5px 0;
-    }
-    
-    /* Logo réduit */
-    .logo img {
-        height: 40px !important;
-        margin-right: 10px !important;
-    }
-    
-    .logo span {
-        font-size: 0.8em !important;
-    }
-    
-    /* Menu hamburger positionné à droite */
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: #013f1c;
-        color: white;
-        border-radius: 50%;
-        font-size: 18px;
-    }
-    
-    /* Navigation mobile - menu qui s'ouvre vers le haut */
-    nav ul {
-        display: none;
-        position: fixed;
-        bottom: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-        border-radius: 20px 20px 0 0;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    nav ul.active {
-        display: flex;
-    }
-    
-    nav ul li {
-        margin: 8px 0;
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid #f0f0f0;
-        padding-bottom: 8px;
-    }
-    
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-    
-    /* Cacher certains éléments sur mobile */
-    .settings-menu,
-    .info-link .info-text {
-        display: none;
-    }
-    
-    /* Afficher seulement l'icône pour Infos pratiques */
-    .info-link {
-        padding: 8px;
-        border: 2px solid #013f1c;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .info-link .info-icon {
-        margin: 0;
-    }
-    
-    /* Bouton contact simplifié */
-    nav ul li:last-child a.btn {
-        background: #D4A017;
-        color: white;
-        border-radius: 20px;
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-    
-    /* Dropdown adapté pour mobile */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: #f8f9fa;
-        margin-top: 10px;
-        border-radius: 10px;
-        padding: 10px;
-    }
-    
-    .dropdown-menu li {
-        border-bottom: 1px solid #e0e0e0;
-        margin: 5px 0;
-    }
-    
-    .dropdown-menu li:last-child {
-        border-bottom: none;
-    }
-    body {
-        padding-bottom: 60px; /* Hauteur du header mobile */
-    }
-    
-    
-
-}
 
 /* Styles pour le lien Infos pratiques avec logo */
 /* Styles pour le lien Infos pratiques avec cercle complet */
@@ -2424,4 +1896,478 @@ nav ul li a:not(.btn) {
   white-space: nowrap;
 }nav ul li.dropdown > a:hover {
     color: #013f1c; /* Vert foncé au survol */
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    /* Header mobile en bas */
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .header-container {
+        height: 60px;
+        padding: 5px 0;
+    }
+    
+    /* Logo réduit */
+    .logo img {
+        height: 40px !important;
+        margin-right: 10px !important;
+    }
+    
+    .logo span {
+        font-size: 0.8em !important;
+    }
+    
+    /* Menu hamburger */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #013f1c;
+        color: white;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+    
+    /* Navigation mobile */
+    nav ul {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        border-radius: 20px 20px 0 0;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 8px 0;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 8px;
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Cacher certains éléments sur mobile */
+    .settings-menu {
+        display: none;
+    }
+    
+    .info-link .info-text {
+        display: none;
+    }
+    
+    /* Infos pratiques en icône seule */
+    .info-link {
+        padding: 8px;
+        border: 2px solid #013f1c;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .info-link .info-icon {
+        margin: 0;
+    }
+    
+    /* Bouton contact simplifié */
+    nav ul li:last-child a.btn {
+        background: #D4A017;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+        justify-content: center;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    /* Dropdown mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        display: none;
+        width: 100%;
+    }
+    
+    .dropdown-menu.active {
+        display: block;
+    }
+    
+    .dropdown-menu li {
+        border-bottom: 1px solid #e0e0e0;
+        margin: 5px 0;
+        padding: 0;
+    }
+    
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown-menu li a {
+        padding: 10px 15px !important;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Compensation pour header en bas */
+    body {
+        padding-bottom: 60px;
+    }
+    
+    /* Hero section mobile */
+    .hero {
+        height: 60vh;
+        padding-left: 0;
+        margin-top: 0;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero::before {
+        left: 0;
+        background-position: center;
+    }
+    
+    .hero::after {
+        left: 0;
+        background: linear-gradient(
+            to bottom, 
+            rgba(237, 245, 247, 0.3) 0%,
+            rgba(237, 245, 247, 0.6) 30%,
+            rgba(237, 245, 247, 0.8) 60%,
+            rgba(237, 245, 247, 1) 100%
+        );
+    }
+    
+    .hero-content {
+        margin-left: 0 !important;
+        max-width: 90% !important;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .hero-content p:first-child {
+        font-size: 0.8rem !important;
+        margin-bottom: 8px !important;
+        color: #013f1c !important;
+        font-weight: 600;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        text-align: center;
+    }
+    
+    .hero h1 span {
+        display: block;
+    }
+    
+    .hero-content p:nth-child(3) {
+        font-size: 0.9rem !important;
+        margin-bottom: 25px !important;
+        line-height: 1.4;
+        text-align: center;
+    }
+    
+    .hero .btn,
+    .hero .btn-tel {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 8px auto !important;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* Services carousel mobile */
+    .services-carousel {
+        margin: 10px 0;
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        flex: 0 0 85%;
+        height: 250px;
+    }
+    
+    .service-image-container {
+        height: 250px;
+    }
+    
+    .carousel-button {
+        display: none;
+    }
+    
+    /* Section Peintre Cahors - Image en dessous du texte */
+    .peintre-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .peintre-text {
+        order: 1;
+        text-align: center;
+    }
+    
+    .peintre-image {
+        order: 2;
+        margin-top: 20px;
+    }
+    
+    .peintre-text h2 {
+        font-size: 1.6rem !important;
+        text-align: center;
+    }
+    
+    .peintre-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .peintre-text h3 {
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+    
+    .peintre-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        text-align: left;
+    }
+    
+    .peintre-cahors .btn {
+        display: block;
+        margin: 20px auto 0;
+        max-width: 280px;
+    }
+    
+    .highlight-text {
+        font-size: 1rem !important;
+        padding: 12px 15px;
+        margin: 20px 0;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid #013f1c;
+        border-bottom: 4px solid #013f1c;
+    }
+    
+    /* About section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .about-text h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .about-text h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Atouts */
+    .atouts-container {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        gap: 15px;
+    }
+    
+    .atout-card {
+        width: 100%;
+        min-height: 200px;
+        padding: 20px;
+    }
+    
+    .atout-icon {
+        font-size: 2rem;
+    }
+    
+    .atout-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Gallery */
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        height: 250px;
+        border: 8px solid #fff;
+    }
+    
+    /* Section Renovation */
+    .renovation-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .renovation-text {
+        padding-left: 0;
+        order: 2;
+        text-align: center;
+    }
+    
+    .renovation-image {
+        order: 1;
+    }
+    
+    .renovation-text h2 {
+        font-size: 1.6rem !important;
+        text-align: center;
+    }
+    
+    .renovation-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .renovation-text p {
+        text-align: left;
+    }
+    
+    /* Devis section */
+    .devis-hero {
+        height: 50vh;
+    }
+    
+    .devis-hero-content {
+        padding-left: 20px;
+        max-width: 90%;
+    }
+    
+    .devis-hero h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .devis-hero p {
+        font-size: 1rem !important;
+    }
+    
+    /* Footer */
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        top: 0;
+        left: 0;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    /* Popup */
+    .about-popup {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .about-popup.active {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustements pour très petits écrans */
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.4rem !important;
+    }
+    
+    .hero-content p:first-child {
+        font-size: 0.75rem !important;
+    }
+    
+    .hero-content p:nth-child(3) {
+        font-size: 0.85rem !important;
+    }
+    
+    .service-card {
+        flex: 0 0 90%;
+        height: 220px;
+    }
+    
+    .service-image-container {
+        height: 220px;
+    }
+    
+    .peintre-text h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .peintre-text h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .atout-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+    
+    .gallery-item {
+        height: 200px;
+        border: 5px solid #fff;
+    }
+    
+    .devis-hero {
+        height: 45vh;
+    }
+    
+    .devis-hero h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .btn, .btn-tel {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
 }
