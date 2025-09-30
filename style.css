@@ -698,10 +698,7 @@ footer {
     padding: 80px 0;
     background: linear-gradient(90deg, #edf5f7 1%, #c0e2e2 100%);        
 }
-.peintre-cahors,
-.renovation-cahors {
-    padding: 50px 0 !important;
-}
+
 .peintre-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1117,28 +1114,19 @@ nav ul li.dropdown:hover .dropdown-menu {
         padding: 8px;
         margin-bottom: 10px;
     }
-    .peintre-text h2,
-    .renovation-text h2 {
-        font-size: 1.4rem !important;
+}
+@media (min-width: 769px) {
+    header {
+        top: 0;
+        bottom: auto;
     }
     
-    .peintre-text h3,
-    .renovation-text h3 {
-        font-size: 1.1rem !important;
+    .menu-toggle {
+        display: none;
     }
     
-    .peintre-text p,
-    .renovation-text p {
-        font-size: 0.9rem !important;
-    }
-    
-    .highlight-text {
-        padding: 12px;
-        margin: 15px 0;
-    }
-    
-    .highlight-text span {
-        font-size: 0.95rem !important;
+    nav ul {
+        display: flex !important;
     }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -1972,10 +1960,14 @@ nav ul li a:not(.btn):not(.info-link):hover {
         height: 60vh;
         padding-left: 0;
         padding-right: 0;
-        margin-top: 60px;
+        margin-top: 0;
+                padding-bottom: 20px;
+
         justify-content: center;
         text-align: center;
+
     }
+    
      .hero::before {
         left: 0; /* Image prend toute la largeur sur mobile */
         background-position: center;
@@ -2070,82 +2062,17 @@ nav ul li a:not(.btn):not(.info-link):hover {
     
     /* Sections texte + image */
     .peintre-content,
-.renovation-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
+    .renovation-content,
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
     
     .peintre-text,
     .renovation-text {
-        padding: 0 !important;
-        order: 1; /* Texte en premier sur mobile */
-    }
-    .peintre-image,
-    .renovation-image {
-        order: 2; /* Image après le texte sur mobile */
-        padding: 10px !important;
-    }
-    .peintre-text h2,
-    .renovation-text h2 {
-        font-size: 1.6rem !important;
-        text-align: center !important;
-        margin-bottom: 20px !important;
+        padding: 0;
     }
     
-    .peintre-text h2:after,
-    .renovation-text h2:after {
-        left: 50% !important;
-        transform: translateX(-50%);
-    }
-    
-    .peintre-text h3,
-    .renovation-text h3 {
-        font-size: 1.2rem !important;
-        text-align: center !important;
-        margin: 20px 0 15px !important;
-    }
-    
-    /* Paragraphes */
-    .peintre-text p,
-    .renovation-text p {
-        font-size: 0.95rem !important;
-        text-align: left !important;
-        line-height: 1.6;
-        margin-bottom: 15px !important;
-    }
-    
-    /* Texte en surbrillance */
-    .peintre-text p span,
-    .renovation-text p span {
-        font-size: 1rem !important;
-    }
-    
-    /* Highlight text */
-    .highlight-text {
-        background: rgba(1, 63, 28, 0.05);
-        padding: 15px;
-        border-left: 4px solid #D4A017;
-        border-radius: 0 8px 8px 0;
-        margin: 20px 0;
-        text-align: left !important;
-    }
-    
-    .highlight-text span {
-        font-size: 1rem !important;
-        color: #013f1c !important;
-        font-weight: 600;
-    }
-    
-    /* Boutons */
-    .peintre-content .btn,
-    .renovation-content .btn {
-        display: block;
-        margin: 20px auto 0 auto;
-        max-width: 250px;
-        text-align: center;
-    }
     /* Atouts */
     .atouts-container {
         grid-template-columns: 1fr;
@@ -2314,6 +2241,131 @@ nav ul li a:not(.btn):not(.info-link):hover {
         padding: 14px 25px;
         font-size: 16px;
     }
+    /* Header principal */
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        top: unset;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .header-container {
+        height: 60px;
+        padding: 5px 0;
+    }
+    
+    /* Logo réduit */
+    .logo img {
+        height: 40px !important;
+        margin-right: 10px !important;
+    }
+    
+    .logo span {
+        font-size: 0.8em !important;
+    }
+    
+    /* Menu hamburger positionné à droite */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #013f1c;
+        color: white;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+    
+    /* Navigation mobile - menu qui s'ouvre vers le haut */
+    nav ul {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        border-radius: 20px 20px 0 0;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 8px 0;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 8px;
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Cacher certains éléments sur mobile */
+    .settings-menu,
+    .info-link .info-text {
+        display: none;
+    }
+    
+    /* Afficher seulement l'icône pour Infos pratiques */
+    .info-link {
+        padding: 8px;
+        border: 2px solid #013f1c;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .info-link .info-icon {
+        margin: 0;
+    }
+    
+    /* Bouton contact simplifié */
+    nav ul li:last-child a.btn {
+        background: #D4A017;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    /* Dropdown adapté pour mobile */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    
+    .dropdown-menu li {
+        border-bottom: 1px solid #e0e0e0;
+        margin: 5px 0;
+    }
+    
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    body {
+        padding-bottom: 60px; /* Hauteur du header mobile */
+    }
+    
+    
 
 }
 
