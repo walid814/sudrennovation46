@@ -7,6 +7,161 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour la barre de défilement du carrousel */
+        .carousel-scrollbar-container {
+            width: 80%;
+            max-width: 800px;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin: 30px auto 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .carousel-scrollbar-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .carousel-scrollbar-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100%;
+            background: #D4A017;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            cursor: grab;
+        }
+
+        .carousel-scrollbar-thumb:hover {
+            background: #BF8C15;
+        }
+
+        .carousel-scrollbar-thumb:active {
+            cursor: grabbing;
+            background: #013f1c;
+        }
+
+        .carousel-scrollbar-marks {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-scrollbar-mark {
+            width: 2px;
+            height: 8px;
+            background: #999;
+            border-radius: 1px;
+        }
+
+        .carousel-scrollbar-mark.active {
+            background: #013f1c;
+            height: 12px;
+        }
+
+        /* Amélioration du carrousel existant */
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0 10px 100px;
+            max-width: none;
+            padding: 0;
+            width: calc(100% - 100px);
+        }
+
+        .services-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .carousel-button {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #013f1c;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            z-index: 20;
+            transition: all 0.3s ease;
+            position: static;
+            transform: none;
+        }
+
+        .carousel-button:hover {
+            background-color: #D4A017;
+            transform: scale(1.15);
+        }
+
+        .carousel-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-button:disabled:hover {
+            background-color: #ccc;
+            transform: none;
+        }
+
+        /* Indicateur de position */
+        .carousel-position {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-carousel {
+                margin: 10px 0;
+                width: 100%;
+                padding: 0 10px;
+            }
+            
+            .carousel-scrollbar-container {
+                width: 90%;
+                margin: 20px auto 15px;
+            }
+            
+            .carousel-button {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -304,9 +459,24 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Barre de défilement -->
+            <div class="carousel-scrollbar-container">
+                <div class="carousel-scrollbar-track">
+                    <div class="carousel-scrollbar-thumb" id="scrollbar-thumb"></div>
+                </div>
+                <div class="carousel-scrollbar-marks" id="scrollbar-marks"></div>
+            </div>
+            
+            <!-- Navigation -->
             <div class="carousel-nav">
-                <button class="carousel-button prev"></button>
-                <button class="carousel-button next"></button>
+                <button class="carousel-button prev" id="prev-button">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-position" id="carousel-position">1/5</div>
+                <button class="carousel-button next" id="next-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -607,124 +777,135 @@
             }
         });
 
-        // Carousel functionality with drag/swipe support
+        // Carousel functionality avec barre de défilement
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.services-track');
             const cards = document.querySelectorAll('.service-card');
-            const prevButton = document.querySelector('.carousel-button.prev');
-            const nextButton = document.querySelector('.carousel-button.next');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const scrollbarThumb = document.getElementById('scrollbar-thumb');
+            const scrollbarContainer = document.querySelector('.carousel-scrollbar-container');
+            const scrollbarMarks = document.getElementById('scrollbar-marks');
+            const positionIndicator = document.getElementById('carousel-position');
 
             if (track && cards.length > 0) {
-                let index = 0;
-                let startX = 0;
-                let currentX = 0;
-                let isDragging = false;
+                let currentIndex = 0;
                 const isMobile = window.innerWidth <= 768;
                 const visibleCards = isMobile ? 1 : 3;
-                const cardWidth = cards[0].offsetWidth + 20;
-                const maxIndex = cards.length - visibleCards;
+                const cardWidth = cards[0].offsetWidth + 30;
+                const totalCards = cards.length;
+                const maxIndex = Math.max(0, totalCards - visibleCards);
 
-                // Function to update carousel position
+                // Créer les marques sur la barre de défilement
+                for (let i = 0; i < totalCards; i++) {
+                    const mark = document.createElement('div');
+                    mark.className = 'carousel-scrollbar-mark';
+                    if (i === 0) mark.classList.add('active');
+                    scrollbarMarks.appendChild(mark);
+                }
+
+                // Mettre à jour la position et la barre de défilement
                 function updateCarousel() {
-                    track.style.transform = `translateX(-${cardWidth * index}px)`;
-                }
-
-                // Next button
-                if (nextButton) {
-                    nextButton.addEventListener('click', () => {
-                        if (index < maxIndex) {
-                            index++;
-                            updateCarousel();
-                        }
+                    const translateX = -currentIndex * cardWidth;
+                    track.style.transform = `translateX(${translateX}px)`;
+                    
+                    // Mettre à jour la barre de défilement
+                    const thumbPosition = (currentIndex / maxIndex) * 100;
+                    scrollbarThumb.style.left = `${thumbPosition}%`;
+                    
+                    // Mettre à jour les marques actives
+                    document.querySelectorAll('.carousel-scrollbar-mark').forEach((mark, index) => {
+                        mark.classList.toggle('active', index === currentIndex);
                     });
+                    
+                    // Mettre à jour l'indicateur de position
+                    positionIndicator.textContent = `${currentIndex + 1}/${totalCards}`;
+                    
+                    // Désactiver les boutons si nécessaire
+                    prevButton.disabled = currentIndex === 0;
+                    nextButton.disabled = currentIndex >= maxIndex;
                 }
 
-                // Previous button
-                if (prevButton) {
-                    prevButton.addEventListener('click', () => {
-                        if (index > 0) {
-                            index--;
-                            updateCarousel();
-                        }
-                    });
-                }
+                // Navigation avec les boutons
+                nextButton.addEventListener('click', () => {
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
 
-                // Touch/Mouse events for dragging
-                track.addEventListener('mousedown', startDrag);
-                track.addEventListener('touchstart', startDrag);
+                prevButton.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
 
-                track.addEventListener('mousemove', drag);
-                track.addEventListener('touchmove', drag);
+                // Navigation avec la barre de défilement
+                let isDragging = false;
 
-                track.addEventListener('mouseup', endDrag);
-                track.addEventListener('mouseleave', endDrag);
-                track.addEventListener('touchend', endDrag);
-
-                function startDrag(e) {
+                scrollbarThumb.addEventListener('mousedown', (e) => {
                     isDragging = true;
-                    startX = getX(e);
-                    currentX = startX;
-                    track.style.cursor = 'grabbing';
-                    track.style.transition = 'none';
-                }
-
-                function drag(e) {
-                    if (!isDragging) return;
-                    
+                    scrollbarThumb.style.cursor = 'grabbing';
                     e.preventDefault();
-                    const x = getX(e);
-                    const diff = x - currentX;
-                    
-                    if (Math.abs(diff) > 5) { // Minimum drag threshold
-                        const transform = -index * cardWidth + (x - startX);
-                        track.style.transform = `translateX(${transform}px)`;
-                        currentX = x;
-                    }
-                }
+                });
 
-                function endDrag(e) {
+                document.addEventListener('mousemove', (e) => {
                     if (!isDragging) return;
                     
+                    const containerRect = scrollbarContainer.getBoundingClientRect();
+                    const relativeX = e.clientX - containerRect.left;
+                    const percentage = Math.max(0, Math.min(1, relativeX / containerRect.width));
+                    
+                    currentIndex = Math.round(percentage * maxIndex);
+                    updateCarousel();
+                });
+
+                document.addEventListener('mouseup', () => {
                     isDragging = false;
-                    track.style.cursor = 'grab';
-                    track.style.transition = 'transform 0.6s ease-in-out';
+                    scrollbarThumb.style.cursor = 'grab';
+                });
+
+                // Clic sur la barre de défilement pour sauter à une position
+                scrollbarContainer.addEventListener('click', (e) => {
+                    const containerRect = scrollbarContainer.getBoundingClientRect();
+                    const relativeX = e.clientX - containerRect.left;
+                    const percentage = Math.max(0, Math.min(1, relativeX / containerRect.width));
                     
-                    const x = getX(e);
-                    const diff = x - startX;
-                    const threshold = cardWidth * 0.2; // 20% of card width
-                    
-                    if (Math.abs(diff) > threshold) {
-                        if (diff > 0 && index > 0) {
-                            // Swipe right - go to previous
-                            index--;
-                        } else if (diff < 0 && index < maxIndex) {
-                            // Swipe left - go to next
-                            index++;
+                    currentIndex = Math.round(percentage * maxIndex);
+                    updateCarousel();
+                });
+
+                // Navigation au clavier
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateCarousel();
+                        }
+                    } else if (e.key === 'ArrowRight') {
+                        if (currentIndex < maxIndex) {
+                            currentIndex++;
+                            updateCarousel();
                         }
                     }
-                    
-                    updateCarousel();
-                }
+                });
 
-                function getX(e) {
-                    return e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-                }
-
-                // Handle window resize
+                // Redimensionnement de la fenêtre
                 window.addEventListener('resize', () => {
                     const isMobileNow = window.innerWidth <= 768;
                     const newVisibleCards = isMobileNow ? 1 : 3;
-                    const newMaxIndex = cards.length - newVisibleCards;
+                    const newMaxIndex = Math.max(0, totalCards - newVisibleCards);
                     
-                    // Adjust index if it exceeds new maximum
-                    if (index > newMaxIndex) {
-                        index = Math.max(0, newMaxIndex);
+                    // Ajuster l'index courant si nécessaire
+                    if (currentIndex > newMaxIndex) {
+                        currentIndex = newMaxIndex;
                     }
                     
                     updateCarousel();
                 });
 
-                // Initial setup
+                // Initialisation
                 updateCarousel();
             }
         });
