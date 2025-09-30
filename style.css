@@ -643,7 +643,7 @@ footer {
     display: flex;
     flex-direction: row-reverse;
     gap: 40px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .renovation-text {
@@ -1085,6 +1085,35 @@ nav ul li.dropdown:hover .dropdown-menu {
     .gallery-item {
         max-width: 100%;
     }
+     .renovation-cahors {
+        padding: 30px 0;
+    }
+    
+    .renovation-text h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .renovation-text p {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+    }
+    
+    .highlight-text {
+        font-size: 0.95rem !important;
+        padding: 10px 12px;
+        margin: 15px 0;
+    }
+    
+    .renovation-cahors .btn {
+        max-width: 250px;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    
+    .renovation-image {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero-content {
@@ -1094,6 +1123,17 @@ nav ul li.dropdown:hover .dropdown-menu {
     
     .hero h1 {
         font-size: 2.5rem !important;
+    }
+    .renovation-content {
+        gap: 30px;
+    }
+    
+    .renovation-text h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .renovation-text p {
+        font-size: 0.95rem !important;
     }
 }
 .highlight-text {
@@ -2114,6 +2154,76 @@ nav ul li a:not(.btn):not(.info-link):hover {
     .about-popup.active {
         right: 0;
     }
+    .renovation-cahors {
+        padding: 40px 0;
+    }
+    
+    .renovation-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .renovation-text {
+        padding-left: 0;
+        padding-right: 0;
+        order: 2; /* Texte après l'image sur mobile */
+    }
+    
+    .renovation-text h2 {
+        font-size: 1.6rem !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .renovation-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .renovation-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .highlight-text {
+        font-size: 1rem !important;
+        padding: 12px 15px;
+        margin: 20px 0;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid #013f1c;
+        border-bottom: 4px solid #013f1c;
+    }
+    
+    .highlight-text span {
+        font-size: 1.1em;
+        display: block;
+        text-align: center;
+    }
+    
+    .renovation-image {
+        order: 1; /* Image avant le texte sur mobile */
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .renovation-image img {
+        border-radius: 8px;
+    }
+    
+    /* Bouton */
+    .renovation-cahors .btn {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 20px auto 0;
+        text-align: center;
+        padding: 14px 25px;
+        font-size: 16px;
+    }
+
 }
 
 /* Styles pour le lien Infos pratiques avec logo */
