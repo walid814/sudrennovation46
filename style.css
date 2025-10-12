@@ -2184,19 +2184,26 @@ nav ul li.dropdown > a:hover {
         );
     }
     
-    .hero-content {
-        margin-left: 0 !important;
-        max-width: 90% !important;
-        text-align: center;
-        padding: 0 15px;
+     .hero-content {
+        margin-top: 20px !important;
+        padding-top: 0 !important;
+        z-index: 10 !important;
+        position: relative !important;
+         margin-left: 0 !important; /* Supprime le décalage gauche */
+        padding: 0 20px; /* Ajoute un peu d’espace sur les côtés */
+    }
+    .hero-content p {
+        text-align: center; /* Centrer les paragraphes aussi pour cohérence */
+    }
+    .hero-content h1 {
+        font-size: 2.2rem !important; /* Augmente la taille du titre */
+        line-height: 1.0;
+        text-align: center; /* Centre le texte sur mobile */
+        margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
     }
     
-    .hero-content p:first-child {
-        font-size: 0.75rem !important;
-        margin-bottom: 8px !important;
-        color: #013f1c !important;
-        font-weight: 600;
-    }
     
     .hero h1 {
         font-size: 1.5rem !important;
@@ -2209,12 +2216,7 @@ nav ul li.dropdown > a:hover {
         display: block;
     }
     
-    .hero-content p:nth-child(3) {
-        font-size: 0.85rem !important;
-        margin-bottom: 20px !important;
-        line-height: 1.4;
-        text-align: center;
-    }
+   
     
     .hero .btn,
     .hero .btn-tel {
@@ -2529,13 +2531,7 @@ nav ul li.dropdown > a:hover {
         font-size: 1.3rem !important;
     }
     
-    .hero-content p:first-child {
-        font-size: 0.7rem !important;
-    }
     
-    .hero-content p:nth-child(3) {
-        font-size: 0.8rem !important;
-    }
     
     .service-card {
         flex: 0 0 90%;
