@@ -377,9 +377,8 @@
             <div class="popup-section">
                 <h3><span style="color: #013f1c">Suivez-nous</span></h3>
                 <div class="social-buttons">
-                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.facebook.com/Sudrenovation46/?paipv=0&eav=Afb9u7VMGwAtQ_AG9jz4cV21Nn_SesUX4xlxEhHE2EK0zvZ-UHV8xYlGRM6VxkFpAvM&_rdr" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>                 
+                    <a href="https://www.instagram.com/sudrenovation46/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -661,9 +660,9 @@
             </div>
             
             <div class="footer-bottom">
-                <p>Haut de page</p>
-                <p class="copyright">&copy; 2023 Sud Rénovation - Tous droits réservés</p>
-            </div>
+    <p><a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i> Haut de page</a></p>
+    <p class="copyright">&copy; 2025 Sud Rénovation - Tous droits réservés</p>
+</div>
         </div>
     </footer>
 
@@ -806,25 +805,26 @@
 
                 // Mettre à jour la position et la barre de défilement
                 function updateCarousel() {
-                    const translateX = -currentIndex * cardWidth;
-                    track.style.transform = `translateX(${translateX}px)`;
-                    
-                    // Mettre à jour la barre de défilement
-                    const thumbPosition = (currentIndex / maxIndex) * 100;
-                    scrollbarThumb.style.left = `${thumbPosition}%`;
-                    
-                    // Mettre à jour les marques actives
-                    document.querySelectorAll('.carousel-scrollbar-mark').forEach((mark, index) => {
-                        mark.classList.toggle('active', index === currentIndex);
-                    });
-                    
-                    // Mettre à jour l'indicateur de position
-                    positionIndicator.textContent = `${currentIndex + 1}/${totalCards}`;
-                    
-                    // Désactiver les boutons si nécessaire
-                    prevButton.disabled = currentIndex === 0;
-                    nextButton.disabled = currentIndex >= maxIndex;
-                }
+    const translateX = -currentIndex * cardWidth;
+    track.style.transform = `translateX(${translateX}px)`;
+    
+    // Mettre à jour la barre de défilement
+    const thumbPosition = (currentIndex / maxIndex) * 100;
+    scrollbarThumb.style.left = `${thumbPosition}%`;
+    
+    // Mettre à jour les marques actives
+    document.querySelectorAll('.carousel-scrollbar-mark').forEach((mark, index) => {
+        mark.classList.toggle('active', index === currentIndex);
+    });
+    
+    // CORRECTION ICI : Afficher la position actuelle / nombre total de PAGES
+    const totalPages = maxIndex + 1;
+    positionIndicator.textContent = `${currentIndex + 1}/${totalPages}`;
+    
+    // Désactiver les boutons si nécessaire
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= maxIndex;
+}
 
                 // Navigation avec les boutons
                 nextButton.addEventListener('click', () => {
@@ -1083,6 +1083,73 @@
                 e.stopPropagation();
             });
         });
+        // Fonctionnalité "Haut de page"
+document.addEventListener('DOMContentLoaded', function() {
+    // Créer un élément pour le bouton fixed (optionnel)
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    backToTopBtn.className = 'back-to-top-fixed';
+    backToTopBtn.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: #013f1c;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    `;
+    
+    document.body.appendChild(backToTopBtn);
+
+    // Gérer l'affichage du bouton fixed
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Fonction pour remonter en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Événements pour les deux boutons
+    backToTopBtn.addEventListener('click', scrollToTop);
+    
+    // Pour le lien dans le footer
+    document.querySelectorAll('.back-to-top').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToTop();
+        });
+    });
+
+    // Style au survol pour le bouton fixed
+    backToTopBtn.addEventListener('mouseenter', function() {
+        this.style.background = '#D4A017';
+        this.style.transform = 'translateY(-2px)';
+    });
+
+    backToTopBtn.addEventListener('mouseleave', function() {
+        this.style.background = '#013f1c';
+        this.style.transform = 'translateY(0)';
+    });
+});
     </script>
 </body>
 </html>
