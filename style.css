@@ -2093,34 +2093,71 @@ nav ul li.dropdown > a:hover {
     }
     
     .header-container {
-        height: 70px;
-        padding: 5px 0;
+        height: 80px !important;
+        padding: 8px 0 !important;
     }
     
     .logo img {
-        height: 50px !important;
-        margin-right: 10px !important;
+        height: 70px !important;
+        margin-right: 15px !important;
     }
     
     .logo span {
-        font-size: 0.9em !important;
+        font-size: 1.1em !important;
+    }
+    .logo span span:first-child {
+        font-size: 1.3em !important;
+    }
+    
+    .logo span span:last-child {
+        font-size: 1.1em !important;
     }
     
     .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: #013f1c;
-        color: white;
-        border-radius: 50%;
-        font-size: 18px;
+        display: none;
+    }
+    /* Ajuster la section hero pour descendre le contenu */
+    .contact-section {
+        padding: 120px 0 80px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* Augmenter la taille du titre principal */
+    .contact-info h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 25px !important;
+        text-align: center;
+        margin: 10px;
+    }
+    .contact-section .container {
+        padding-top: 20px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 20px !important;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .contact-info h4 {
+        font-size: 1.1rem !important;
+        padding: 20px !important;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 25px !important;
+    }
+
+    /* Ajuster l'espacement global */
+    .contact-container {
+        gap: 30px !important;
+        margin-top: 10px !important;
     }
     
+    /* Ajuster le menu mobile pour compenser le header plus grand */
     body {
-        padding-top: 70px;
-        padding-bottom: 70px;
+        padding-top: 80px !important;
+        padding-bottom: 70px !important;
     }
     
     .hero {
@@ -2434,17 +2471,33 @@ nav ul li.dropdown > a:hover {
 
 @media (max-width: 480px) {
     .header-container {
-        height: 60px;
+        height: 75px !important;
     }
     
     .logo img {
-        height: 40px !important;
+        height: 60px !important;
+        margin-right: 12px !important;
     }
     
     .logo span {
         font-size: 0.8em !important;
     }
+    .contact-section {
+        padding: 100px 0 60px 0 !important;
+    }
     
+    .contact-info h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .contact-info h4 {
+        font-size: 1rem !important;
+        padding: 15px !important;
+    }
     .mobile-nav {
         padding: 6px 0;
     }
