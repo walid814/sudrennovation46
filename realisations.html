@@ -399,10 +399,14 @@
 
         .before-label {
             left: 12px;
+                z-index: 15; /* Augmenter le z-index pour qu'il soit au-dessus */
+
         }
 
         .after-label {
             right: 12px;
+                z-index: 15; /* Même z-index pour les deux labels */
+
         }
 
         .instructions {
@@ -563,41 +567,44 @@
             white-space: nowrap;
         }
 
-        .desktop-nav ul li.dropdown .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: white;
-            min-width: 220px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            z-index: 100;
-            flex-direction: column;
-            padding: 10px 0;
-        }
+       nav ul li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Commence juste en dessous du lien */
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 100;
+    flex-direction: column;
+    padding: 10px 0;
+    margin-top: 0; /* Supprime tout espace supplémentaire */
+}
+nav ul li.dropdown .dropdown-menu li {
+    margin: 0;
+    height: auto; /* Hauteur automatique pour les sous-éléments */
+     width: 100%;
+}
 
-        .desktop-nav ul li.dropdown .dropdown-menu li {
-            margin: 0;
-        }
+nav ul li.dropdown .dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    font-weight: 500;
+      transition: color 0.3s ease;
+    height: auto; /* Hauteur automatique */
+    white-space: normal; /* Permet le retour à la ligne si nécessaire */
+}
+nav ul li.dropdown .dropdown-menu li a:hover {
+    background-color: transparent;
+ color: #00a859;
+    text-shadow: 0 0 1px rgba(0, 168, 89, 0.3); /* Légère ombre pour contraste */}
 
-        .desktop-nav ul li.dropdown .dropdown-menu li a {
-            padding: 10px 20px;
-            display: block;
-            color: #333;
-            font-weight: 500;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .desktop-nav ul li.dropdown .dropdown-menu li a:hover {
-            background-color: #03550e;
-            color: white;
-        }
-
-        /* Affiche le menu au hover */
-        .desktop-nav ul li.dropdown:hover .dropdown-menu {
-            display: flex;
-        }
+/* Affiche le menu au hover */
+nav ul li.dropdown:hover .dropdown-menu {
+    display: flex;
+}
 
         /* Styles pour le menu des paramètres */
         .settings-menu {
@@ -1093,6 +1100,32 @@
                 padding-left: 20px;
             }
         }
+        #avant, #apres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+/* Les deux sont visibles au départ */
+#avant {
+  opacity: 1;
+  z-index: 2;
+}
+
+#apres {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Quand on survole le conteneur, les deux disparaissent */
+.container:hover #avant,
+.container:hover #apres {
+  opacity: 0;
+}
+
     </style>
 </head>
 <body>
@@ -1114,8 +1147,8 @@
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li class="dropdown active">
-                        <a href="#" class="active">Services <i class="fas fa-caret-down"></i></a>
+<li class="dropdown">
+                            <a href="#">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="ravalement.html">Ravalement / Traitement de façades</a></li>
                             <li><a href="couvreur.html">Couvreur</a></li>
@@ -1337,12 +1370,12 @@
                 <div class="comparison-section">
                     <h3 class="comparison-title">Projet 1</h3>
                     <div class="comparison-container">
-                        <div class="before-container">
-                            <img src="images/real1avant.jpg" alt="Avant travaux">
+                        <div class="container">
+                            <img src="images/real1apres.jpg" alt="Avant travaux">
                             <div class="image-label before-label">Avant</div>
                         </div>
                         <div class="after-container">
-                            <img src="images/real1apres.jpg" alt="Après travaux">
+                            <img src="images/real1avant.jpg" alt="Après travaux">
                             <div class="image-label after-label">Après</div>
                         </div>
                         <div class="comparison-slider"></div>
@@ -1353,12 +1386,12 @@
                 <div class="comparison-section">
                     <h3 class="comparison-title">Projet 2</h3>
                     <div class="comparison-container">
-                        <div class="before-container">
-                            <img src="images/real2avant.jpg" alt="Avant travaux">
+                        <div class="container">
+                            <img src="images/real2apres.jpg" alt="Avant travaux">
                             <div class="image-label before-label">Avant</div>
                         </div>
                         <div class="after-container">
-                            <img src="images/real2apres.jpg" alt="Après travaux">
+                            <img src="images/real2avant.jpg" alt="Après travaux">
                             <div class="image-label after-label">Après</div>
                         </div>
                         <div class="comparison-slider"></div>
@@ -1369,12 +1402,12 @@
                 <div class="comparison-section">
                     <h3 class="comparison-title">Projet 3</h3>
                     <div class="comparison-container">
-                        <div class="before-container">
-                            <img src="images/real3avant.jpg" alt="Avant travaux">
+                        <div class="container">
+                            <img src="images/real3apres.jpg" alt="Avant travaux">
                             <div class="image-label before-label">Avant</div>
                         </div>
                         <div class="after-container">
-                            <img src="images/real3apres.jpg" alt="Après travaux">
+                            <img src="images/real3avant.jpg" alt="Après travaux">
                             <div class="image-label after-label">Après</div>
                         </div>
                         <div class="comparison-slider"></div>
@@ -1385,12 +1418,12 @@
                 <div class="comparison-section">
                     <h3 class="comparison-title">Projet 5</h3>
                     <div class="comparison-container">
-                        <div class="before-container">
-                            <img src="images/real5avant.jpg" alt="Avant travaux">
+                        <div class="container">
+                            <img src="images/real5apres.jpg" alt="Avant travaux">
                             <div class="image-label before-label">Avant</div>
                         </div>
                         <div class="after-container">
-                            <img src="images/real5apres.jpg" alt="Après travaux">
+                            <img src="images/real5avant.jpg" alt="Après travaux">
                             <div class="image-label after-label">Après</div>
                         </div>
                         <div class="comparison-slider"></div>
@@ -1401,12 +1434,12 @@
                 <div class="comparison-section">
                     <h3 class="comparison-title">Projet 7</h3>
                     <div class="comparison-container">
-                        <div class="before-container">
-                            <img src="images/real7avant.jpg" alt="Avant travaux">
+                        <div class="container">
+                            <img src="images/real7apres.jpg" alt="Avant travaux">
                             <div class="image-label before-label">Avant</div>
                         </div>
                         <div class="after-container">
-                            <img src="images/real7apres.jpg" alt="Après travaux">
+                            <img src="images/real7avant.jpg" alt="Après travaux">
                             <div class="image-label after-label">Après</div>
                         </div>
                         <div class="comparison-slider"></div>
@@ -1584,63 +1617,90 @@
         });
 
         // Comparison slider functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const comparisons = document.querySelectorAll('.comparison-container');
+       // Comparison slider functionality
+// Comparison slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const comparisons = document.querySelectorAll('.comparison-container');
+    
+    comparisons.forEach(container => {
+        const slider = container.querySelector('.comparison-slider');
+        const afterImg = container.querySelector('.after-container img');
+        const beforeLabel = container.querySelector('.before-label');
+        const afterLabel = container.querySelector('.after-label');
+        let isMoving = false;
+        
+        // Position initiale
+        slider.style.left = '50%';
+        afterImg.style.clipPath = 'polygon(0 0, 50% 0, 50% 100%, 0 100%)';
+        
+        function moveSlider(e) {
+            if (!isMoving) return;
             
-            comparisons.forEach(container => {
-                const slider = container.querySelector('.comparison-slider');
-                const afterImg = container.querySelector('.after-container img');
-                let isMoving = false;
-                
-                // Position initiale
-                slider.style.left = '50%';
-                afterImg.style.clipPath = 'polygon(0 0, 50% 0, 50% 100%, 0 100%)';
-                
-                function moveSlider(e) {
-                    if (!isMoving) return;
-                    
-                    let rect = container.getBoundingClientRect();
-                    let position;
-                    
-                    if (e.type.includes('mouse')) {
-                        position = (e.clientX - rect.left) / rect.width;
-                    } else {
-                        position = (e.touches[0].clientX - rect.left) / rect.width;
-                    }
-                    
-                    if (position < 0) position = 0;
-                    if (position > 1) position = 1;
-                    
-                    const percentage = position * 100;
-                    slider.style.left = percentage + '%';
-                    afterImg.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
-                }
-                
-                // Événements souris
-                slider.addEventListener('mousedown', () => {
-                    isMoving = true;
-                    slider.style.cursor = 'grabbing';
-                });
-                
-                document.addEventListener('mouseup', () => {
-                    isMoving = false;
-                    slider.style.cursor = 'ew-resize';
-                });
-                
-                document.addEventListener('mousemove', moveSlider);
-                
-                // Événements tactiles
-                slider.addEventListener('touchstart', () => {
-                    isMoving = true;
-                });
-                
-                document.addEventListener('touchend', () => {
-                    isMoving = false;
-                });
-                
-                document.addEventListener('touchmove', moveSlider);
-            });
+            let rect = container.getBoundingClientRect();
+            let position;
+            
+            if (e.type.includes('mouse')) {
+                position = (e.clientX - rect.left) / rect.width;
+            } else {
+                position = (e.touches[0].clientX - rect.left) / rect.width;
+            }
+            
+            if (position < 0) position = 0;
+            if (position > 1) position = 1;
+            
+            const percentage = position * 100;
+            slider.style.left = percentage + '%';
+            afterImg.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+            
+            // Gestion de l'opacité des labels
+            if (percentage <= 10) {
+                // Curseur tout à gauche - "Avant" disparaît, "Après" visible
+                beforeLabel.style.opacity = '0';
+                afterLabel.style.opacity = '1';
+            } else if (percentage >= 90) {
+                // Curseur tout à droite - "Avant" visible, "Après" disparaît
+                beforeLabel.style.opacity = '1';
+                afterLabel.style.opacity = '0';
+            } else {
+                // Position intermédiaire - les deux labels sont visibles
+                beforeLabel.style.opacity = '1';
+                afterLabel.style.opacity = '1';
+            }
+        }
+        
+        // Événements souris
+        slider.addEventListener('mousedown', () => {
+            isMoving = true;
+            slider.style.cursor = 'grabbing';
         });
+        
+        document.addEventListener('mouseup', () => {
+            isMoving = false;
+            slider.style.cursor = 'ew-resize';
+        });
+        
+        document.addEventListener('mousemove', moveSlider);
+        
+        // Événements tactiles
+        slider.addEventListener('touchstart', () => {
+            isMoving = true;
+        });
+        
+        document.addEventListener('touchend', () => {
+            isMoving = false;
+        });
+        
+        document.addEventListener('touchmove', moveSlider);
+        
+        // Initialiser l'opacité des labels (les deux visibles au début)
+        beforeLabel.style.opacity = '1';
+        afterLabel.style.opacity = '1';
+        
+        // S'assurer que les labels ont le bon z-index
+        beforeLabel.style.zIndex = '15';
+        afterLabel.style.zIndex = '15';
+    });
+});
 
         // Settings functionality
         document.addEventListener('DOMContentLoaded', function() {

@@ -2394,3 +2394,18 @@ nav ul li a:not(.btn) {
         display: block;
     }
 }
+/* CORRECTION MENUS DÉROULANTS */
+nav ul li.dropdown .dropdown-menu {
+    display: none !important; /* Caché par défaut */
+}
+
+nav ul li.dropdown:hover .dropdown-menu {
+    display: flex !important; /* Affiché uniquement au survol */
+}
+
+/* Pour mobile : menu déroulant cliquable */
+@media (max-width: 768px) {
+    nav ul li.dropdown.active .dropdown-menu {
+        display: flex !important;
+    }
+}
