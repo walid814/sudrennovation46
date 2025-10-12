@@ -2729,3 +2729,63 @@ nav ul > li > a.btn:hover::after {
         box-shadow: 0 4px 12px rgba(212, 160, 23, 0.3);
     }
 }
+/* Correction du trait sur mobile pour la page Réalisations */
+@media (max-width: 768px) {
+    .mobile-nav li.active a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background-color: #013f1c;
+        border-radius: 1px;
+    }
+    
+    /* S'assurer que seul l'élément actif a le trait */
+    .mobile-nav li:not(.active) a::after {
+        display: none;
+    }
+    
+    /* Correction spécifique pour la page Réalisations */
+    .mobile-nav li a[href="realisations.html"].active::after {
+        background-color: #013f1c;
+    }
+    
+    .mobile-nav li a[href="index.html"].active::after {
+        background-color: #013f1c;
+    }
+}
+/* Correction pour l'icône Info pratiques sur mobile */
+@media (max-width: 768px) {
+    .mobile-nav .info-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .mobile-nav .info-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: #013f1c;
+        color: white;
+        border-radius: 50%;
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+    
+    .mobile-nav .info-text {
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
+    
+    /* S'assurer que l'icône reste visible */
+    .mobile-nav .info-link .info-icon i {
+        display: block !important;
+    }
+}
