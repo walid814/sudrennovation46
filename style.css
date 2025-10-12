@@ -2472,7 +2472,6 @@ nav ul li.dropdown > a:hover {
 @media (max-width: 480px) {
     .header-container {
         height: 75px !important;
-        
     }
     
     .logo img {
