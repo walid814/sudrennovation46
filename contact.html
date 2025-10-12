@@ -585,10 +585,76 @@
                 height: 150px;
             }
         }
+        /* === CORRECTIONS SPÉCIFIQUES À LA PAGE CONTACT === */
+
+/* Désactiver le trait vert pour tous les liens sauf l'élément actif */
+body:not(.index-page) nav ul li:not(.active) > a:not(.btn):hover::after {
+    opacity: 0 !important;
+}
+
+/* S'assurer que seul l'élément Contact a le trait vert */
+body nav ul li.active > a:not(.btn)::after {
+    opacity: 1 !important;
+    background-color: #013f1c;
+}
+
+/* Correction spécifique pour la navigation mobile sur la page Contact */
+@media (max-width: 768px) {
+    .mobile-nav li a::after {
+        display: none !important;
+    }
+    
+    .mobile-nav li.active a::after {
+        display: block !important;
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background-color: #013f1c;
+        border-radius: 1px;
+    }
+    
+    /* S'assurer que Services n'a pas le trait sur la page Contact */
+    .mobile-nav li:not(.active) a::after {
+        display: none !important;
+    }
+}
+
+/* Correction pour le logo Infos pratiques sur mobile */
+@media (max-width: 768px) {
+    .mobile-nav .info-link {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 8px !important;
+    }
+    
+    .mobile-nav .info-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 22px !important;
+        height: 22px !important;
+        background-color: #013f1c;
+        color: white;
+        border-radius: 50%;
+        font-size: 11px !important;
+        margin-bottom: 2px;
+    }
+    
+    .mobile-nav .info-text {
+        font-size: 0.65rem;
+        white-space: nowrap;
+        display: block !important;
+    }
+}
     </style>
 </head>
-<body>
-    <!-- Header -->
+<body class="contact-page">    <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo" style="font-size: 22px; display: flex; align-items: center;">
@@ -693,7 +759,7 @@
                     <span>Accueil</span>
                 </a>
             </li>
-            <li class="dropdown active">
+            <li class="dropdown">
                 <a href="#">
                     <i class="fas fa-concierge-bell"></i>
                     <span>Services</span>
