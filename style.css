@@ -2094,6 +2094,8 @@ nav ul li.dropdown > a:hover {
      .hero-content h1 {
         font-size: 2.2rem !important;
         line-height: 1.2 !important;
+                margin-bottom: 15px !important;
+
     }
     
     .hero-content {
@@ -2101,10 +2103,12 @@ nav ul li.dropdown > a:hover {
         margin-right: 20px !important;
         max-width: 100% !important;
         text-align: center !important;
+        padding: 0 15px;
     }
     
-    .hero-content p {
+     .hero-content p {
         font-size: 1.1rem !important;
+        margin-bottom: 25px !important;
     }
     .header-container {
         height: 80px !important;
@@ -2198,19 +2202,9 @@ nav ul li.dropdown > a:hover {
         );
     }
     
-    .hero-content {
-        margin-left: 0 !important;
-        max-width: 90% !important;
-        text-align: center;
-        padding: 0 15px;
-    }
     
-    .hero-content p:first-child {
-        font-size: 0.75rem !important;
-        margin-bottom: 8px !important;
-        color: #013f1c !important;
-        font-weight: 600;
-    }
+    
+    
     
     .hero h1 {
         font-size: 1.5rem !important;
@@ -2223,12 +2217,6 @@ nav ul li.dropdown > a:hover {
         display: block;
     }
     
-    .hero-content p:nth-child(3) {
-        font-size: 0.85rem !important;
-        margin-bottom: 20px !important;
-        line-height: 1.4;
-        text-align: center;
-    }
     
     .hero .btn,
     .hero .btn-tel {
@@ -2588,8 +2576,10 @@ nav ul li.dropdown > a:hover {
     }
     
     .btn, .btn-tel {
-        padding: 10px 15px;
-        font-size: 13px;
+        display: inline-block;
+        margin: 5px 8px !important;
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
     }
 }
 
