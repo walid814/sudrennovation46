@@ -348,6 +348,46 @@
     .services-carousel:active {
         cursor: grabbing;
     }
+    .atouts-container {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    gap: 15px;
+    /* MODIFICATIONS POUR PRENDRE TOUTE LA LARGEUR */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%; /* ← PREND TOUTE LA LARGEUR */
+    margin: 10px 0; /* ← MARGES SIMPLIFIÉES */
+    padding: 0 15px; /* ← ESPACE SUR LES CÔTÉS */
+}
+
+.atout-card {
+    width: 100%; /* ← PREND TOUTE LA LARGEUR DISPONIBLE */
+    min-height: 200px;
+    padding: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.atout-icon {
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.atout-card h3 {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.atout-card p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+}
 }
 
 /* Styles desktop pour hero-content */
