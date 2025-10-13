@@ -2580,14 +2580,7 @@ nav ul li.dropdown > a:hover {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .hero-content {
-        margin-left: 100px !important;
-        max-width: 500px !important;
-    }
     
-    .hero h1 {
-        font-size: 2.5rem !important;
-    }
     
     .renovation-content {
         gap: 30px;
