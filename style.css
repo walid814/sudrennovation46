@@ -2295,62 +2295,45 @@ nav ul li.dropdown > a:hover {
         font-size: 1.1rem !important;
     }
     
-    .atouts-container {
-        grid-template-columns: 1fr;
-        margin-left: 0;
-        gap: 15px;
-        /* AJOUTER CES LIGNES POUR CENTRER */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 400px; /* Limite la largeur pour éviter que ça s'étire trop */
-        margin: 10px 20px 10px 10px; /* ← DÉCALAGE VERS LA GAUCHE ICI */
-        padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
-    }
-    
-    .atouts-container {
+   .atouts-container {
     grid-template-columns: 1fr;
     margin-left: 0;
     gap: 15px;
-    /* AJOUTER CES LIGNES POUR CENTRER */
+    /* MODIFICATIONS POUR PRENDRE TOUTE LA LARGEUR */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 500px; /* ← AUGMENTÉ DE 400px À 500px */
-    margin: 10px 20px 10px 10px;
-    padding: 0 20px;
+    max-width: 100%; /* ← PREND TOUTE LA LARGEUR */
+    margin: 10px 0; /* ← MARGES SIMPLIFIÉES */
+    padding: 0 15px; /* ← ESPACE SUR LES CÔTÉS */
 }
 
 .atout-card {
-    width: 100%;
+    width: 100%; /* ← PREND TOUTE LA LARGEUR DISPONIBLE */
     min-height: 200px;
-    padding: 25px; /* ← AUGMENTÉ LE PADDING */
-    /* AJOUTER POUR S'ASSURER QUE LES CARTES SONT BIEN CENTRÉES */
+    padding: 25px;
     text-align: center;
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    box-sizing: border-box;
 }
 
 .atout-icon {
-    font-size: 2.2rem; /* ← LÉGÈREMENT AUGMENTÉ */
-    /* OPTIONNEL : Centrer l'icône */
+    font-size: 2.2rem;
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 }
 
 .atout-card h3 {
-    font-size: 1.3rem; /* ← AUGMENTÉ */
-    text-align: center; /* S'assurer que le titre est centré */
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 .atout-card p {
-    font-size: 1rem; /* ← OPTIONNEL : Augmenter la taille du texte */
-    text-align: center; /* S'assurer que le texte est centré */
-    line-height: 1.5; /* ← AMÉLIORER LA LISIBILITÉ */
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
 }
     
     .gallery {
