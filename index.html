@@ -162,13 +162,32 @@
             }
         }
         /* Correction de la superposition sur mobile */
+/* CORRECTION HERO SUR MOBILE */
 @media (max-width: 768px) {
     .hero {
         height: 60vh !important;
         margin-top: 0 !important;
-        margin-top: 20px !important;
         padding-top: 20px !important;
         padding-bottom: 20px !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding-left: 0 !important;
+    }
+    
+    .hero::before {
+        left: 0 !important;
+        background-position: center center !important;
+    }
+    
+    .hero::after {
+        left: 0 !important;
+        background: linear-gradient(
+            to bottom, 
+            rgba(237, 245, 247, 0.3) 0%,
+            rgba(237, 245, 247, 0.6) 30%,
+            rgba(237, 245, 247, 0.8) 60%,
+            rgba(237, 245, 247, 1) 100%
+        ) !important;
     }
     
     .hero-content {
@@ -181,6 +200,7 @@
         text-align: center !important;
         max-width: 100% !important;
         width: 100% !important;
+        margin: 0 auto !important;
     }
     
     .hero-content p {
@@ -202,6 +222,8 @@
         display: inline-block !important;
         margin: 5px 8px !important;
         width: auto !important;
+        font-size: 14px !important;
+        padding: 10px 20px !important;
     }
     
     .hero::before,
@@ -209,6 +231,36 @@
         top: 0 !important;
         height: 100% !important;
     }
+}
+
+/* Styles desktop pour hero-content */
+.hero-content {
+    text-align: left;
+    margin-left: 180px;
+    max-width: 600px;
+}
+
+/* Correction pour les très petits écrans */
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh !important;
+    }
+    
+    .hero-content {
+        margin-top: 30px !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-content .btn,
+    .hero-content .btn-tel {
+        display: block !important;
+        width: 90% !important;
+        margin: 8px auto !important;
+    }
+
 
     
     /* Ajustement spécifique pour la section peintre-cahors */
@@ -229,6 +281,10 @@
     .peintre-text {
         order: 1 !important;
         margin-bottom: 20px !important;
+    }
+    body {
+        padding-top: 80px !important;
+        padding-bottom: 70px !important;
     }
 }
 
@@ -476,23 +532,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content" style="text-align: left; margin-left: 180px; max-width: 600px;">
-            <p style="font-size: 0.95rem; margin-bottom: 10px; color: #013f1c;">POUR MAINTENIR SON ESTHÉTIQUE ET PROTÉGER VOTRE MAISON</p>
-            <h1>
-                <span style="color: #70471c;">Des professionnels</span><br>
-                <span style="color: #013f1c;">à votre service&nbsp;!</span>
-            </h1>
-            <p><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Notre savoir-faire technique</span> dans le domaine de la toiture garantit des travaux durables.</p>
-            <a href="contact.html" class="btn">
-                <img src="images/messages.png" alt="Contact" style="height:22px; vertical-align:middle; margin-right:8px;">
-                Contactez-nous
-            </a>
-            <a href="tel:0970354139" class="btn-tel" style="margin-left:12px;">
-                <i class="fas fa-phone" style="margin-right:8px;"></i>
-                09 70 35 41 39
-            </a>
-        </div>
-    </section>
+    <div class="hero-content">
+        <p style="font-size: 0.95rem; margin-bottom: 10px; color: #013f1c;">POUR MAINTENIR SON ESTHÉTIQUE ET PROTÉGER VOTRE MAISON</p>
+        <h1>
+            <span style="color: #70471c;">Des professionnels</span><br>
+            <span style="color: #013f1c;">à votre service&nbsp;!</span>
+        </h1>
+        <p><span style="color: #013f1c; font-weight: bold; font-size: 1.1em;">Notre savoir-faire technique</span> dans le domaine de la toiture garantit des travaux durables.</p>
+        <a href="contact.html" class="btn">
+            <img src="images/messages.png" alt="Contact" style="height:22px; vertical-align:middle; margin-right:8px;">
+            Contactez-nous
+        </a>
+        <a href="tel:0970354139" class="btn-tel" style="margin-left:12px;">
+            <i class="fas fa-phone" style="margin-right:8px;"></i>
+            09 70 35 41 39
+        </a>
+    </div>
+</section>
 
     <section class="services">
         <!-- Services Section Modifiée -->
