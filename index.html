@@ -1402,6 +1402,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // Fonctionnalité Swipe pour mobile
 // Fonctionnalité Swipe pour mobile - VERSION CORRIGÉE
+// Fonctionnalité Swipe pour mobile - VERSION CORRIGÉE
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.services-track');
     const carousel = document.querySelector('.services-carousel');
@@ -1409,6 +1410,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!track || !carousel) return;
 
     let startX = 0;
+    let startY = 0;
     let currentX = 0;
     let isDragging = false;
     let currentTranslate = 0;
@@ -1429,7 +1431,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarouselPosition(currentIndex);
 
     // Événements tactiles
-    carousel.addEventListener('touchstart', handleTouchStart, { passive: false });
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
     carousel.addEventListener('touchmove', handleTouchMove, { passive: false });
     carousel.addEventListener('touchend', handleTouchEnd);
 
@@ -1438,20 +1440,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
 
-    // Empêcher le défilement de la page pendant le swipe
-    function preventDefault(e) {
-        e.preventDefault();
-    }
-
     function handleTouchStart(e) {
         if (window.innerWidth > 768) return; // Uniquement sur mobile
         
         startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
         isDragging = true;
         track.style.transition = 'none';
-        
-        // Empêcher le défilement de la page
-        document.addEventListener('touchmove', preventDefault, { passive: false });
         
         // Animation fluide
         cancelAnimationFrame(animationID);
@@ -1461,11 +1456,24 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isDragging || window.innerWidth > 768) return;
         
         currentX = e.touches[0].clientX;
-        const diff = currentX - startX;
+        const currentY = e.touches[0].clientY;
+        
+        // Calculer la distance horizontale et verticale
+        const diffX = currentX - startX;
+        const diffY = currentY - startY;
+        
+        // Si le mouvement est plus vertical qu'horizontal, laisser le défilement normal
+        if (Math.abs(diffY) > Math.abs(diffX)) {
+            isDragging = false;
+            return;
+        }
+        
+        // Empêcher le défilement seulement pour les mouvements horizontaux
+        e.preventDefault();
         
         // Appliquer le déplacement avec une résistance
         const resistance = 0.5;
-        const swipeTranslate = diff * resistance;
+        const swipeTranslate = diffX * resistance;
         
         // Limiter le déplacement pour éviter de dépasser les limites
         const minTranslate = -maxIndex * cardWidth;
@@ -1479,7 +1487,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isDragging || window.innerWidth > 768) return;
         
         isDragging = false;
-        document.removeEventListener('touchmove', preventDefault);
         
         const diff = currentX - startX;
         handleSwipeEnd(diff);
