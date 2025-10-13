@@ -239,59 +239,88 @@
         height: 100% !important;
     }
     .peintre-cahors {
-        padding: 40px 0 20px 0 !important;
         margin-top: 0 !important;
-        background: transparent !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
     }
     
     .peintre-content {
         gap: 20px !important;
-        margin-top: 0 !important;
     }
     
     .peintre-text {
         margin-bottom: 0 !important;
-        padding: 0 15px !important;
-    }
-    
-    .peintre-text h2 {
-        font-size: 1.8rem !important;
-        margin-bottom: 15px !important;
-        text-align: center;
-    }
-    
-    .peintre-text h2:after {
-        display: none !important; /* Supprime le trait sous le titre */
-    }
-    
-    .peintre-text h3 {
-        font-size: 1.3rem !important;
-        margin: 20px 0 12px 0 !important;
-        text-align: center;
-    }
-    
-    .peintre-text p {
-        font-size: 0.95rem !important;
-        line-height: 1.6;
-        margin-bottom: 12px !important;
-        text-align: left;
     }
     
     .peintre-image {
-        margin-top: 10px !important;
-        padding: 10px !important;
+        margin-top: 0 !important;
+    }
+     .service-overlay {
+        opacity: 1 !important;
+        transform: none !important;
+        padding: 15px !important;
+        background: linear-gradient(
+            to top,
+            rgba(1, 61, 28, 0.9) 0%,
+            rgba(1, 61, 28, 0.6) 50%,
+            rgba(1, 61, 28, 0.3) 80%,
+            transparent 100%
+        ) !important;
     }
     
-    .highlight-text {
-        margin: 15px 0 !important;
-        padding: 10px 15px !important;
-        font-size: 1rem !important;
+    .service-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
     
-    .peintre-cahors .btn {
-        margin: 15px auto 0 auto !important;
-        display: block;
-        max-width: 280px;
+    .service-description {
+        opacity: 1 !important;
+        transform: none !important;
+        max-height: none !important;
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        display: block !important;
+    }
+    
+    .service-image-container::after {
+        background: linear-gradient(
+            to top,
+            rgba(1, 61, 28, 0.8) 0%,
+            rgba(1, 61, 28, 0.5) 40%,
+            rgba(1, 61, 28, 0.2) 70%,
+            transparent 100%
+        ) !important;
+    }
+    
+    /* Désactiver les animations sur mobile pour les cartes */
+    .service-card:hover .service-image {
+        transform: none !important;
+    }
+    .services-carousel {
+        margin: 0 !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+    }
+    
+    .service-card {
+        flex: 0 0 90% !important;
+        height: 280px !important;
+        margin: 0 5px !important;
+    }
+    
+    .service-image-container {
+        height: 280px !important;
+    }
+    
+    .services-track {
+        gap: 15px !important;
+    }
+    
+    .carousel-scrollbar-container {
+        width: 95% !important;
+        margin: 15px auto 10px !important;
     }
 }
 
