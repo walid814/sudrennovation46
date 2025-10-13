@@ -2306,7 +2306,7 @@ nav ul li.dropdown > a:hover {
         justify-content: center;
         width: 100%;
         max-width: 400px; /* Limite la largeur pour éviter que ça s'étire trop */
-margin: 5px 5px 5px 15px; /* haut:5px, droite:5px, bas:5px, gauche:15px */
+    margin: 2px 2px 2px 10px; /* haut:2px, droite:2px, bas:2px, gauche:10px */
         padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
     }
     
