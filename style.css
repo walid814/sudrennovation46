@@ -2922,3 +2922,27 @@ nav ul > li > a.btn:hover::after {
 body.contact-page nav ul li:not(.active) > a:not(.btn):hover::after {
     opacity: 0 !important;
 }
+
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .logo {
+        margin: 0 auto;
+    }
+    
+    .menu-toggle {
+        left: 15px;
+    }
+    
+    /* Optionnel : réduire la taille du logo sur mobile */
+    .logo img {
+        height: 70px !important;
+    }
+    
+    .logo span {
+        font-size: 1.2em !important;
+    }
+}
