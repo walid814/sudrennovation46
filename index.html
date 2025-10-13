@@ -153,13 +153,26 @@
             .carousel-scrollbar-container {
                 width: 90%;
                 margin: 20px auto 15px;
+                        display: none; /* Cache la barre de défilement sur mobile */
+
             }
             
             .carousel-button {
                 width: 45px;
                 height: 45px;
                 font-size: 18px;
+                        display: none; /* Cache les boutons sur mobile */
+
             }
+            .carousel-nav {
+        /* AJOUTER CES LIGNES */
+        display: none; /* Cache toute la navigation sur mobile */
+    }
+    
+    .carousel-position {
+        /* AJOUTER CES LIGNES */
+        display: none; /* Cache l'indicateur de position sur mobile */
+    }
         }
         /* Correction de la superposition sur mobile */
 /* CORRECTION HERO SUR MOBILE */
@@ -1142,18 +1155,37 @@
                 });
 
                 // Redimensionnement de la fenêtre
-                window.addEventListener('resize', () => {
-                    const isMobileNow = window.innerWidth <= 768;
-                    const newVisibleCards = isMobileNow ? 1 : 3;
-                    const newMaxIndex = Math.max(0, totalCards - newVisibleCards);
-                    
-                    // Ajuster l'index courant si nécessaire
-                    if (currentIndex > newMaxIndex) {
-                        currentIndex = newMaxIndex;
-                    }
-                    
-                    updateCarousel();
-                });
+                // Redimensionnement de la fenêtre
+window.addEventListener('resize', () => {
+    const isMobileNow = window.innerWidth <= 768;
+    const newVisibleCards = isMobileNow ? 1 : 3;
+    const newMaxIndex = Math.max(0, totalCards - newVisibleCards);
+    
+    // Ajuster l'index courant si nécessaire
+    if (currentIndex > newMaxIndex) {
+        currentIndex = newMaxIndex;
+    }
+    
+    // Recalculer la largeur des cartes
+    const newCardWidth = cards[0].offsetWidth + 30;
+    
+    // Mettre à jour la position
+    updateCarouselPosition(currentIndex);
+    
+    // AJOUTER CES LIGNES : Masquer/afficher les éléments selon le device
+    const scrollbarContainer = document.querySelector('.carousel-scrollbar-container');
+    const carouselNav = document.querySelector('.carousel-nav');
+    
+    if (isMobileNow) {
+        // Sur mobile : cacher les éléments
+        if (scrollbarContainer) scrollbarContainer.style.display = 'none';
+        if (carouselNav) carouselNav.style.display = 'none';
+    } else {
+        // Sur desktop : afficher les éléments
+        if (scrollbarContainer) scrollbarContainer.style.display = 'block';
+        if (carouselNav) carouselNav.style.display = 'flex';
+    }
+});
 
                 // Initialisation
                 updateCarousel();
