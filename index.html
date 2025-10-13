@@ -211,12 +211,20 @@
     
     .hero-content h1 {
         font-size: 2.2rem !important;
-        line-height: 1.2 !important;
+        line-height: 1.1 !important; /* Réduit l'espace entre les lignes */
         text-align: center !important;
         margin: 0 auto 15px auto !important;
         text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
     }
-    
+
+    .hero-content h1 br {
+        display: block !important; /* Assure que le saut de ligne fonctionne */
+        margin-bottom: 2px !important; /* Réduit l'espace après le br */
+    }
+    .hero-content h1 span {
+        display: block !important;
+        line-height: 1.1 !important; /* Espacement identique pour les spans */
+    }
     .hero-content .btn,
     .hero-content .btn-tel {
         display: inline-block !important;
