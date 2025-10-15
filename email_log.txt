@@ -22,3 +22,21 @@ Sujet: Demande de devis / tarifs
 De: john prime (john.prime@outlook.fr)
 Sujet: Demande de devis / tarifs
 ❌ Erreur d'envoi: 
+
+==============================
+[2025-10-15 16:21:59] Tentative d'envoi à : walid.c69@outlook.fr
+De : john prime QUI PUE SUR FN <john.prime@outlook.fr>
+Service : Autre demande
+Message : ta maman est tres gentil
+❌ ERREUR : Email non envoyé.
+Détail : Aucun message d'erreur PHP
+==============================
+
+==============================
+[2025-10-15 16:24:35] Tentative d'envoi à : walid.c69@outlook.fr
+De : john prime <john.prime@outlook.fr>
+Service : Demande de devis / tarifs
+Message : adadad
+❌ ERREUR : Email non envoyé.
+Détail : Aucun message d'erreur PHP
+==============================
