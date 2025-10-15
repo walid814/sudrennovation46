@@ -3277,3 +3277,9 @@ body.dark-theme a:hover,
 body.dark-theme button:hover {
     transform: translateY(-1px);
 }
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+    transition: none !important;
+    animation: none !important;
+}
