@@ -1234,6 +1234,7 @@ window.addEventListener('resize', () => {
 
         // Gestion des paramètres d'affichage
         // Gestion des paramètres d'affichage - VERSION COMPLÉTÉE
+// Gestion des paramètres d'affichage - VERSION FINALE
 document.addEventListener('DOMContentLoaded', function() {
     const themeButtons = document.querySelectorAll('.theme-btn');
     const highContrastToggle = document.getElementById('high-contrast-toggle');
@@ -1244,7 +1245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sizeValue = document.querySelector('.size-value');
     const resetSettingsBtn = document.getElementById('reset-settings');
     
-    // Charger les paramètres sauvegardés
+    // Charger les paramètres au démarrage
     loadSettings();
     
     // Gestion du thème
@@ -1253,32 +1254,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const theme = this.getAttribute('data-theme');
             setTheme(theme);
             
+            // Mettre à jour les boutons actifs
             themeButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
+            // Sauvegarder
             localStorage.setItem('theme', theme);
         });
     });
     
-    // Mode contraste élevé
+    // Autres écouteurs d'événements (reste identique)
     highContrastToggle.addEventListener('change', function() {
         document.body.classList.toggle('high-contrast', this.checked);
         localStorage.setItem('highContrast', this.checked);
     });
     
-    // Réduire les animations
     reduceMotionToggle.addEventListener('change', function() {
         document.body.classList.toggle('reduce-motion', this.checked);
         localStorage.setItem('reduceMotion', this.checked);
     });
     
-    // Barres de défilement classiques
     classicScrollbarsToggle.addEventListener('change', function() {
         document.body.classList.toggle('classic-scrollbars', this.checked);
         localStorage.setItem('classicScrollbars', this.checked);
     });
     
-    // Contrôle de la taille
     decreaseSizeBtn.addEventListener('click', function() {
         changeFontSize(-1);
     });
@@ -1287,7 +1287,6 @@ document.addEventListener('DOMContentLoaded', function() {
         changeFontSize(1);
     });
     
-    // Réinitialisation
     resetSettingsBtn.addEventListener('click', function() {
         localStorage.removeItem('theme');
         localStorage.removeItem('highContrast');
@@ -1324,22 +1323,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Contraste élevé
+        // Autres paramètres...
         const highContrast = localStorage.getItem('highContrast') === 'true';
         document.body.classList.toggle('high-contrast', highContrast);
         highContrastToggle.checked = highContrast;
         
-        // Réduire les animations
         const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
         document.body.classList.toggle('reduce-motion', reduceMotion);
         reduceMotionToggle.checked = reduceMotion;
         
-        // Barres de défilement classiques
         const classicScrollbars = localStorage.getItem('classicScrollbars') === 'true';
         document.body.classList.toggle('classic-scrollbars', classicScrollbars);
         classicScrollbarsToggle.checked = classicScrollbars;
         
-        // Taille de police
         const savedFontSize = localStorage.getItem('fontSize') || 100;
         document.documentElement.style.fontSize = savedFontSize + '%';
         sizeValue.textContent = savedFontSize + '%';
@@ -1348,8 +1344,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function setTheme(theme) {
         if (theme === 'dark') {
             document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
         } else {
             document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
         }
     }
     
@@ -1357,7 +1355,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentSize = parseInt(document.documentElement.style.fontSize) || 100;
         let newSize = currentSize + (direction * 10);
         
-        // Limiter entre 80% et 150%
         newSize = Math.max(80, Math.min(150, newSize));
         
         document.documentElement.style.fontSize = newSize + '%';
@@ -1366,7 +1363,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('fontSize', newSize);
     }
 });
-
         // === GESTION DU POPUP À PROPOS ===
         document.addEventListener('DOMContentLoaded', function() {
             const aboutPopup = document.getElementById('about-popup');
