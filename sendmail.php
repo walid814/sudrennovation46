@@ -71,6 +71,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $confirmMail = mail($email, $confirm_subject, $confirm_body, $confirm_headers);
 
+    // 🔹 Nouveau : création d'un fichier log spécifique pour l'email automatique envoyé au client
+    $auto_log  = "\n==============================\n";
+    $auto_log .= "[" . date('Y-m-d H:i:s') . "] Email automatique envoyé à : $email\n";
+    $auto_log .= "Sujet : $confirm_subject\n\n";
+    $auto_log .= "Contenu du message envoyé :\n";
+    $auto_log .= "--------------------------------------\n";
+    $auto_log .= $confirm_body . "\n";
+    $auto_log .= "--------------------------------------\n";
+    $auto_log .= "Résultat de l'envoi : " . ($confirmMail ? "✅ Succès" : "❌ Échec") . "\n";
+    $auto_log .= "==============================\n";
+    file_put_contents('email_auto_log.txt', $auto_log, FILE_APPEND);
+
     // Gestion des logs et messages utilisateur
     if ($mainMail) {
         $success_log  = "✅ SUCCÈS : Email envoyé à l’entreprise.\n";

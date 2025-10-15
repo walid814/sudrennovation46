@@ -40,3 +40,12 @@ Message : adadad
 ❌ ERREUR : Email non envoyé.
 Détail : Aucun message d'erreur PHP
 ==============================
+
+==============================
+[2025-10-15 16:27:15] Tentative d'envoi à : walid.c69@outlook.fr
+De : tu te <john.prime@outlook.fr>
+Service : Autre demande
+Message : je demande que je demande
+❌ ERREUR : Email non envoyé.
+Détail : Aucun message d'erreur PHP
+==============================
