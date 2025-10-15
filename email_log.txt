@@ -49,3 +49,12 @@ Message : je demande que je demande
 ❌ ERREUR : Email non envoyé.
 Détail : Aucun message d'erreur PHP
 ==============================
+
+==============================
+[2025-10-15 16:33:21] Tentative d'envoi à : walid.c69@outlook.fr
+De : john prime <john.prime@outlook.fr>
+Service : Demande de devis / tarifs
+Message : il fait chier tout le monde
+❌ ERREUR : Email non envoyé.
+Détail : Aucun message d'erreur PHP
+==============================

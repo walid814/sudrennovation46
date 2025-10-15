@@ -1233,125 +1233,67 @@ window.addEventListener('resize', () => {
         });
 
         // Gestion des paramètres d'affichage
-        document.addEventListener('DOMContentLoaded', function() {
-            const themeButtons = document.querySelectorAll('.theme-btn');
-            const highContrastToggle = document.getElementById('high-contrast-toggle');
-            const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
-            const classicScrollbarsToggle = document.getElementById('classic-scrollbars-toggle');
-            const decreaseSizeBtn = document.getElementById('decrease-size');
-            const increaseSizeBtn = document.getElementById('increase-size');
-            const sizeValue = document.querySelector('.size-value');
-            const resetSettingsBtn = document.getElementById('reset-settings');
-            
-            loadSettings();
-            
-            themeButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const theme = this.getAttribute('data-theme');
-                    setTheme(theme);
-                    
-                    themeButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    localStorage.setItem('theme', theme);
-                });
-            });
-            
-            highContrastToggle.addEventListener('change', function() {
-                document.body.classList.toggle('high-contrast', this.checked);
-                localStorage.setItem('highContrast', this.checked);
-            });
-            
-            reduceMotionToggle.addEventListener('change', function() {
-                document.body.classList.toggle('reduce-motion', this.checked);
-                localStorage.setItem('reduceMotion', this.checked);
-            });
-            
-            classicScrollbarsToggle.addEventListener('change', function() {
-                document.body.classList.toggle('classic-scrollbars', this.checked);
-                localStorage.setItem('classicScrollbars', this.checked);
-            });
-            
-            decreaseSizeBtn.addEventListener('click', function() {
-                changeFontSize(-1);
-            });
-            
-            increaseSizeBtn.addEventListener('click', function() {
-                changeFontSize(1);
-            });
-            
-            resetSettingsBtn.addEventListener('click', function() {
-                localStorage.removeItem('theme');
-                localStorage.removeItem('highContrast');
-                localStorage.removeItem('reduceMotion');
-                localStorage.removeItem('classicScrollbars');
-                localStorage.removeItem('fontSize');
-                
-                setTheme('light');
-                document.body.classList.remove('high-contrast', 'reduce-motion', 'classic-scrollbars');
-                highContrastToggle.checked = false;
-                reduceMotionToggle.checked = false;
-                classicScrollbarsToggle.checked = false;
-                
-                document.documentElement.style.fontSize = '100%';
-                sizeValue.textContent = '100%';
-                
-                themeButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.getAttribute('data-theme') === 'light') {
-                        btn.classList.add('active');
-                    }
-                });
-            });
-            
-            function loadSettings() {
-                const savedTheme = localStorage.getItem('theme') || 'light';
-                setTheme(savedTheme);
-                
-                themeButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.getAttribute('data-theme') === savedTheme) {
-                        btn.classList.add('active');
-                    }
-                });
-                
-                const highContrast = localStorage.getItem('highContrast') === 'true';
-                document.body.classList.toggle('high-contrast', highContrast);
-                highContrastToggle.checked = highContrast;
-                
-                const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
-                document.body.classList.toggle('reduce-motion', reduceMotion);
-                reduceMotionToggle.checked = reduceMotion;
-                
-                const classicScrollbars = localStorage.getItem('classicScrollbars') === 'true';
-                document.body.classList.toggle('classic-scrollbars', classicScrollbars);
-                classicScrollbarsToggle.checked = classicScrollbars;
-                
-                const savedFontSize = localStorage.getItem('fontSize') || 100;
-                document.documentElement.style.fontSize = savedFontSize + '%';
-                sizeValue.textContent = savedFontSize + '%';
-            }
-            
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    document.body.classList.add('dark-mode');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                }
-            }
-            
-            function changeFontSize(direction) {
-                const currentSize = parseInt(document.documentElement.style.fontSize) || 100;
-                let newSize = currentSize + (direction * 10);
-                
-                newSize = Math.max(80, Math.min(150, newSize));
-                
-                document.documentElement.style.fontSize = newSize + '%';
-                sizeValue.textContent = newSize + '%';
-                
-                localStorage.setItem('fontSize', newSize);
-            }
+        // Gestion du thème et des préférences d'affichage
+document.addEventListener('DOMContentLoaded', function() {
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const highContrastToggle = document.getElementById('high-contrast-toggle');
+    const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+    const classicScrollbarsToggle = document.getElementById('classic-scrollbars-toggle');
+    const resetSettingsBtn = document.getElementById('reset-settings');
+
+    // Charger les préférences depuis localStorage
+    function loadSettings() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.classList.toggle('dark-mode', theme === 'dark');
+        themeButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.theme === theme));
+
+        const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
+        document.body.classList.toggle('reduce-motion', reduceMotion);
+        reduceMotionToggle.checked = reduceMotion;
+
+        const classicScrollbars = localStorage.getItem('classicScrollbars') === 'true';
+        document.body.classList.toggle('classic-scrollbars', classicScrollbars);
+        classicScrollbarsToggle.checked = classicScrollbars;
+    }
+
+    loadSettings();
+
+    // Changement de thème
+    themeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.dataset.theme;
+            document.body.classList.toggle('dark-mode', theme === 'dark');
+            themeButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            localStorage.setItem('theme', theme);
         });
+    });
+
+    // Réduction des animations
+    reduceMotionToggle.addEventListener('change', () => {
+        document.body.classList.toggle('reduce-motion', reduceMotionToggle.checked);
+        localStorage.setItem('reduceMotion', reduceMotionToggle.checked);
+    });
+
+    // Barres de défilement classiques
+    classicScrollbarsToggle.addEventListener('change', () => {
+        document.body.classList.toggle('classic-scrollbars', classicScrollbarsToggle.checked);
+        localStorage.setItem('classicScrollbars', classicScrollbarsToggle.checked);
+    });
+
+    // Réinitialiser les paramètres
+    resetSettingsBtn.addEventListener('click', () => {
+        localStorage.removeItem('theme');
+        localStorage.removeItem('reduceMotion');
+        localStorage.removeItem('classicScrollbars');
+        document.body.classList.remove('dark-mode', 'reduce-motion', 'classic-scrollbars');
+        themeButtons.forEach(b => b.classList.remove('active'));
+        themeButtons[0].classList.add('active'); // Thème clair par défaut
+        reduceMotionToggle.checked = false;
+        classicScrollbarsToggle.checked = false;
+    });
+});
+
 
         // === GESTION DU POPUP À PROPOS ===
         document.addEventListener('DOMContentLoaded', function() {

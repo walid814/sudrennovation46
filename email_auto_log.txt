@@ -1,0 +1,25 @@
+
+==============================
+[2025-10-15 16:33:21] Email automatique envoyé à : john.prime@outlook.fr
+Sujet : Confirmation de votre demande de devis - Sud Rénovation
+
+Contenu du message envoyé :
+--------------------------------------
+Bonjour john prime,
+
+Merci pour votre demande de devis concernant : "Demande de devis / tarifs".
+Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.
+
+Rappel de votre message :
+--------------------------------------
+il fait chier tout le monde
+--------------------------------------
+
+Cordialement,
+L’équipe Sud Rénovation
+📞 09 70 35 41 39 | 🌐 sud-renovation.com
+Date : 15/10/2025 à 16:33:21
+
+--------------------------------------
+Résultat de l'envoi : ❌ Échec
+==============================
