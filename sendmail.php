@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Adresse de réception
+    // Adresse de réception (celle qui reçoit)
     $to = "walid.c69@outlook.fr";
     $subject = "Nouvelle demande de devis - Sud Rénovation";
 
-    // Contenu du mail enrichi
+    // Contenu du mail
     $body = "=== NOUVELLE DEMANDE DE DEVIS ===\n\n";
     $body .= "INFORMATIONS CLIENT :\n";
     $body .= "Nom : $name\n";
@@ -34,29 +34,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Envoyé depuis le formulaire de contact Sud Rénovation\n";
     $body .= "Date : " . date('d/m/Y à H:i:s') . "\n";
 
-    // Entêtes améliorées
+    // Entêtes du mail
     $headers = "From: noreply@sud-renovation.com\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
 
-    // Journalisation pour debug
-    $log_message = "[" . date('Y-m-d H:i:s') . "] Tentative d'envoi à: $to\n";
-    $log_message .= "De: $name ($email)\n";
-    $log_message .= "Sujet: $service\n";
-    file_put_contents('email_log.txt', $log_message, FILE_APPEND);
+    // Préparation du log
+    $log_message  = "\n==============================\n";
+    $log_message .= "[" . date('Y-m-d H:i:s') . "] Tentative d'envoi à : $to\n";
+    $log_message .= "De : $name <$email>\n";
+    $log_message .= "Service : $service\n";
+    $log_message .= "Message : $message\n";
 
     // Tentative d'envoi
     if (mail($to, $subject, $body, $headers)) {
-        // Log de succès
-        file_put_contents('email_log.txt', "✅ Email envoyé avec succès\n", FILE_APPEND);
+        $success_log  = "✅ SUCCÈS : Email envoyé avec succès !\n";
+        $success_log .= "Sujet : $subject\n";
+        $success_log .= "Date : " . date('d/m/Y H:i:s') . "\n";
+        $success_log .= "==============================\n";
+        file_put_contents('email_log.txt', $log_message . $success_log, FILE_APPEND);
         echo "✅ Merci $name, votre demande de devis a bien été envoyée. Nous vous recontacterons rapidement.";
     } else {
-        // Log d'erreur
         $error = error_get_last();
-        file_put_contents('email_log.txt', "❌ Erreur d'envoi: " . $error['message'] . "\n", FILE_APPEND);
-        echo "❌ Désolé, une erreur est survenue lors de l'envoi. Veuillez nous contacter directement au 09 70 35 41 39";
+        $error_log  = "❌ ERREUR : Email non envoyé.\n";
+        $error_log .= "Détail : " . ($error['message'] ?? 'Aucun message d\'erreur PHP') . "\n";
+        $error_log .= "==============================\n";
+        file_put_contents('email_log.txt', $log_message . $error_log, FILE_APPEND);
+        echo "❌ Désolé, une erreur est survenue lors de l'envoi. Veuillez nous contacter directement au 09 70 35 41 39.";
     }
 } else {
     echo "Accès non autorisé.";
