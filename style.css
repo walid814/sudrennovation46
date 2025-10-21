@@ -2817,23 +2817,23 @@ nav ul > li > a.btn:hover::after {
         justify-content: center;
         width: 24px;
         height: 24px;
-        background-color: #013f1c;
-        color: white;
-        border-radius: 50%;
+        color: #013f1c; /* couleur du texte/icône uniquement */
         font-size: 12px;
         margin-bottom: 2px;
+        background: none; /* supprime le fond vert */
+        border-radius: 0; /* supprime la forme circulaire */
     }
     
     .mobile-nav .info-text {
         font-size: 0.65rem;
         white-space: nowrap;
     }
-    
-    /* S'assurer que l'icône reste visible */
+
     .mobile-nav .info-link .info-icon i {
         display: block !important;
     }
 }
+
 /* ===== CORRECTIONS GLOBALES ===== */
 
 /* Problème 1 & 3 : Correction des traits verts indésirables */
