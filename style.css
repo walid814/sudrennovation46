@@ -2835,7 +2835,7 @@ nav ul > li > a.btn:hover::after {
     }
     .mobile-nav .info-link .info-icon i {
         position: relative;
-        top: 2px; /* descend légèrement l’icône, ajuste à 1px ou 3px si besoin */
+        top: 10px; /* descend légèrement l’icône, ajuste à 1px ou 3px si besoin */
     }
     
     
