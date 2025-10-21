@@ -2803,9 +2803,93 @@ nav ul > li > a.btn:hover::after {
     }
 }
 /* Correction pour l'icône Info pratiques sur mobile */
+@media (max-width: 768px) {
+    .mobile-nav .info-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .mobile-nav .info-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        color: #013f1c; /* couleur du texte/icône uniquement */
+        font-size: 12px;
+        margin-bottom: 2px;
+        background: none; /* supprime le fond vert */
+        border-radius: 0; /* supprime la forme circulaire */
+    }
+    
+    .mobile-nav .info-text {
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
+
+    .mobile-nav .info-link .info-icon i {
+        display: block !important;
+    }
+}
 
 /* ===== CORRECTIONS GLOBALES ===== */
+@media (max-width: 768px) {
+    .mobile-nav .info-link {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+    }
 
+    .mobile-nav .info-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        background-color: #013f1c;
+        color: white;
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    /* CACHER l'icône Font Awesome sur mobile */
+    .mobile-nav .info-icon i {
+        display: none !important;
+    }
+
+    /* CRÉER le "i" manuel */
+    .mobile-nav .info-icon::before {
+        content: "i";
+        display: block;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1;
+        color: white;
+    }
+
+    .mobile-nav .info-text {
+        display: block !important;
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
+
+    /* Styles de survol */
+    .mobile-nav .info-link:hover .info-icon {
+        background-color: white;
+        transform: scale(1.1);
+    }
+
+    .mobile-nav .info-link:hover .info-icon::before {
+        color: #013f1c;
+    }
+}
 /* Problème 1 & 3 : Correction des traits verts indésirables */
 @media (max-width: 768px) {
     .mobile-nav li a::after {
@@ -2826,52 +2910,9 @@ nav ul > li > a.btn:hover::after {
     }
 }
 
-/* Problème 2 : Correction complète du logo Infos pratiques */
-.mobile-nav .info-link {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-decoration: none;
-}
 
-.mobile-nav .info-icon {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    background-color: #013f1c;
-    color: white;
-    border-radius: 50%;
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 2px;
-}
 
-.mobile-nav .info-text {
-    display: block !important;
-    font-size: 0.65rem;
-    white-space: nowrap;
-}
 
-/* S'assurer que l'icône est toujours visible */
-.mobile-nav .info-icon i {
-    display: block !important;
-    line-height: 1;
-}
-
-/* Styles de survol */
-.mobile-nav .info-link:hover .info-icon {
-    background-color: white;
-    color: #013f1c;
-    transform: scale(1.1);
-}
-
-.mobile-nav .info-link:hover {
-    color: #013f1c;
-    background-color: transparent;
-}
 
 /* Correction desktop pour les traits */
 @media (min-width: 769px) {
