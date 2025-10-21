@@ -318,7 +318,7 @@ header {
 .service-card {
     flex: 0 0 550px;
     height: 325px;
-    border-radius: px;
+    border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
