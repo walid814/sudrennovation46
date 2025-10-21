@@ -2809,6 +2809,7 @@ nav ul > li > a.btn:hover::after {
         flex-direction: column;
         align-items: center;
         gap: 4px;
+        margin-top: 15px;
     }
     
     .mobile-nav .info-icon {
@@ -2822,7 +2823,6 @@ nav ul > li > a.btn:hover::after {
         margin-bottom: 2px;
         background: none; /* supprime le fond vert */
         border-radius: 0; /* supprime la forme circulaire */
-
     }
     
     .mobile-nav .info-text {
@@ -2833,7 +2833,11 @@ nav ul > li > a.btn:hover::after {
     .mobile-nav .info-link .info-icon i {
         display: block !important;
     }
-    
+    .mobile-nav .info-link .info-icon i {
+    display: block !important;
+    position: relative;
+    top: 2px; /* ajuste la valeur (ex: 1px, 3px, etc.) selon le rendu souhaité */
+}
 
 }
 
