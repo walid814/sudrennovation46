@@ -2016,11 +2016,16 @@ nav ul li a:not(.btn):not(.info-link):hover {
     transform: scale(1.05);
 }
 
+/* CORRECTION POUR LA VERSION DESKTOP AUSSI */
 .info-icon {
     position: relative;
     display: inline-block;
     width: 20px;
     height: 20px;
+}
+
+.info-icon i {
+    display: none !important; /* Cache l'icône Font Awesome */
 }
 
 .info-icon::before {
@@ -2030,12 +2035,18 @@ nav ul li a:not(.btn):not(.info-link):hover {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: green;
+    background: #013f1c;
     color: white;
     border-radius: 50%;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
+    line-height: 1;
+}
+
+.info-link:hover .info-icon::before {
+    background-color: white;
+    color: #013f1c;
 }
 .info-link:hover .info-icon {
     background-color: white;
@@ -2811,35 +2822,67 @@ nav ul > li > a.btn:hover::after {
     }
 }
 /* Correction pour l'icône Info pratiques sur mobile */
+/* CORRECTION DU LOGO INFOS PRATIQUES SUR MOBILE */
 @media (max-width: 768px) {
     .mobile-nav .info-link {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         gap: 4px;
+        text-decoration: none;
     }
-    
+
     .mobile-nav .info-icon {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         background-color: #013f1c;
         color: white;
         border-radius: 50%;
-        font-size: 12px;
+        font-size: 11px;
+        font-weight: bold;
         margin-bottom: 2px;
+        position: relative;
     }
-    
+
+    /* CACHER L'ICÔNE FONT AWESOME POUR NE GARDER QUE LE ROND VERT */
+    .mobile-nav .info-icon i {
+        display: none !important;
+    }
+
+    /* CRÉER LE "i" MANUEL DANS LE ROND VERT */
+    .mobile-nav .info-icon::before {
+        content: "i";
+        display: block;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1;
+        color: white;
+    }
+
     .mobile-nav .info-text {
+        display: block !important;
         font-size: 0.65rem;
         white-space: nowrap;
     }
-    
-    /* S'assurer que l'icône reste visible */
-    .mobile-nav .info-link .info-icon i {
-        display: block !important;
+
+    /* Styles de survol */
+    .mobile-nav .info-link:hover .info-icon {
+        background-color: white;
+        color: #013f1c;
+        transform: scale(1.1);
+    }
+
+    .mobile-nav .info-link:hover .info-icon::before {
+        color: #013f1c;
+    }
+
+    .mobile-nav .info-link:hover {
+        color: #013f1c;
+        background-color: transparent;
     }
 }
 /* ===== CORRECTIONS GLOBALES ===== */
