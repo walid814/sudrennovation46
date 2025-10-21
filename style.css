@@ -2809,7 +2809,6 @@ nav ul > li > a.btn:hover::after {
         flex-direction: column;
         align-items: center;
         gap: 4px;
-        margin-top: 15px;
     }
     
     .mobile-nav .info-icon {
@@ -2823,6 +2822,8 @@ nav ul > li > a.btn:hover::after {
         margin-bottom: 2px;
         background: none; /* supprime le fond vert */
         border-radius: 0; /* supprime la forme circulaire */
+                margin-top: 15px;
+
     }
     
     .mobile-nav .info-text {
