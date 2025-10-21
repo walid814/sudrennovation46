@@ -2819,10 +2819,9 @@ nav ul > li > a.btn:hover::after {
         height: 24px;
         color: #013f1c; /* couleur du texte/icône uniquement */
         font-size: 12px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
         background: none; /* supprime le fond vert */
         border-radius: 0; /* supprime la forme circulaire */
-                margin-top: 15px;
 
     }
     
