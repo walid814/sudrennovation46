@@ -2820,7 +2820,7 @@ nav ul > li > a.btn:hover::after {
         color: #013f1c; /* couleur du texte/icône uniquement */
         font-size: 12px;
         margin-bottom: 2px;
-        margin-top: 2px;
+        margin-top: 0px;
         background: none; /* supprime le fond vert */
         border-radius: 0; /* supprime la forme circulaire */
     }
