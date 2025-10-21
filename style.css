@@ -2832,6 +2832,12 @@ nav ul > li > a.btn:hover::after {
     .mobile-nav .info-link .info-icon i {
         display: block !important;
     }
+    .mobile-nav .info-link .info-icon i {
+    display: block !important;
+    position: relative;
+    top: 2px; /* ajuste la valeur (ex: 1px, 3px, etc.) selon le rendu souhaité */
+}
+
 }
 
 /* ===== CORRECTIONS GLOBALES ===== */
